@@ -27,10 +27,27 @@
 
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	</head>
-	<body class="">
-
-
-
+	<body class="{% if home? %}{{'home'}}{% endif %}">
+		<header class="mh">
+			<div class="site-logo">
+				<span class="r-icon restore-logo"></span>
+			</div>
+			<span class="menu-btn r-icon restore-menu-btn">
+				<span>Menu</span>
+			</span>
+		</header>
+		<!--
+		<nav id="site-nav">
+			<ul class="site-menu">
+				<li>Our Work</li>
+				<li>About Us</li>
+				<li>Get Involved</li>
+				<li>Contact Us</li>
+				<li><span class="btn small fill">Donate</span></li>
+				<li><span class="btn small">Find Help</span></li>
+			</ul>
+		</nav>
+		-->
 		<div id="page">
 			<section class="dynamic-lead full-width">
 				<div class="sec-wrap">
@@ -64,7 +81,33 @@
 			{% endfor %}
 
 		</div>
-
-
+		<footer class="flush-top">
+			<div class="footer-wrap">
+				<div class="top clearfix">
+					<div class="header">
+						<h2>Stay Informed</h2>
+						<div class="input-wrap">
+							<input class="" type="text" placeholder="Your email" maxlength="50" />
+							<span class="btn large f-c-white fill-dark-grey">Submit</span>
+						</div>
+					</div>
+					<div class="links clearfix">
+						{{site.pages['footer'].body}}
+					</div>
+				</div>
+				<div class="bottom clearfix">
+					<div class="logo-wrap">
+						<span class="r-icon restore-logo"></span>
+						<h1>Rebuilding the Life Intended</h1>
+					</div>
+					<div class="social">
+						<a href=""><i class="fa fa-twitter"></i></a>
+						<a href=""><i class="fa fa-facebook"></i></a>
+						<a href=""><i class="fa fa-instagram"></i></a>
+					</div>
+				</div>
+				<div class="copyright">&copy;{{site.date | date:"%Y"}} Restore NYC <i class="fa fa-circle bullet"></i> Proudly Made in NYC <i class="fa fa-circle bullet"></i> Contact Us</div>
+			</div>
+		</footer>
 	</body>
 </html>

@@ -1,6 +1,10 @@
-{% assign subsection = page | post %}
 <article>
 	<header>
+		{% if subsection.meta.headerIconClass %}
+			<div class="icon-wrapper">
+				<i class="{{subsection.meta.headerIconClass}} vertical-align"></i>
+			</div>
+		{% endif %}
 		{% include 'views/utils/title-post' %}
 	</header>
 	<div class="content">

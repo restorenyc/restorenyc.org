@@ -2,14 +2,22 @@
 	<div class="sec-wrap clearfix">
 		<div class="calendar">
 			<header>
-				<h2 class="f-c-white f-w-thin">{{sectionTitle}}</h2>
+				{% include 'views/utils/title-subpage' %}
 			</header>
 			{% for post in section.posts limit:5 %}
 				{% include 'views/custom/upcoming-events-post' %}
 			{% endfor %}
 		</div>
-		{% for page in section.pages limit:1 %}
+		{% for aside in section.pages limit:1 %}
+			{% if aside.title contains '__'%}
+
+				{% if aside.title contains '__?' %}
+					{% assign title = '' %}
+				{% else %}
+					{% assign title = aside.title | remove_first:'__' %}
+				{% endif %}
 				{% include 'views/custom/upcoming-events-aside' %}
+			{% endif %}
 		{% endfor %}
 	</div>
 </section>
