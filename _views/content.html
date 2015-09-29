@@ -1,0 +1,25 @@
+{% if section.meta.moduleTemplate %}
+	{% assign template = section.meta.moduleTemplate %}
+
+	{% if template == 'divider-arrow' %}
+		{% include 'views/utils/divider-arrow' %}
+	{% elsif template == 'section' %}
+		{% include 'views/partials/section' %}
+	{% elsif template == 'single' %}
+		{% include 'views/partials/single' %}
+	{% elsif template == 'post' %}
+		{% include 'views/partials/post' %}
+	{% elsif template == 'twitter' %}
+		{% include 'views/custom/twitter' %}
+	{% elsif template == 'upcoming-events' %}
+		{% include 'views/custom/upcoming-events' %}
+	{% elsif template == 'upcoming-events-aside' %}
+		{% include 'views/custom/upcoming-events-aside' %}
+
+
+	{% else %}
+		{% include 'views/partials/section' %}
+	{% endif %}
+
+
+{% endif %}

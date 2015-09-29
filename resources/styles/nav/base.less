@@ -1,0 +1,47 @@
+.mh {
+	position:relative;
+	padding:10px 0 8px;
+	.site-logo {
+		line-height:1;
+		margin:0 0 0 20px;
+		font-size:40px;
+		text-align:left;
+		color:@restore-red;
+	}
+	.menu-btn {
+		position:absolute;
+		z-index:2;
+		right:9px;
+		top:8px;
+		font-size:36px;
+		color:@restore-light-grey;
+		padding:5px;
+		cursor:pointer;
+		span {
+			display:none;
+		}
+	}
+	.border-menu {
+		position:absolute;
+		z-index:1;
+		right:20px;
+		top:14px;
+		padding-left: 1.25em;
+		&:before {
+			box-sizing:content-box;
+			content: "";
+			position: absolute;
+			top: 0.25em;
+			left: 0;
+			width: 1em;
+			height: 0.125em;
+			border-top: 0.375em double #000;
+			border-bottom: 0.125em solid #000;
+		}
+	}
+	.mh-right {
+		display:none;
+	}
+	.site-menu {
+	}
+}

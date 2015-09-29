@@ -1,0 +1,15 @@
+<section class="{{section.meta.sectionClass}}">
+	<div class="sec-wrap clearfix">
+		<div class="calendar">
+			<header>
+				<h2 class="f-c-white f-w-thin">{{sectionTitle}}</h2>
+			</header>
+			{% for post in section.posts limit:5 %}
+				{% include 'views/custom/upcoming-events-post' %}
+			{% endfor %}
+		</div>
+		{% for page in section.pages limit:1 %}
+				{% include 'views/custom/upcoming-events-aside' %}
+		{% endfor %}
+	</div>
+</section>

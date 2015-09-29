@@ -1,0 +1,45 @@
+.featured {
+	background-color:#7B8281;
+	color:#fff;
+	padding-top:90px;
+	padding-bottom:60px;
+	h2 {
+		font-size:2.4em;
+		font-weight:200;
+	}
+	.btn-wrap {
+		margin:40px 0 0;
+	}
+}
+.photo-slider {
+	max-width:400px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:40px;
+	figure {
+		margin:0;
+		.wrap {
+			background-color:#000;
+			padding-top:56.25%;
+			height:0;
+			box-shadow:0 3px 5px #777;
+		}
+	}
+	figcaption {
+		position:relative;
+		margin-top: 25px;
+		padding: 20px 22px;
+		font-size:0.8em;
+		font-style:italic;
+		color:@restore-light-grey;
+		&:before {
+			content:"";
+			position:absolute;
+			top:0;
+			left:0;
+			width:50%;
+			height:4px;
+			background-color:@restore-purple;
+		}
+	}
+}

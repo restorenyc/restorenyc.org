@@ -1,0 +1,3 @@
+{% if title != ''%}
+	<h3 {% if section.meta.headerClass %} class="{{section.meta.headerClass}}"{% endif %}>{% include 'views/utils/title' %}</h3>
+{% endif %}

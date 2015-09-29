@@ -1,0 +1,9 @@
+{% assign subsection = page | post %}
+<article>
+	<header>
+		{% include 'views/utils/title-post' %}
+	</header>
+	<div class="content">
+		{{subsection.body}}
+	</div>
+</article>

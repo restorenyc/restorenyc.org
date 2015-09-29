@@ -1,0 +1,19 @@
+<article class="clearfix">
+	<a href="{% if post.meta.url and post.meta.url != "" %}{{post.meta.url}}{% else %}{{"#"}}{% endif %}">
+		<div class="cal-time-wrap">
+			<div class="cal-time">
+				<div class="wrap vertical-align">
+					<div class="month">{{post.date | date:"%^b"}}</div>
+					<div class="date">{{post.date | date:"%-d"}}</div>
+				</div>
+			</div>
+		</div>
+		<header>
+			<h3>{{post.title}}</h3>
+			<time datetime="{{post.date | date:"%Y-%m-%dT%H:%M"}}">{{post.date | date:"%-I:%M %p"}}</time>
+		</header>
+		<div class="cal-link">
+			<i class="fa fa-angle-right"></i>
+		</div>
+	</a>
+</article>

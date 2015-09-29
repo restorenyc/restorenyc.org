@@ -1,0 +1,26 @@
+{% if section.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+
+<section class="{{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" {% if bgImage %}style="background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}})"{% endif %}>
+	<div class="sec-wrap {% if bgImage %}vertical-align{% endif %}">
+		{% include 'views/utils/title-subpage' %}
+
+		{{section.body}}
+
+		{% for subsection in section.pages %}
+			{% if subsection.title contains '__'%}
+
+				{% if subsection.title contains '__?' %}
+					{% assign title = '' %}
+				{% else %}
+					{% assign title = subsection.title | remove_first:'__' %}
+				{% endif %}
+				{{subsection.title}}
+			{% endif %}
+		{% endfor %}
+
+	</div>
+</section>

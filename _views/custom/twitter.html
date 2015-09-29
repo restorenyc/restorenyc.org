@@ -1,0 +1,22 @@
+{% if section.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+<section class="{{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" {% if bgImage %}style="background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}})"{% endif %}>
+	<div class="sec-wrap {% if bgImage %}vertical-align{% endif %}">
+		<header>
+			<div class="icon-wrapper">
+				<i class="fa fa-twitter"></i>
+			</div>
+		</header>
+		{{section.body}}
+	</div>
+	<div class="nav">
+		<ul class="clearfix">
+			<li class="selected"></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+</section>

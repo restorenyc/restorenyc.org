@@ -1,0 +1,289 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+body {
+	//margin:40px 0 0;
+	margin:0;
+	font-family:@font-family;
+	font-weight:300;
+	color:@text-color;
+	line-height:1.3;
+	// font-size:100%;
+	font-size:20px;
+	text-align: center;
+}
+a {
+	text-decoration:none;
+}
+img {
+	max-width:100%;
+}
+h1 {
+	font-size:3em;
+}
+h2 {
+	font-size:1.6em;
+}
+h3 {
+	font-size:1.4em;
+}
+h1,h2,h3,h4,h5,h6 {
+	line-height:1.25;
+	margin-top:0.2em;
+	margin-bottom:0.2em;
+	font-weight:600;
+	&.sub {
+		font-style:italic;
+		margin-top:-1.3em;
+	}
+	&.light {
+		font-weight:300;
+	}
+	&.reg {
+		font-weight:400;
+	}
+	&.line {
+		position:relative;
+		padding-bottom:50px;
+		line-height:1;
+		&:after {
+			content:"";
+			position:absolute;
+			margin-left:-22px;
+			left:50%;
+			bottom:20px;
+			width:44px;
+			height:2px;
+		}
+	}
+	&.red:after {
+		background-color:@restore-red;
+	}
+	&.grey:after {
+		background-color:@restore-purple;
+	}
+}
+strong {
+	font-weight:600;
+}
+strong.red {
+	color:@restore-red;
+}
+mark {
+	background-color:@restore-purple;
+	color:@restore-light-grey;
+}
+blockquote {
+	border-left:6px solid @restore-purple;
+	margin-left: 40px;
+	padding: 0 0 0 20px;
+	font-weight:600;
+	font-size:1.5em;
+	font-style:italic;
+	position:relative;
+	text-align:left;
+	line-height:1.25;
+	&:after {
+		content:"\201C";
+		position:absolute;
+		font-size:2.933em;
+		color:@restore-red;
+		top:-5px;
+		left:-70px;
+		line-height:1;
+	}
+}
+
+.title {
+	color:#777;
+}
+
+// LISTS
+ul.list {
+	list-style:none;
+	li {
+		position:relative;
+		padding-left:10px;
+		&:before {
+			content:'\f00c';
+			font-family:FontAwesome;
+			position:absolute;
+			left:-25px;
+			top:0px;
+			color:@restore-red;
+		}
+	}
+}
+ul.bullet {
+	list-style:none;
+	li {
+		position:relative;
+		padding-left:10px;
+		&:before {
+			content:@restore-icon;
+			font-family:'restore-font';
+			position:absolute;
+			left:-25px;
+			top:px;
+			color:@restore-red;
+		}
+	}
+}
+
+// BUTTONS
+.btn {
+	border-color:@restore-red;
+	border-style:solid;
+	color:@restore-red;
+	display:inline-block;
+	font-weight:300;
+	text-align:center;
+	&.small {
+		border-width:1px;
+		font-size:0.8em;
+		letter-spacing:1px;
+		padding: 0.3em 0.55em;
+	}
+	&.med {
+		border-width:1px;
+		font-size:0.5em;
+		letter-spacing:1px;
+		padding:1.15em 3.9em;
+	}
+	&.large {
+		min-width:120px;
+		border-width:2px;
+		font-size:0.85em;
+		// letter-spacing:3px;
+		//padding:0.75em 2.9em;
+		padding:0.6em 0.85em;
+	}
+	&.x-large {
+		border-width:2px;
+		font-size:1em;
+		letter-spacing:3px;
+		padding:1.1em 3.8em;
+	}
+	&.fill-red {
+		background-color:@restore-red;
+	}
+	&.fill-dark-grey {
+		background-color:@restore-dark-grey;
+	}
+	&.fill-purple {
+		background-color:@restore-purple;
+		border-color:@restore-purple;
+	}
+	&.trim {
+		padding:0.6em 0.85em;
+	}
+	&.icon {
+		padding-left:0.6em;
+		padding-right:1em;
+		.fa,
+		.r-icon {
+			display:inline-block;
+			margin-left:0.2em;
+			margin-right:0.5em;
+			font-size:1.3em;
+		}
+	}
+	&.block {
+		display:block;
+		margin-bottom:15px;
+	}
+}
+
+// UTILS
+section {
+	margin-bottom:70px;
+}
+.sec-wrap {
+	padding:0 25px;
+}
+.full-width {
+	padding:0;
+}
+
+.bg-image {
+	height:540px;
+	background-position: center;
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+.flush-top {
+	margin-top:-70px;
+}
+.vertical-align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+// DIVIDERS
+.divider {
+	margin:15px 0;
+	.restore-icon {
+		font-size:1.48em;
+		color:@restore-red;
+	}
+	& + p {
+		margin-top:0;
+	}
+	&.line {
+		position:relative;
+		padding-bottom:50px;
+		line-height:1;
+		&:after {
+			content:"";
+			position:absolute;
+			margin-left:-22px;
+			top:40%;
+			left:50%;
+			bottom:20px;
+			width:44px;
+			height:2px;
+		}
+	}
+	&.red:after {
+		background-color:@restore-red;
+	}
+	&.grey:after {
+		background-color:@restore-purple;
+	}
+}
+
+// FONT TREATMENTS
+.f-w-thin {
+	font-weight:100;
+}
+.f-w-light {
+	font-weight:300;
+}
+.f-w-reg {
+	font-weight:400;
+}
+.f-w-semi {
+	font-weight:600;
+}
+.f-w-bold {
+	font-weight:800;
+}
+.f-c-white {
+	color:#fff !important;
+}
+.f-c-black {
+	color:#000 !important;
+}
+.f-c-red {
+	color:@restore-red !important;
+}
+
