@@ -39,13 +39,13 @@
 		<!--
 		<nav id="site-nav">
 			<ul class="site-menu">
-				<li>Our Work</li>
-				<li>About Us</li>
-				<li>Get Involved</li>
-				<li>Contact Us</li>
-				<li><span class="btn small fill">Donate</span></li>
-				<li><span class="btn small">Find Help</span></li>
-			</ul>
+				{% for single in site.pages %}
+					{% if single.title contains '__' %}
+						{% else %}
+							<li>{{single.title}}<li>
+					{% endif %}
+				{% endfor %}
+				</ul>
 		</nav>
 		-->
 		<div id="page">
@@ -68,18 +68,17 @@
 				</div>
 			</section>
 			{% for section in pages %}
+				{% comment %}a double underscore before the title indicates a subpage{% endcomment %}
 				{% if section.title contains '__' %}
+					{% comment %}a question mark indicates 'do not show title'{% endcomment %}
 					{% if section.title contains '__?' %}
 						{% assign title = '' %}
 					{% else %}
 						{% assign title = section.title | remove_first:'__' %}
 					{% endif %}
-
 					{% include 'views/content' %}
-
 				{% endif %}
 			{% endfor %}
-
 		</div>
 		<footer class="flush-top">
 			<div class="footer-wrap">
@@ -92,7 +91,7 @@
 						</div>
 					</div>
 					<div class="links clearfix">
-						{{site.pages['footer'].body}}
+						{{site.pages['footer'].pages['links'].body}}
 					</div>
 				</div>
 				<div class="bottom clearfix">
@@ -101,12 +100,10 @@
 						<h1>Rebuilding the Life Intended</h1>
 					</div>
 					<div class="social">
-						<a href=""><i class="fa fa-twitter"></i></a>
-						<a href=""><i class="fa fa-facebook"></i></a>
-						<a href=""><i class="fa fa-instagram"></i></a>
+						{{site.pages['footer'].pages['social-media'].body}}
 					</div>
 				</div>
-				<div class="copyright">&copy;{{site.date | date:"%Y"}} Restore NYC <i class="fa fa-circle bullet"></i> Proudly Made in NYC <i class="fa fa-circle bullet"></i> Contact Us</div>
+				<div class="copyright">&copy;{{site.date | date:"%Y"}} {{site.pages['footer'].pages['copyright']}}</div>
 			</div>
 		</footer>
 	</body>
