@@ -1,110 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<title>{{site.title | title}}</title>
-
-
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
-		<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800,700' rel='stylesheet' type='text/css'> -->
-		<!-- design@restorenyc.org -->
-		<script src="//use.typekit.net/oln3ahs.js"></script>
-		<!-- jayme@restorenyc.org -->
-		<!-- <script src="//use.typekit.net/prz1lek.js"></script> -->
-		<script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<link rel="stylesheet" type="text/css" href="src/css/styles.css">
-
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	</head>
-	<body class="{% if home? %}{{'home'}}{% endif %}">
-		<header class="mh">
-			<div class="site-logo">
-				<span class="r-icon restore-logo"></span>
-			</div>
-			<span class="menu-btn r-icon restore-menu-btn">
-				<span>Menu</span>
-			</span>
-		</header>
-		<!--
-		<nav id="site-nav">
-			<ul class="site-menu">
-				{% for single in site.pages %}
-					{% if single.title contains '__' %}
-						{% else %}
-							<li>{{single.title}}<li>
-					{% endif %}
-				{% endfor %}
-				</ul>
-		</nav>
-		-->
-		<div id="page">
-			<section class="dynamic-lead full-width">
-				<div class="sec-wrap">
-					<article>
-						<header>
-							<h2>REBUILDING <span class="f-w-thin">THE LIFE INTENDED</span></h2>
-						</header>
-						<figure>
-							<img style="background-image:url(/src/images/home/bg-slider-heart.png);" src="/src/images/base/clear.gif"/>
-						</figure>
-						<div class="article-content">
-							<div class="btn-wrap">
-								<a class="btn large f-c-white" href="#">Get involved</a>
-								<a class="btn large f-c-white fill-red" href="#">Give</a>
-							</div>
-						</div>
-					</article>
-				</div>
-			</section>
-			{% for section in pages %}
-				{% comment %}a double underscore before the title indicates a subpage{% endcomment %}
-				{% if section.title contains '__' %}
-					{% comment %}a question mark indicates 'do not show title'{% endcomment %}
-					{% if section.title contains '__?' %}
-						{% assign title = '' %}
-					{% else %}
-						{% assign title = section.title | remove_first:'__' %}
-					{% endif %}
-					{% include 'views/content' %}
-				{% endif %}
-			{% endfor %}
-		</div>
-		<footer class="flush-top">
-			<div class="footer-wrap">
-				<div class="top clearfix">
-					<div class="header">
-						<h2>Stay Informed</h2>
-						<div class="input-wrap">
-							<input class="" type="text" placeholder="Your email" maxlength="50" />
-							<span class="btn large f-c-white fill-dark-grey">Submit</span>
-						</div>
-					</div>
-					<div class="links clearfix">
-						{{site.pages['footer'].pages['links'].body}}
-					</div>
-				</div>
-				<div class="bottom clearfix">
-					<div class="logo-wrap">
-						<span class="r-icon restore-logo"></span>
-						<h1>Rebuilding the Life Intended</h1>
-					</div>
-					<div class="social">
-						{{site.pages['footer'].pages['social-media'].body}}
-					</div>
-				</div>
-				<div class="copyright">&copy;{{site.date | date:"%Y"}} {{site.pages['footer'].pages['copyright']}}</div>
-			</div>
-		</footer>
-	</body>
-</html>
+{% capture content %}
+	{% for section in pages %}
+		{% comment %}a double underscore before the title indicates a subpage{% endcomment %}
+		{% if section.title contains '__' %}
+			{% comment %}a question mark indicates 'do not show title'{% endcomment %}
+			{% if section.title contains '__?' %}
+				{% assign title = '' %}
+			{% else %}
+				{% assign title = section.title | remove_first:'__' %}
+			{% endif %}
+			{% include 'views/main' %}
+		{% endif %}
+	{% endfor %}
+{% endcapture %}
+{% include 'views/layout' %}
