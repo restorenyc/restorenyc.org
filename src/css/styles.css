@@ -367,6 +367,8 @@ section {
 .mh {
   position: relative;
   padding: 10px 0 8px;
+  z-index: 10;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 .mh .site-logo {
   line-height: 1;
@@ -872,12 +874,15 @@ footer .copyright .bullet {
     min-width: 160px;
   }
   .divider.triangle {
+    margin-bottom: -8px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+    height: 1px;
     position: relative;
   }
-  .divider.triangle:after {
+  .divider.triangle:before {
     content: "";
     position: absolute;
-    top: 0;
+    top: -2px;
     left: 50%;
     margin-left: -76px;
     width: 0;
@@ -885,6 +890,19 @@ footer .copyright .bullet {
     border-top: 60px solid #fff;
     border-left: 75px solid transparent;
     border-right: 75px solid transparent;
+    z-index: 2;
+  }
+  .divider.triangle:after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -73px;
+    width: 0;
+    height: 0;
+    border-top: 57px solid rgba(0, 0, 0, 0.05);
+    border-left: 72px solid transparent;
+    border-right: 72px solid transparent;
     z-index: 1;
   }
   .mh .menu-btn {
@@ -949,12 +967,13 @@ footer .copyright .bullet {
     padding: 8px 0 4px;
   }
   .mh .site-logo {
+    margin-left: 30px;
     font-size: 51px;
     line-height: 1;
   }
   .mh .menu-btn {
     top: 7px;
-    right: 22px;
+    right: 15px;
     font-size: 45px;
   }
   .mh .mh-right {
@@ -1076,6 +1095,7 @@ footer .copyright .bullet {
     padding-bottom: 6px;
   }
   .mh .site-logo {
+    margin-left: 3%;
     font-size: 42px;
   }
   .mh .menu-btn {
@@ -1085,23 +1105,39 @@ footer .copyright .bullet {
   .mh .menu-btn span {
     position: absolute;
     display: inline-block;
-    top: 17px;
-    right: 100%;
-    font-size: 18px;
+    top: 18px;
+    right: 102%;
+    font-size: 14px;
     font-weight: 400;
     z-index: 1;
-    opacity: 0;
-  }
-  .mh .menu-btn:hover span {
-    opacity: 1;
   }
   .mh .mh-right {
     top: 15px;
-    right: 35px;
+    right: 2%;
   }
   .mh .mh-right .btn {
     font-size: 18px;
     padding: 3px 30px;
+  }
+  .mh.banner {
+    position: relative;
+    padding: 0;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+  }
+  .mh.banner .site-logo {
+    position: absolute;
+    top: 8px;
+    left: 3%;
+    margin-left: 0;
+    z-index: 1;
+  }
+  .mh.banner .menu-btn {
+    position: absolute;
+    top: 2px;
+    right: 2%;
+    z-index: 1;
   }
   footer .footer-wrap {
     margin: auto;

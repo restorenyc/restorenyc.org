@@ -92,11 +92,14 @@ h1,h2,h3,h4,h5,h6 {
 
 .divider {
 	&.triangle {
+		margin-bottom:-8px;
+		box-shadow:0 3px 3px rgba(0,0,0,0.3);
+		height:1px;
 		position:relative;
-		&:after {
+		&:before {
 			content:"";
 			position:absolute;
-			top:0;
+			top:-2px;
 			left:50%;
 			margin-left:-76px;
 			width:0;
@@ -104,10 +107,19 @@ h1,h2,h3,h4,h5,h6 {
 			border-top:60px solid #fff;
 			border-left:75px solid transparent;
 			border-right:75px solid transparent;
-			//background-color:#fff;
-			// -ms-transform: rotate(45deg);
-			// -webkit-transform: rotate(45deg);
-			// transform: rotate(45deg);
+			z-index:2;
+		}
+		&:after {
+			content:"";
+			position:absolute;
+			top:5px;
+			left:50%;
+			margin-left:-73px;
+			width:0;
+			height:0;
+			border-top:57px solid rgba(0,0,0, 0.05);
+			border-left:72px solid transparent;
+			border-right:72px solid transparent;
 			z-index:1;
 		}
 	}

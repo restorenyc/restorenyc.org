@@ -1,0 +1,15 @@
+{% capture content %}
+    {% for section in pages %}
+        {% comment %}a double underscore before the title indicates a subpage{% endcomment %}
+        {% if section.title contains '__' %}
+            {% comment %}a question mark indicates 'do not show title'{% endcomment %}
+            {% if section.title contains '__?' %}
+                {% assign title = '' %}
+            {% else %}
+                {% assign title = section.title | remove_first:'__' %}
+            {% endif %}
+            {% include 'views/main' %}
+        {% endif %}
+    {% endfor %}
+{% endcapture %}
+{% include 'views/layout' %}
