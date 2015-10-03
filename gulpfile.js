@@ -7,11 +7,13 @@ var gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	notify = require('gulp-notify'),
 	livereload = require('gulp-livereload'),
-	del = require('del');
+	del = require('del'),
+	jsmap = require('./resources/scripts/_scripts');
 
 gulp.task('styles', function() {
-	return gulp.src('resources/styles/styles.less')
+	return gulp.src('resources/styles/_styles.less')
 		.pipe(less())
+		.pipe(rename('styles.css'))
 		.pipe(gulp.dest('src/css'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
@@ -19,7 +21,8 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-	return gulp.src('resources/scripts/**/*.js')
+	var src = jsmap();
+	return gulp.src(src)
 		.pipe(concat('scripts.js'))
 		.pipe(gulp.dest('src/js'))
 		.pipe(rename({ suffix: '.min' }))
