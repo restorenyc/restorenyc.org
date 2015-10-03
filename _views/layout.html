@@ -40,18 +40,9 @@
 				<span>Menu</span>
 			</span>
 		</header>
-		<!--
-		<nav id="site-nav">
-			<ul class="site-menu">
-				{% for single in site.pages %}
-					{% if single.title contains '__' %}
-						{% else %}
-							<li>{{single.title}}<li>
-					{% endif %}
-				{% endfor %}
-				</ul>
-		</nav>
-		-->
+
+		{% include 'views/partials/site-nav' %}
+
 		<div id="page">
 			<section class="dynamic-lead full-width">
 				<div class="sec-wrap">
@@ -100,6 +91,7 @@
 			</div>
 		</footer>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="src/js/scripts.js"></script>
 		{{ footer_scripts }}
 	</body>
 </html>

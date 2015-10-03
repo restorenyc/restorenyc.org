@@ -18,16 +18,27 @@ gulp.task('styles', function() {
 		.pipe(gulp.dest('src/css'));
 });
 
+gulp.task('scripts', function() {
+	return gulp.src('resources/scripts/**/*.js')
+		.pipe(concat('scripts.js'))
+		.pipe(gulp.dest('src/js'))
+		.pipe(rename({ suffix: '.min' }))
+		.pipe(uglify())
+		.pipe(gulp.dest('src/js'));
+});
+
 gulp.task('clean', function(cb) {
 	del(['src/css', 'src/js'], cb);
 });
 
 gulp.task('default', ['clean'], function() {
 	gulp.start('styles');
+	gulp.start('scripts');
 });
 
 gulp.task('watch', function() {
 	gulp.watch('resources/styles/**/*.less', ['styles']);
+	gulp.watch('resources/scripts/**/*.js', ['scripts']);
 
 	// Create LiveReload server
 	livereload.listen();

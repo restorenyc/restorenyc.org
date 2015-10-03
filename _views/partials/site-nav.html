@@ -1,0 +1,11 @@
+<nav id="site-nav">
+	<span class="close">X</span>
+	<ul class="site-menu">
+		{% for single in site.pages %}
+			{% if single.title contains '__' %}
+				{% else %}
+					<li>{{single.title}}<li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</nav>
