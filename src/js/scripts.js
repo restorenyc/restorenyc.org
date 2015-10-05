@@ -1,6 +1,8 @@
 var Utils = (function() {
 	return {
-		$body: $('body')
+		$html: $('html'),
+		$body: $('body'),
+		$main: $('#main')
 	};
 })(jQuery);
 (function($) {
@@ -10,9 +12,12 @@ var Utils = (function() {
 		},
 		bindEvents: function() {
 			Utils.$body
-				.on('click', '.menu-btn', function() {
-					console.log('nav');
-				});
+				.on('click', '.menu-btn', function(e) {
+					Utils.$body.addClass('nav-open');
+				})
+				.on('click', '#site-nav .close', function(e){
+					Utils.$body.removeClass('nav-open');
+				})
 		}
 	};
 

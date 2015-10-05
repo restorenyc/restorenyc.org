@@ -1,10 +1,22 @@
 <nav id="site-nav">
 	<span class="close">X</span>
-	<ul class="site-menu">
+	<ul class="site-menu vertical-align">
 		{% for single in site.pages %}
 			{% if single.title contains '__' %}
 				{% else %}
-					<li>{{single.title}}<li>
+					<li class="item {% if single.pages.size > 0 %}has-sub{% endif%}">{{single.title}}</li>
+					{% for subpage in single.pages %}
+						{% if subpage.title contains '__' %}
+							{% else %}
+								{% if forloop.first %}
+									<ul class="submenu">
+								{% endif %}
+									<li class="subitem">{{subpage.title}}</li>
+								{% if forloop.last %}
+									</ul>
+								{% endif %}
+						{% endif %}
+					{% endfor %}
 			{% endif %}
 		{% endfor %}
 	</ul>

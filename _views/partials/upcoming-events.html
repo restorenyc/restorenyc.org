@@ -5,7 +5,7 @@
 				{% include 'views/utils/title-subpage' %}
 			</header>
 			{% for post in section.posts limit:5 %}
-				{% include 'views/custom/upcoming-events-post' %}
+				{% include 'views/partials/upcoming-events-post' %}
 			{% endfor %}
 		</div>
 		{% for aside in section.pages limit:1 %}
@@ -16,7 +16,7 @@
 				{% else %}
 					{% assign title = aside.title | remove_first:'__' %}
 				{% endif %}
-				{% include 'views/custom/upcoming-events-aside' %}
+				{% include 'views/partials/upcoming-events-aside' %}
 			{% endif %}
 		{% endfor %}
 	</div>

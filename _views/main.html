@@ -10,11 +10,13 @@
 	{% elsif template == 'post' %}
 		{% include 'views/partials/post' %}
 	{% elsif template == 'twitter' %}
-		{% include 'views/custom/twitter' %}
+		{% include 'views/partials/twitter' %}
 	{% elsif template == 'upcoming-events' %}
-		{% include 'views/custom/upcoming-events' %}
+		{% include 'views/partials/upcoming-events' %}
 	{% elsif template == 'upcoming-events-aside' %}
-		{% include 'views/custom/upcoming-events-aside' %}
+		{% include 'views/partials/upcoming-events-aside' %}
+	{% elsif template == 'featured' %}
+		{% include 'views/partials/upcoming-events-aside' %}
 
 	{% else %}
 		{% include 'views/partials/section' %}

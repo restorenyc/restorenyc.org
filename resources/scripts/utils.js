@@ -1,5 +1,7 @@
 var Utils = (function() {
 	return {
-		$body: $('body')
+		$html: $('html'),
+		$body: $('body'),
+		$main: $('#main')
 	};
 })(jQuery);
