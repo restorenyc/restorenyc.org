@@ -3,6 +3,10 @@
 
 	{% if template == 'divider-arrow' %}
 		{% include 'views/utils/divider-arrow' %}
+	{% elsif template == 'header' %}
+		{% include 'views/partials/header' %}
+	{% elsif template == 'subheader' %}
+		{% include 'views/partials/subheader' %}
 	{% elsif template == 'section' %}
 		{% include 'views/partials/section' %}
 	{% elsif template == 'single' %}
@@ -16,9 +20,12 @@
 	{% elsif template == 'upcoming-events-aside' %}
 		{% include 'views/partials/upcoming-events-aside' %}
 	{% elsif template == 'featured' %}
-		{% include 'views/partials/upcoming-events-aside' %}
+		{% include 'views/partials/featured' %}
 
 	{% else %}
 		{% include 'views/partials/section' %}
 	{% endif %}
+
+{% else %}
+	{% include 'views/partials/section' %}
 {% endif %}
