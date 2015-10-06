@@ -101,6 +101,22 @@ h6 {
   margin-bottom: 0.2em;
   font-weight: 600;
 }
+h1.align-left,
+h2.align-left,
+h3.align-left,
+h4.align-left,
+h5.align-left,
+h6.align-left {
+  text-align: left;
+}
+h1.align-right,
+h2.align-right,
+h3.align-right,
+h4.align-right,
+h5.align-right,
+h6.align-right {
+  text-align: right;
+}
 h1.sub,
 h2.sub,
 h3.sub,
@@ -236,30 +252,16 @@ ul.bullet li:before {
   display: inline-block;
   font-weight: 300;
   text-align: center;
+  min-width: 120px;
+  border-width: 2px;
+  font-size: 0.85em;
+  padding: 0.6em 0.85em;
 }
 .btn.small {
   border-width: 1px;
   font-size: 0.8em;
   letter-spacing: 1px;
   padding: 0.3em 0.55em;
-}
-.btn.med {
-  border-width: 1px;
-  font-size: 0.5em;
-  letter-spacing: 1px;
-  padding: 1.15em 3.9em;
-}
-.btn.large {
-  min-width: 120px;
-  border-width: 2px;
-  font-size: 0.85em;
-  padding: 0.6em 0.85em;
-}
-.btn.x-large {
-  border-width: 2px;
-  font-size: 1em;
-  letter-spacing: 3px;
-  padding: 1.1em 3.8em;
 }
 .btn.fill-red {
   background-color: #EE3526;
@@ -270,9 +272,6 @@ ul.bullet li:before {
 .btn.fill-purple {
   background-color: #A1A6BB;
   border-color: #A1A6BB;
-}
-.btn.trim {
-  padding: 0.6em 0.85em;
 }
 .btn.icon {
   padding-left: 0.6em;
@@ -293,7 +292,7 @@ section {
   margin-bottom: 70px;
 }
 .sec-wrap {
-  padding: 0 25px;
+  padding: 0 20px;
 }
 .full-width {
   padding: 0;
@@ -318,7 +317,7 @@ section {
   margin: 15px 0;
 }
 .divider .restore-icon {
-  font-size: 1.48em;
+  font-size: 1.2em;
   color: #EE3526;
 }
 .divider + p {
@@ -344,6 +343,38 @@ section {
 }
 .divider.grey:after {
   background-color: #A1A6BB;
+}
+.divider.arrow {
+  margin-bottom: -8px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  height: 5px;
+  position: relative;
+}
+.divider.arrow:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -45px;
+  width: 0;
+  height: 0;
+  border-top: 36px solid #fff;
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+  z-index: 2;
+}
+.divider.arrow:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -43px;
+  width: 0;
+  height: 0;
+  border-top: 34px solid rgba(0, 0, 0, 0.07);
+  border-left: 43px solid transparent;
+  border-right: 43px solid transparent;
+  z-index: 1;
 }
 .f-w-thin {
   font-weight: 100;
@@ -573,11 +604,24 @@ footer .copyright .bullet {
   display: block;
   margin-bottom: 15px;
 }
+.single-header {
+  height: 360px;
+  margin-bottom: 30px;
+  background-color: #EE3526;
+}
+.single-header h1 {
+  margin: 0;
+  line-height: 1;
+  color: #fff;
+}
+.subheader .divider.arrow {
+  margin: -10px 0 0;
+}
 .featured {
   background-color: #7B8281;
   color: #fff;
-  padding-top: 90px;
-  padding-bottom: 60px;
+  padding-top: 95px;
+  padding-bottom: 80px;
 }
 .featured h2 {
   font-size: 2.4em;
@@ -617,6 +661,9 @@ footer .copyright .bullet {
   width: 50%;
   height: 4px;
   background-color: #A1A6BB;
+}
+.home .sec-wrap {
+  padding: 0 25px;
 }
 .num-home {
   text-align: right;
@@ -851,14 +898,6 @@ footer .copyright .bullet {
   margin-bottom: 30px;
 }
 @media screen and (min-width: 600px) {
-  .sec-wrap {
-    padding-left: 75px;
-    padding-right: 75px;
-  }
-  .sec-wrap > h2,
-  .sec-wrap > h3 {
-    text-align: left;
-  }
   h1 {
     font-size: 3em;
   }
@@ -892,17 +931,17 @@ footer .copyright .bullet {
   .bg-image {
     height: 700px;
   }
-  .btn.large {
+  .btn {
     font-size: 1em;
     min-width: 160px;
   }
-  .divider.triangle {
+  .divider.arrow {
     margin-bottom: -8px;
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
     height: 1px;
     position: relative;
   }
-  .divider.triangle:before {
+  .divider.arrow:before {
     content: "";
     position: absolute;
     top: -2px;
@@ -915,7 +954,7 @@ footer .copyright .bullet {
     border-right: 75px solid transparent;
     z-index: 2;
   }
-  .divider.triangle:after {
+  .divider.arrow:after {
     content: "";
     position: absolute;
     top: 5px;
@@ -958,6 +997,11 @@ footer .copyright .bullet {
     padding-right: .5em;
     margin: 10px;
   }
+  .subheader h2,
+  .subheader h3,
+  .subheader h4 {
+    text-align: center;
+  }
   .our-mission h2 {
     text-align: center;
   }
@@ -967,7 +1011,8 @@ footer .copyright .bullet {
   .our-vision .btn {
     margin-top: 30px;
   }
-  .get-involved > h2 {
+  .get-involved h2 {
+    text-align: left;
     margin-bottom: 60px;
   }
   .get-involved .content {
@@ -982,10 +1027,6 @@ footer .copyright .bullet {
   }
 }
 @media screen and (min-width: 768px) {
-  .sec-wrap {
-    padding-left: 125px;
-    padding-right: 125px;
-  }
   .mh {
     padding: 8px 0 4px;
   }
@@ -1066,6 +1107,10 @@ footer .copyright .bullet {
   }
   .dynamic-lead .article-content {
     top: 365px;
+  }
+  .home .sec-wrap {
+    padding-left: 125px;
+    padding-right: 125px;
   }
   .upcoming-events .calendar article {
     display: table;
