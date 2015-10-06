@@ -44,6 +44,7 @@
 		{% include 'views/partials/site-nav' %}
 
 		<div id="main">
+			{% if home? %}
 			<section class="dynamic-lead full-width">
 				<div class="sec-wrap">
 					<article>
@@ -62,6 +63,7 @@
 					</article>
 				</div>
 			</section>
+			{% endif %}
 			{{ content }}
 		</div>
 		<footer class="flush-top">
