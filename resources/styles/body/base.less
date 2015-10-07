@@ -19,7 +19,7 @@ body {
 	font-size:20px;
 	text-align: center;
 }
-a {
+a, a:hover, a:visited {
 	text-decoration:none;
 }
 img {
@@ -149,7 +149,7 @@ ul.bullet {
 	border-style:solid;
 	color:@restore-red;
 	display:inline-block;
-	font-weight:300;
+	font-weight:400;
 	text-align:center;
 	min-width:120px;
 	border-width:2px;
@@ -221,10 +221,12 @@ section {
 // DIVIDERS
 .divider {
 	margin:15px 0;
-	.restore-icon {
-		font-size:1.2em;
-		margin-left:-2px;
-		color:@restore-red;
+	&.icon {
+		.restore-icon {
+			font-size:1.2em;
+			margin-left:-2px;
+			color:@restore-red;
+		}
 	}
 	& + p {
 		margin-top:0;

@@ -75,7 +75,9 @@ body {
   font-size: 20px;
   text-align: center;
 }
-a {
+a,
+a:hover,
+a:visited {
   text-decoration: none;
 }
 img {
@@ -250,7 +252,7 @@ ul.bullet li:before {
   border-style: solid;
   color: #EE3526;
   display: inline-block;
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
   min-width: 120px;
   border-width: 2px;
@@ -316,7 +318,7 @@ section {
 .divider {
   margin: 15px 0;
 }
-.divider .restore-icon {
+.divider.icon .restore-icon {
   font-size: 1.2em;
   margin-left: -2px;
   color: #EE3526;
@@ -557,9 +559,6 @@ footer .copyright .bullet {
 }
 .dynamic-lead {
   position: relative;
-}
-.dynamic-lead .sec-wrap {
-  padding: 0;
 }
 .dynamic-lead article {
   position: relative;
@@ -980,6 +979,10 @@ footer .copyright .bullet {
   .subheader .divider.arrow {
     margin: -6px 0 0;
   }
+  .featured h2 {
+    width: 70%;
+    margin: auto;
+  }
   .home .sec-wrap {
     padding-left: 75px;
     padding-right: 75px;
@@ -1090,6 +1093,9 @@ footer .copyright .bullet {
   .dynamic-lead .article-content {
     top: 365px;
   }
+  .featured h2 {
+    width: 50%;
+  }
   .home .sec-wrap {
     padding-left: 125px;
     padding-right: 125px;
@@ -1125,7 +1131,7 @@ footer .copyright .bullet {
 }
 @media screen and (min-width: 1024px) {
   h1 {
-    font-size: 4em;
+    font-size: 4.2em;
   }
   h2 {
     font-size: 2em;
@@ -1146,11 +1152,38 @@ footer .copyright .bullet {
     width: auto;
     margin: auto;
   }
+  body:not(.home) .sec-wrap {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
   body:not(.home) p {
     text-align: left;
   }
   blockquote {
     margin-right: 100px;
+  }
+  .divider.icon .restore-icon {
+    font-size: 1.6em;
+    margin-left: -6px;
+    color: #EE3526;
+  }
+  .divider.arrow {
+    box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+  }
+  .divider.arrow:before {
+    top: 2px;
+    margin-left: -70px;
+    border-top: 55px solid #fff;
+    border-left: 69px solid transparent;
+    border-right: 69px solid transparent;
+    z-index: 2;
+  }
+  .divider.arrow:after {
+    margin-left: -73px;
+    border-top: 57px solid rgba(0, 0, 0, 0.07);
+    border-left: 72px solid transparent;
+    border-right: 72px solid transparent;
+    z-index: 1;
   }
   .mh {
     margin: 0 auto;
@@ -1219,8 +1252,11 @@ footer .copyright .bullet {
   footer .logo-wrap {
     padding-right: 124px;
   }
-  .dynamic-lead .sec-wrap {
-    padding: 0;
+  .single-header {
+    margin-bottom: 80px;
+  }
+  .subheader + section {
+    padding-top: 5px;
   }
   .get-involved article {
     margin-bottom: 100px;
