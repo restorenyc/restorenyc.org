@@ -52,11 +52,20 @@
 	height:100%;
 	width:100%;
 	z-index:100;
-	background-color:rgba(255,255,255,0.8);
+	background-color:rgba(255,255,255,0.9);
 	opacity:0;
+	// -webkit-transition: opacity 500ms ease-out;
+	// -moz-transition: opacity 500ms ease-out;
+	// -o-transition: opacity 500ms ease-out;
+	transition: opacity 300ms @ease;
+
 	ul {
 		list-style: none;
 		padding:0;
+
+	}
+	.submenu {
+		display:none;
 	}
 }
 .nav-open {

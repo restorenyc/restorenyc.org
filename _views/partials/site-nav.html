@@ -4,14 +4,18 @@
 		{% for single in site.pages %}
 			{% if single.title contains '__' %}
 				{% else %}
-					<li class="item {% if single.pages.size > 0 %}has-sub{% endif%}">{{single.title}}</li>
+					{% if single.url == '/' or single.pages.size < 1 %}
+						<li class="item {% if hasSub %}has-sub{% endif %}"><a href="{{single.url}}">{{single.title}}</a></li>
+					{% else %}
+						<li class="item {% if hasSub%}has-sub{% endif%}">{{single.title}}</li>
+					{% endif %}
 					{% for subpage in single.pages %}
 						{% if subpage.title contains '__' %}
 							{% else %}
 								{% if forloop.first %}
 									<ul class="submenu">
 								{% endif %}
-									<li class="subitem">{{subpage.title}}</li>
+									<li class="subitem"><a href="{{subpage.url}}">{{subpage.title}}</a></li>
 								{% if forloop.last %}
 									</ul>
 								{% endif %}
