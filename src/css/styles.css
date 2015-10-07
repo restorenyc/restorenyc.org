@@ -194,7 +194,7 @@ mark {
 }
 blockquote {
   border-left: 6px solid #A1A6BB;
-  margin-left: 40px;
+  margin: 55px 0 55px 40px;
   padding: 0 0 0 20px;
   font-weight: 600;
   font-size: 1.5em;
@@ -318,6 +318,7 @@ section {
 }
 .divider .restore-icon {
   font-size: 1.2em;
+  margin-left: -2px;
   color: #EE3526;
 }
 .divider + p {
@@ -935,38 +936,6 @@ footer .copyright .bullet {
     font-size: 1em;
     min-width: 160px;
   }
-  .divider.arrow {
-    margin-bottom: -8px;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
-    height: 1px;
-    position: relative;
-  }
-  .divider.arrow:before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: 50%;
-    margin-left: -76px;
-    width: 0;
-    height: 0;
-    border-top: 60px solid #fff;
-    border-left: 75px solid transparent;
-    border-right: 75px solid transparent;
-    z-index: 2;
-  }
-  .divider.arrow:after {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    margin-left: -73px;
-    width: 0;
-    height: 0;
-    border-top: 57px solid rgba(0, 0, 0, 0.05);
-    border-left: 72px solid transparent;
-    border-right: 72px solid transparent;
-    z-index: 1;
-  }
   .mh .menu-btn {
     right: 15px;
     top: 8px;
@@ -997,13 +966,19 @@ footer .copyright .bullet {
     padding-right: .5em;
     margin: 10px;
   }
-  .subheader h2,
-  .subheader h3,
-  .subheader h4 {
-    text-align: center;
+  .single-header {
+    margin-bottom: 50px;
   }
-  .our-mission h2 {
-    text-align: center;
+  .subheader .sec-wrap {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+  .subheader .divider.arrow {
+    margin: -6px 0 0;
+  }
+  .home .sec-wrap {
+    padding-left: 75px;
+    padding-right: 75px;
   }
   .our-vision {
     text-align: left;
@@ -1027,6 +1002,9 @@ footer .copyright .bullet {
   }
 }
 @media screen and (min-width: 768px) {
+  blockquote {
+    margin-left: 100px;
+  }
   .mh {
     padding: 8px 0 4px;
   }
@@ -1142,13 +1120,11 @@ footer .copyright .bullet {
   }
 }
 @media screen and (min-width: 1024px) {
-  .sec-wrap {
-    width: 1024px;
-    margin: 0 auto;
+  h1 {
+    font-size: 4em;
   }
-  .full-width .sec-wrap {
-    width: auto;
-    margin: auto;
+  h2 {
+    font-size: 2em;
   }
   h1.line:after,
   h2.line:after,
@@ -1157,6 +1133,20 @@ footer .copyright .bullet {
   h5.line:after,
   h6.line:after {
     width: 54px;
+  }
+  .sec-wrap {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  .full-width .sec-wrap {
+    width: auto;
+    margin: auto;
+  }
+  body:not(.home) p {
+    text-align: left;
+  }
+  blockquote {
+    margin-right: 100px;
   }
   .mh {
     margin: 0 auto;
@@ -1224,6 +1214,9 @@ footer .copyright .bullet {
   }
   footer .logo-wrap {
     padding-right: 124px;
+  }
+  .dynamic-lead .sec-wrap {
+    padding: 0;
   }
   .get-involved article {
     margin-bottom: 100px;

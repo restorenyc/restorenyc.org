@@ -1,3 +1,17 @@
+h1 {
+	font-size:4em;
+}
+h2 {
+	font-size:2em;
+}
+h3 {
+
+}
+h1,h2,h3,h4,h5,h6 {
+	&.line:after {
+		width:54px;
+	}
+}
 .sec-wrap {
 	width:1024px;
 	margin:0 auto;
@@ -8,9 +22,11 @@
 		margin:auto;
 	}
 }
-
-h1,h2,h3,h4,h5,h6 {
-	&.line:after {
-		width:54px;
+body:not(.home) {
+	p {
+		text-align:left;
 	}
+}
+blockquote {
+	margin-right:100px;
 }
