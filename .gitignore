@@ -4,12 +4,12 @@ config.ru
 
 # Compiled source #
 ###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
+#*.com
+#*.class
+#*.dll
+#*.exe
+#*.o
+#*.so
 
 # OS generated files #
 ######################
