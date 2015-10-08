@@ -1,26 +1,27 @@
 <nav id="site-nav">
 	<span class="close">X</span>
-	<ul class="site-menu vertical-align">
+	<ul class="site-menu">
 		{% for single in site.pages %}
 			{% if single.title contains '__' %}
 				{% else %}
 					{% if single.url == '/' or single.pages.size < 1 %}
-						<li class="item {% if hasSub %}has-sub{% endif %}"><a href="{{single.url}}">{{single.title}}</a></li>
+						<li class="item"><a href="{{single.url}}">{{single.title}}</a>
 					{% else %}
-						<li class="item {% if hasSub%}has-sub{% endif%}">{{single.title}}</li>
+						<li class="item has-sub">{{single.title}} <i class="sub-icon fa fa-angle-right"></i>
 					{% endif %}
-					{% for subpage in single.pages %}
-						{% if subpage.title contains '__' %}
-							{% else %}
-								{% if forloop.first %}
-									<ul class="submenu">
-								{% endif %}
-									<li class="subitem"><a href="{{subpage.url}}">{{subpage.title}}</a></li>
-								{% if forloop.last %}
-									</ul>
-								{% endif %}
-						{% endif %}
-					{% endfor %}
+						{% for subpage in single.pages %}
+							{% if subpage.title contains '__' %}
+								{% else %}
+									{% if forloop.first %}
+										<ul class="submenu">
+									{% endif %}
+										<li class="subitem"><a href="{{subpage.url}}">{{subpage.title}}</a></li>
+									{% if forloop.last %}
+										</ul>
+									{% endif %}
+							{% endif %}
+						{% endfor %}
+					</li>
 			{% endif %}
 		{% endfor %}
 	</ul>

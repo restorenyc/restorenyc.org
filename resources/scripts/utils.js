@@ -2,6 +2,7 @@ var Utils = (function() {
 	return {
 		$html: $('html'),
 		$body: $('body'),
-		$main: $('#main')
+		$main: $('#main'),
+		$nav: $('#site-nav')
 	};
 })(jQuery);
