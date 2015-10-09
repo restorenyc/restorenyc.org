@@ -686,6 +686,39 @@ footer .copyright .bullet {
   height: 4px;
   background-color: #A1A6BB;
 }
+.team-grid {
+  padding-bottom: 70px;
+}
+.team-grid .bio {
+  width: 280px;
+  height: 280px;
+  margin: 20px auto;
+  background-color: #ccc;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  text-align: left;
+  position: relative;
+  border-top: 14px solid #EE3526;
+}
+.team-grid .bio a {
+  padding: 20px;
+  display: block;
+  color: #374146;
+}
+.team-grid .bio h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.team-grid .bio h4 {
+  font-size: 1.1em;
+  font-weight: 300;
+}
+.team-grid .bio .link {
+  font-size: 2em;
+  position: absolute;
+  bottom: 3px;
+  right: 15px;
+  color: #EE3526;
+}
 .home .sec-wrap {
   padding: 0 25px;
 }
@@ -1006,6 +1039,9 @@ footer .copyright .bullet {
     width: 70%;
     margin: auto;
   }
+  .team-grid a {
+    height: 100%;
+  }
   .home .sec-wrap {
     padding-left: 75px;
     padding-right: 75px;
@@ -1122,6 +1158,14 @@ footer .copyright .bullet {
   .featured h2 {
     width: 50%;
   }
+  .team-grid .sec-wrap {
+    text-align: center;
+  }
+  .team-grid .bio {
+    display: inline-block;
+    margin: 10px;
+    overflow: hidden;
+  }
   .home .sec-wrap {
     padding-left: 125px;
     padding-right: 125px;
@@ -1178,11 +1222,11 @@ footer .copyright .bullet {
     width: auto;
     margin: auto;
   }
-  body:not(.home) .sec-wrap {
+  .sec-wrap {
     padding-left: 100px;
     padding-right: 100px;
   }
-  body:not(.home) p {
+  p {
     text-align: left;
   }
   blockquote {
@@ -1279,10 +1323,17 @@ footer .copyright .bullet {
     padding-right: 124px;
   }
   .single-header {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
   }
   .subheader + section {
     padding-top: 5px;
+  }
+  .team-grid .sec-wrap {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .home p {
+    text-align: center;
   }
   .get-involved article {
     margin-bottom: 100px;

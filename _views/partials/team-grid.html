@@ -1,0 +1,17 @@
+<section class="team-grid {{section.meta.sectionClass}}" style="{{section.meta.sectionStyles}}">
+	<div class="sec-wrap" style="{{section.meta.sectionWrapStyles}}">
+		{% for bio in section.pages %}
+			<div class="bio">
+				<a href="{{bio.url | fallback:'#'}}">
+					<header>
+						<h3>{{bio.title}}</h3>
+						{% if bio.meta.jobTitle %}
+							<h4>{{bio.meta.jobTitle}}</h4>
+							<div class="link"><i class="fa fa-angle-double-right"></i></div>
+						{% endif %}
+					</header>
+				</a>
+			</div>
+		{% endfor %}
+	</div>
+</section>
