@@ -1,0 +1,29 @@
+{% if section.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+{% assign gridSize = 4 %}
+
+<section class="grid-2 {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}} {% if bgImage %}background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}}){% endif %}">
+	<div class="sec-wrap {% if bgImage %}vertical-align{% endif %}" style="{{section.meta.sectionWrapStyles}}">
+		{% include 'views/utils/title-subpage' %}
+
+		{{section.body}}
+
+		{% for subsection in section.pages %}
+			{% if subsection.title contains '__'%}
+
+				{% if subsection.title contains '__?' %}
+					{% assign title = '' %}
+				{% else %}
+					{% assign title = subsection.title | remove_first:'__' %}
+				{% endif %}
+
+				{% cycle '<div class="row">','','','' %}
+					{% include 'views/partials/post' %}
+				{% cycle '','','',</div>' %}
+			{% endif %}
+		{% endfor %}
+	</div>
+</section>
