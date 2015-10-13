@@ -6,6 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta property="description" content="{{excerpt | fallback:site.meta.description | strip_html | truncate: 300 | escape}}">
 		<meta property='st:title' content='{{ title }}' />
+		{% if meta.redirect %}
+			<meta http-equiv="refresh" content="0;url={{meta.redirect}}">
+		{% endif %}
 
 		{% if url == '/' %}
 			<title>{{site.title}}</title>
