@@ -1,3 +1,7 @@
+{% comment %}
+	// main section (subpage) loop
+{% endcomment %}
+
 {% if section.meta.sectionTemplate %}
 	{% assign template = section.meta.sectionTemplate %}
 
@@ -11,8 +15,6 @@
 		{% include 'views/partials/section' %}
 	{% elsif template == 'single' %}
 		{% include 'views/partials/single' %}
-	{% elsif template == 'post' %}
-		{% include 'views/partials/post' %}
 	{% elsif template == 'twitter' %}
 		{% include 'views/partials/twitter' %}
 	{% elsif template == 'upcoming-events' %}
@@ -23,8 +25,6 @@
 		{% include 'views/partials/featured' %}
 	{% elsif template == 'team-grid' %}
 		{% include 'views/partials/team-grid' %}
-	{% elsif template == 'team-bio' %}
-		{% include 'views/partials/team-bio' %}
 	{% elsif template == 'grid-2' %}
 		{% include 'views/partials/grid-2' %}
 	{% elsif template == 'grid-3' %}
@@ -36,6 +36,21 @@
 		{% include 'views/partials/section' %}
 	{% endif %}
 
+{% elsif meta.sectionTemplate %}
+	{% comment %}
+		// if a custom single page
+	{% endcomment %}
+	{% assign template = meta.sectionTemplate %}
+	{% if template == 'team-bio' %}
+		{% include 'views/partials/team-bio' %}
+
+	{% else %}
+		{% include 'views/partials/section' %}
+	{% endif %}
+
 {% else %}
-	{% include 'views/partials/section' %}
+	{% comment %}
+		// single fallback
+	{% endcomment %}
+	{% include 'views/partials/single' %}
 {% endif %}

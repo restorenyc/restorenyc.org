@@ -1,0 +1,18 @@
+{% if subsection.meta.sectionTemplate %}
+	{% assign template = subsection.meta.sectionTemplate %}
+
+	{% if template == 'post' %}
+		{% include 'views/partials/post' %}
+	{% elsif template == 'infobox' %}
+		{% include 'views/partials/infobox' %}
+	{% elsif template == 'icon-over-text' %}
+		{% include 'views/partials/icon-over-text' %}
+
+
+	{% else %}
+		{% include 'views/partials/post' %}
+	{% endif %}
+
+{% else %}
+	{% include 'views/partials/post' %}
+{% endif %}
