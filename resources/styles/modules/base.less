@@ -15,6 +15,9 @@
 	& + .content.flush-top {
 		padding:30px 0 25px 0;
 	}
+	p:last-of-type {
+		margin-bottom:40px;
+	}
 }
 .featured {
 	background-color:#7B8281;
@@ -144,7 +147,10 @@
 		box-sizing:content-box;
 	}
 	&:first-of-type {
-		margin-top:34px;
+		margin-top:80px;
+	}
+	ul {
+		text-align:left;
 	}
 	.icon-wrapper {
 		position:absolute;
@@ -193,5 +199,24 @@
 	}
 	.content {
 		font-style:italic;
+	}
+}
+.pray {
+	background-color:@restore-purple;
+	color:#fff;
+	padding-bottom:70px;
+	header {
+		padding-top:100px;
+		padding-bottom:80px;
+		.divider.icon .restore-icon {
+			font-size:1.5em;
+		}
+	}
+	h1 {
+		font-size:2.4em;
+		line-height:1;
+	}
+	p {
+		font-weight:200;
 	}
 }

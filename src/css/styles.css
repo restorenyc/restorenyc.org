@@ -144,6 +144,7 @@ a,
 a:hover,
 a:visited {
   text-decoration: none;
+  color: #EE3526;
 }
 img {
   max-width: 100%;
@@ -889,6 +890,9 @@ footer .copyright .bullet {
 .subheader + .content.flush-top {
   padding: 30px 0 25px 0;
 }
+.subheader p:last-of-type {
+  margin-bottom: 40px;
+}
 .featured {
   background-color: #7B8281;
   color: #fff;
@@ -1017,7 +1021,10 @@ footer .copyright .bullet {
   box-sizing: content-box;
 }
 .infobox:first-of-type {
-  margin-top: 34px;
+  margin-top: 80px;
+}
+.infobox ul {
+  text-align: left;
 }
 .infobox .icon-wrapper {
   position: absolute;
@@ -1066,6 +1073,25 @@ footer .copyright .bullet {
 }
 .icon-over-text .content {
   font-style: italic;
+}
+.pray {
+  background-color: #A1A6BB;
+  color: #fff;
+  padding-bottom: 70px;
+}
+.pray header {
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+.pray header .divider.icon .restore-icon {
+  font-size: 1.5em;
+}
+.pray h1 {
+  font-size: 2.4em;
+  line-height: 1;
+}
+.pray p {
+  font-weight: 200;
 }
 @media screen and (min-width: 600px) {
   h1 {
@@ -1189,6 +1215,16 @@ footer .copyright .bullet {
   }
   .infobox .content {
     padding-bottom: 44px;
+  }
+  .pray header {
+    padding-top: 150px;
+  }
+  .pray header .divider.icon .restore-icon {
+    font-size: 1.7em;
+  }
+  .pray h1 {
+    font-size: 3em;
+    line-height: 1;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1332,6 +1368,10 @@ footer .copyright .bullet {
     margin-top: -15px;
     margin-left: 70px;
     font-size: 1.5em;
+  }
+  .pray header {
+    padding-top: 200px;
+    padding-bottom: 100px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1496,6 +1536,9 @@ footer .copyright .bullet {
   .subheader + section {
     padding-top: 5px;
   }
+  .subheader p {
+    text-align: center;
+  }
   .team-grid .sec-wrap {
     padding-left: 0;
     padding-right: 0;
@@ -1521,9 +1564,6 @@ footer .copyright .bullet {
   .infobox:before {
     height: 60px;
   }
-  .infobox:first-of-type {
-    margin-top: 80px;
-  }
   .infobox .icon-wrapper {
     width: 125px;
     height: 125px;
@@ -1544,5 +1584,19 @@ footer .copyright .bullet {
   }
   .infobox .content .btn-wrap {
     margin-top: 20px;
+  }
+  .pray .sec-wrap {
+    width: 760px;
+    padding: 0;
+  }
+  .pray header {
+    padding-top: 170px;
+    padding-bottom: 80px;
+  }
+  .pray header .divider.icon .restore-icon {
+    font-size: 2em;
+  }
+  .pray h1 {
+    font-size: 4em;
   }
 }

@@ -1,0 +1,18 @@
+{% if section.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+
+<section class="pray {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}} {% if bgImage %}background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}}){% endif %}">
+	<div class="sec-wrap {% if bgImage %}vertical-align{% endif %}" style="{{section.meta.sectionWrapStyles}}">
+
+		<header>
+			<div class="divider icon"><span class="r-icon restore-icon"></span></div>
+			{% include 'views/utils/title-single' %}
+		</header>
+
+		{{section.body}}
+
+	</div>
+</section>
