@@ -1,8 +1,8 @@
-<article>
+<article class="{{subsection.meta.sectionClass}} {% if gridSize %}col-{{subsection.meta.gridColSize | fallback:'1'}}-{{gridSize}}{% endif %}">
 	<header>
 		{% if subsection.meta.headerIconClass %}
 			<div class="icon-wrapper">
-				<i class="{{subsection.meta.headerIconClass}} vertical-align"></i>
+				<i class="{{subsection.meta.headerIconClass}}"></i>
 			</div>
 		{% endif %}
 		{% include 'views/utils/title-post' %}
