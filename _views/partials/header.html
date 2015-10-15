@@ -1,4 +1,10 @@
-<section class="single-header {{section.meta.sectionClass}}">
+{% if section.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+
+<section class="single-header {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}} {% if bgImage %}background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}}); {% endif %}{% if section.meta.backgroundPosition %}background-position:{{section.meta.backgroundPosition}};{% endif %}" >
 	<div class="sec-wrap vertical-align" style="{{section.meta.sectionWrapStyles}}">
 		{% include 'views/utils/title-single' %}
 
