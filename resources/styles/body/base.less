@@ -73,9 +73,15 @@ h1,h2,h3,h4,h5,h6 {
 	&.red:after {
 		background-color:@restore-red;
 	}
-	&.grey:after {
+	&.purple:after {
 		background-color:@restore-purple;
 	}
+}
+p {
+	margin-top:0;
+}
+p:only-child {
+	margin-top:1em;
 }
 strong {
 	font-weight:600;
@@ -201,7 +207,9 @@ section {
 	padding:0 20px;
 }
 .full-width {
-	padding:0;
+	.sec-wrap {
+		padding:0;
+	}
 }
 
 .bg-image {
@@ -212,6 +220,9 @@ section {
 }
 .flush-top {
 	margin-top:-70px;
+}
+.flush-top-half {
+	margin-top:-35px;
 }
 .vertical-align {
 	position: relative;
@@ -227,6 +238,7 @@ section {
 .divider {
 	margin:15px 0;
 	&.icon {
+		text-align:center;
 		.restore-icon {
 			font-size:1.2em;
 			margin-left:-2px;

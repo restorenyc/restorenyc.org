@@ -1,9 +1,5 @@
-.grid-2 .sec-wrap,
-.grid-3 .sec-wrap,
-.grid-4 .sec-wrap {
-  padding: 0;
-}
 .row {
+  text-align: center;
   display: inline;
 }
 [class*='col-'] {
@@ -242,13 +238,19 @@ h5.red:after,
 h6.red:after {
   background-color: #EE3526;
 }
-h1.grey:after,
-h2.grey:after,
-h3.grey:after,
-h4.grey:after,
-h5.grey:after,
-h6.grey:after {
+h1.purple:after,
+h2.purple:after,
+h3.purple:after,
+h4.purple:after,
+h5.purple:after,
+h6.purple:after {
   background-color: #A1A6BB;
+}
+p {
+  margin-top: 0;
+}
+p:only-child {
+  margin-top: 1em;
 }
 strong {
   font-weight: 600;
@@ -356,13 +358,16 @@ ul.bullet li:before {
   display: block;
   margin-bottom: 15px;
 }
+.btn-wrap {
+  margin: 30px 0;
+}
 section {
   margin-bottom: 70px;
 }
 .sec-wrap {
   padding: 0 20px;
 }
-.full-width {
+.full-width .sec-wrap {
   padding: 0;
 }
 .bg-image {
@@ -373,6 +378,9 @@ section {
 }
 .flush-top {
   margin-top: -70px;
+}
+.flush-top-half {
+  margin-top: -35px;
 }
 .vertical-align,
 .infobox .icon-wrapper .fa,
@@ -385,6 +393,9 @@ section {
 }
 .divider {
   margin: 15px 0;
+}
+.divider.icon {
+  text-align: center;
 }
 .divider.icon .restore-icon {
   font-size: 1.2em;
@@ -412,7 +423,7 @@ section {
 .divider.red:after {
   background-color: #EE3526;
 }
-.divider.grey:after {
+.divider.purple:after {
   background-color: #A1A6BB;
 }
 .divider.arrow {
@@ -519,6 +530,8 @@ section {
   display: none;
 }
 #site-nav {
+  overflow-y: scroll;
+  text-align: center;
   position: fixed;
   top: 0;
   left: 100%;
@@ -535,6 +548,8 @@ section {
   padding: 10px;
   top: 10px;
   right: 10px;
+  z-index: 10;
+  cursor: pointer;
 }
 #site-nav ul {
   list-style: none;
@@ -550,14 +565,14 @@ section {
   position: relative;
 }
 #site-nav .submenu {
-  display: none;
-  background-color: #EE3526;
+  font-style: italic;
 }
 .nav-open #site-nav {
   left: 0;
   opacity: 1;
 }
 footer {
+  text-align: center;
   background-color: #EE3526;
 }
 footer .footer-wrap {
@@ -645,6 +660,9 @@ footer .copyright .bullet {
 .home .sec-wrap {
   padding: 0 25px;
 }
+.home .single-header {
+  height: 360px;
+}
 .num-home {
   text-align: right;
   background-color: #EE3526;
@@ -672,6 +690,7 @@ footer .copyright .bullet {
   background: #EAEAEA;
 }
 .sm-tweet {
+  text-align: center;
   position: relative;
   color: #fff;
   font-weight: 100;
@@ -758,6 +777,7 @@ footer .copyright .bullet {
   opacity: 0.85;
 }
 .upcoming-events {
+  text-align: center;
   background-color: #7B8281;
 }
 .upcoming-events .sec-wrap {
@@ -875,7 +895,8 @@ footer .copyright .bullet {
   margin-bottom: 15px;
 }
 .single-header {
-  height: 360px;
+  text-align: center;
+  height: 450px;
   margin-bottom: 30px;
   background-color: #EE3526;
 }
@@ -883,6 +904,9 @@ footer .copyright .bullet {
   margin: 0;
   line-height: 1;
   color: #fff;
+}
+.subheader {
+  text-align: center;
 }
 .subheader .divider.arrow {
   margin: -10px 0 0;
@@ -894,6 +918,7 @@ footer .copyright .bullet {
   margin-bottom: 40px;
 }
 .featured {
+  text-align: center;
   background-color: #7B8281;
   color: #fff;
   padding-top: 95px;
@@ -1028,6 +1053,7 @@ footer .copyright .bullet {
 }
 .infobox .icon-wrapper {
   position: absolute;
+  text-align: center;
   top: -25px;
   left: 50%;
   margin-left: -48px;
@@ -1049,15 +1075,18 @@ footer .copyright .bullet {
   margin-top: 50px;
 }
 .infobox h3 {
+  text-align: center;
   margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
-  font-style: italic;
 }
 .infobox .content {
   padding: 0 30px 34px;
   position: relative;
   border-top: none;
+}
+.infobox .btn-wrap {
+  text-align: center;
 }
 .icon-over-text {
   text-align: center;
@@ -1075,6 +1104,7 @@ footer .copyright .bullet {
   font-style: italic;
 }
 .pray {
+  text-align: center;
   background-color: #A1A6BB;
   color: #fff;
   padding-bottom: 70px;
@@ -1094,6 +1124,9 @@ footer .copyright .bullet {
   font-weight: 200;
 }
 @media screen and (min-width: 600px) {
+  body {
+    text-align: left;
+  }
   h1 {
     font-size: 3em;
   }
@@ -1148,6 +1181,9 @@ footer .copyright .bullet {
   .home .sec-wrap {
     padding-left: 75px;
     padding-right: 75px;
+  }
+  .our-mission {
+    text-align: center;
   }
   .our-vision {
     text-align: left;
@@ -1348,7 +1384,7 @@ footer .copyright .bullet {
     padding: 70px 0 60px 0;
   }
   .featured h2 {
-    width: 50%;
+    width: 60%;
   }
   .team-grid .sec-wrap {
     text-align: center;
@@ -1375,11 +1411,14 @@ footer .copyright .bullet {
   }
 }
 @media screen and (min-width: 1024px) {
+  body {
+    font-size: 24px;
+  }
   h1 {
-    font-size: 4.2em;
+    font-size: 3.5em;
   }
   h2 {
-    font-size: 2em;
+    font-size: 1.667em;
   }
   h1.line:after,
   h2.line:after,
@@ -1401,14 +1440,11 @@ footer .copyright .bullet {
     padding-left: 100px;
     padding-right: 100px;
   }
-  p {
-    text-align: left;
-  }
   blockquote {
     margin-right: 100px;
   }
   .divider.icon .restore-icon {
-    font-size: 1.6em;
+    font-size: 1.33em;
     margin-left: -6px;
     color: #EE3526;
   }
@@ -1488,20 +1524,18 @@ footer .copyright .bullet {
     width: 45%;
   }
   footer .links {
-    padding-left: 200px;
+    padding-left: 160px;
   }
   footer .social {
     margin-top: 25px;
-    font-size: 1.35em;
+    font-size: 1.125em;
   }
   footer .logo-wrap {
     padding-right: 124px;
   }
-  .home p {
-    text-align: center;
-  }
   .sm-tweet {
-    height: 560px;
+    height: 640px;
+    text-align: center;
   }
   .upcoming-events .sec-wrap {
     position: relative;
@@ -1530,14 +1564,17 @@ footer .copyright .bullet {
     float: right;
     padding-top: 45px;
   }
+  .dynamic-lead .btn-wrap .btn {
+    width: 200px;
+  }
   .single-header {
     margin-bottom: 70px;
   }
-  .subheader + section {
-    padding-top: 5px;
-  }
   .subheader p {
     text-align: center;
+  }
+  .featured h2 {
+    width: 80%;
   }
   .team-grid .sec-wrap {
     padding-left: 0;
@@ -1547,12 +1584,12 @@ footer .copyright .bullet {
     margin-top: 110px;
   }
   .team-bio h1 {
-    font-size: 4.3em;
+    font-size: 3.58em;
   }
   .team-bio h2 {
     margin-top: -20px;
     margin-left: 83px;
-    font-size: 1.7em;
+    font-size: 1.42em;
   }
   .team-bio aside .btn:hover {
     background-color: #EE3526;
@@ -1563,6 +1600,9 @@ footer .copyright .bullet {
   }
   .infobox:before {
     height: 60px;
+  }
+  .infobox:first-of-type {
+    margin-top: 120px;
   }
   .infobox .icon-wrapper {
     width: 125px;
@@ -1583,7 +1623,7 @@ footer .copyright .bullet {
     padding: 0 80px 54px;
   }
   .infobox .content .btn-wrap {
-    margin-top: 20px;
+    margin-top: 50px;
   }
   .pray .sec-wrap {
     width: 760px;
@@ -1594,9 +1634,9 @@ footer .copyright .bullet {
     padding-bottom: 80px;
   }
   .pray header .divider.icon .restore-icon {
-    font-size: 2em;
+    font-size: 1.667em;
   }
   .pray h1 {
-    font-size: 4em;
+    font-size: 3.33em;
   }
 }
