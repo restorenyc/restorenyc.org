@@ -46,7 +46,17 @@
 
 
 // Animation Timings
-@ease: cubic-bezier(.25,.1,.25,1);
+@ease-time: cubic-bezier(.25,.1,.25,1);
 
 //-webkit-transition: width 2s, height 2s, background-color 2s, -webkit-transform 2s;
 //transition: width 2s, height 2s, background-color 2s, transform 2s;
+
+
+// Mixins
+.transition (@prop: all, @time: 0.5s, @ease: @ease-time, @delay: 0s) {
+	-webkit-transition: @prop @time @ease @delay;
+	-moz-transition: @prop @time @ease @delay;
+	-o-transition: @prop @time @ease @delay;
+	-ms-transition: @prop @time @ease @delay;
+	transition: @prop @time @ease @delay;
+}

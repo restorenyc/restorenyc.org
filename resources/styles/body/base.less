@@ -151,10 +151,11 @@ ul.bullet {
 }
 
 // BUTTONS
-.btn {
+.btn,
+a.btn {
 	border-color:@restore-red;
 	border-style:solid;
-	color:@restore-red;
+	color:@restore-dark-grey;
 	display:inline-block;
 	font-weight:400;
 	text-align:center;
@@ -162,6 +163,8 @@ ul.bullet {
 	border-width:2px;
 	font-size:0.85em;
 	padding:0.6em 0.85em;
+	.transition(all, 0.2s, @ease-time);
+
 	&.small {
 		border-width:1px;
 		font-size:0.8em;
@@ -170,13 +173,16 @@ ul.bullet {
 	}
 	&.fill-red {
 		background-color:@restore-red;
+		color:#fff;
 	}
 	&.fill-dark-grey {
 		background-color:@restore-dark-grey;
+		color:#fff;
 	}
 	&.fill-purple {
 		background-color:@restore-purple;
 		border-color:@restore-purple;
+		color:#fff;
 	}
 	&.icon {
 		padding-left:0.6em;

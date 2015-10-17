@@ -315,10 +315,11 @@ ul.bullet li:before {
   top: px;
   color: #EE3526;
 }
-.btn {
+.btn,
+a.btn {
   border-color: #EE3526;
   border-style: solid;
-  color: #EE3526;
+  color: #374146;
   display: inline-block;
   font-weight: 400;
   text-align: center;
@@ -326,35 +327,51 @@ ul.bullet li:before {
   border-width: 2px;
   font-size: 0.85em;
   padding: 0.6em 0.85em;
+  -webkit-transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -moz-transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -o-transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -ms-transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
 }
-.btn.small {
+.btn.small,
+a.btn.small {
   border-width: 1px;
   font-size: 0.8em;
   letter-spacing: 1px;
   padding: 0.3em 0.55em;
 }
-.btn.fill-red {
+.btn.fill-red,
+a.btn.fill-red {
   background-color: #EE3526;
+  color: #fff;
 }
-.btn.fill-dark-grey {
+.btn.fill-dark-grey,
+a.btn.fill-dark-grey {
   background-color: #374146;
+  color: #fff;
 }
-.btn.fill-purple {
+.btn.fill-purple,
+a.btn.fill-purple {
   background-color: #A1A6BB;
   border-color: #A1A6BB;
+  color: #fff;
 }
-.btn.icon {
+.btn.icon,
+a.btn.icon {
   padding-left: 0.6em;
   padding-right: 1em;
 }
 .btn.icon .fa,
-.btn.icon .r-icon {
+a.btn.icon .fa,
+.btn.icon .r-icon,
+a.btn.icon .r-icon {
   display: inline-block;
   margin-left: 0.2em;
   margin-right: 0.5em;
   font-size: 1.3em;
 }
-.btn.block {
+.btn.block,
+a.btn.block {
   display: block;
   margin-bottom: 15px;
 }
@@ -1465,6 +1482,22 @@ footer .copyright .bullet {
     border-left: 72px solid transparent;
     border-right: 72px solid transparent;
     z-index: 1;
+  }
+  .btn:hover {
+    background-color: #EE3526;
+    color: #fff;
+  }
+  .btn.fill-red:hover {
+    background-color: #fff;
+    color: #EE3526;
+  }
+  .btn.fill-dark-grey:hover {
+    background-color: #A1A6BB;
+    color: #374146;
+  }
+  .btn.fill-purple:hover {
+    background-color: #fff;
+    color: #A1A6BB;
   }
   .mh {
     margin: 0 auto;
