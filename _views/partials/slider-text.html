@@ -1,0 +1,36 @@
+{% capture header_styles %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css">
+{% endcapture %}
+
+{% capture footer_scripts %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script>
+	<script type="text/javascript">
+		$('.slider-text').flickity();
+	</script>
+{% endcapture %}
+
+{% if section.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+<section class="full-width {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" {% if bgImage %}style="background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}})"{% endif %}>
+	<div class="sec-wrap {% if bgImage %}vertical-align{% endif %}">
+		<header>
+			<div class="icon-wrapper">
+				<i class="fa fa-twitter"></i>
+			</div>
+		</header>
+		<div class="slider-text">
+			<div class="gallery-cell">
+				{{section.body}}
+			</div>
+			<div class="gallery-cell">
+				{{section.body}}
+			</div>
+			<div class="gallery-cell">
+				{{section.body}}
+			</div>
+		</div>
+	</div>
+</section>
