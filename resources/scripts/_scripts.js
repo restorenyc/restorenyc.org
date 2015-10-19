@@ -4,6 +4,7 @@ module.exports = function() {
 	var path = 'resources/scripts/';
 	return [
 		path + 'utils.js',
-		path + 'nav.js'
+		path + 'nav.js',
+		path + 'header.js'
 	];
 };
