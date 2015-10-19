@@ -1,4 +1,9 @@
 {% capture content %}
+    {% if url == '/' %}
+        {% assign pageTitle = {{site.title}} %}
+    {% else %}
+       {% assign pageTitle = {{title}} %}
+    {% endif %}
     {% if pages.size > 0 %}
         {% for section in pages %}
             {% comment %}a double underscore before the title indicates a subpage{% endcomment %}

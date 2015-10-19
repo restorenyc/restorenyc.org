@@ -1,4 +1,5 @@
 {% capture content %}
+    {% assign pageTitle = {{site.title}} %}
     {% for section in pages %}
         {% comment %}a double underscore before the title indicates a subpage{% endcomment %}
         {% if section.title contains '__' %}

@@ -5,15 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta property="description" content="{{excerpt | fallback:site.meta.description | strip_html | truncate: 300 | escape}}">
-		<meta property='st:title' content='{{ title }}' />
+		<meta property='st:title' content='{{ pageTitle }}' />
 		{% if meta.redirect %}
 			<meta http-equiv="refresh" content="0;url={{meta.redirect}}">
 		{% endif %}
 
-		{% if url == '/' %}
-			<title>{{site.title}}</title>
+		{% if parent %}
+			<title>{{parent.title}} | {{pageTitle}}</title>
 		{% else %}
-			<title>{{title}}</title>
+			<title>{{pageTitle}}</title>
 		{% endif %}
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
