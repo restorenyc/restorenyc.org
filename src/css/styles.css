@@ -964,6 +964,7 @@ footer .copyright .bullet {
 .single-header.bg-image .sec-wrap {
   position: absolute;
   z-index: 2;
+  width: 100%;
 }
 .single-header.bg-image .frame {
   position: absolute;

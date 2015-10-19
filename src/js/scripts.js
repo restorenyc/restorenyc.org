@@ -64,8 +64,6 @@ var Utils = (function() {
 					url = portrait.attr('data-img-url'),
 					position = $.trim(portrait.attr('data-img-pos')) === "" ? "50% 50%" : portrait.attr('data-img-pos'),
 					img = new Image();
-				console.log(this.el);
-				console.log(portrait);
 				img.addEventListener('load', function() {
 					portrait
 						.css({
