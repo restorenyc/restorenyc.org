@@ -4,7 +4,8 @@
 			<div class="icon-wrapper">
 				<i class="{{subsection.meta.headerIconClass}} vertical-align"></i>
 			</div>
-		{% elsif subsection.meta.headerImage %}
+		{% endif %}
+		{% if subsection.meta.headerImage %}
 			<img src="{{subsection.meta.headerImage}}" alt="{{subsection.title}}" />
 		{% endif %}
 		{% include 'views/utils/title-post' %}

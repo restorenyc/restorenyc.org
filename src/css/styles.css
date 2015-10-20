@@ -173,7 +173,7 @@ a:visited {
   color: #EE3526;
 }
 img {
-  max-width: 100%;
+  width: 100%;
 }
 h1 {
   font-size: 3em;
@@ -1150,7 +1150,7 @@ footer .copyright .bullet {
 .infobox {
   position: relative;
   border: 2px solid #A1A6BB;
-  padding-top: 46px;
+  padding-top: 50px;
   margin-bottom: 80px;
 }
 .infobox:before {
@@ -1734,6 +1734,7 @@ footer .copyright .bullet {
     color: #fff !important;
   }
   .infobox {
+    padding-top: 60px;
     margin-bottom: 100px;
   }
   .infobox:before {
