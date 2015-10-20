@@ -163,7 +163,7 @@ a.btn {
 	border-width:2px;
 	font-size:0.85em;
 	padding:0.6em 0.85em;
-	.transition(all, 0.2s, @ease-time);
+	.transition(all, 0.4s, @ease-time);
 
 	&.small {
 		border-width:1px;
@@ -206,7 +206,10 @@ a.btn {
 
 // UTILS
 section {
-	margin-bottom:70px;
+	//margin-bottom:70px;
+	padding-top:70px;
+	padding-bottom: 50px;
+	background-color:#fff;
 	&:extend(.clearfix all);
 }
 .sec-wrap {
@@ -219,16 +222,27 @@ section {
 }
 
 .bg-image {
+	padding-top:0;
+	padding-bottom:0;
 	height:540px;
 	background-position: center;
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 .flush-top {
-	margin-top:-70px;
+	padding-top:0;
+	p:only-child {
+		margin-top:0;
+	}
 }
 .flush-top-half {
-	margin-top:-35px;
+	padding-top:35px;
+}
+.flush-bottom {
+	padding-bottom:0;
+}
+.flush-bottom-half {
+	padding-bottom:25px;
 }
 .vertical-align {
 	position: relative;
@@ -276,7 +290,8 @@ section {
 		background-color:@restore-purple;
 	}
 	&.arrow {
-		margin-bottom:-8px;
+		background-color:#fff;
+		margin:0 0 -8px;
 		box-shadow:0 2px 2px rgba(0,0,0,0.1);
 		height:5px;
 		position:relative;

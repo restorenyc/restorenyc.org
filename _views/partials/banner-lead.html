@@ -1,0 +1,24 @@
+<section class="banner-lead {{section.meta.sectionClass}}">
+	<div class="b-wrap">
+		<article>
+			<div class="article-content">
+				<header>
+					{% include 'views/utils/title-subpage' %}
+				</header>
+				{{section.body}}
+			</div>
+			<div class="bg-wrap">
+				{% if section.meta.bgVideo %}
+					<video autoplay="true" loop="true" class="bg-video" preload="none">
+						{{section.meta.bgVideo}}
+					</video>
+				{% endif %}
+				{% if section.meta.bgImage %}
+					<figure>
+						<img style="background-image:url({{section.meta.bgImage}});" src="/src/images/base/clear.gif"/>
+					</figure>
+				{% endif %}
+			</div>
+		</article>
+	</div>
+</section>
