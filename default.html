@@ -2,7 +2,7 @@
     {% if url == '/' %}
         {% assign pageTitle = {{site.title}} %}
     {% else %}
-       {% assign pageTitle = {{title}} %}
+       {% assign pageTitle = {{title | replace: '[[', '' | replace: ']]', '' | replace: '__',''}} %}
     {% endif %}
     {% if pages.size > 0 %}
         {% for section in pages %}

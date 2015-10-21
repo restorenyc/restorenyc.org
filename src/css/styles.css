@@ -147,7 +147,10 @@
   box-sizing: border-box;
 }
 .clearfix:after,
-section:after {
+section:after,
+.contact-info .info a:after,
+.contact-info .info a:hover:after,
+.contact-info .info a:visited:after {
   content: "";
   display: table;
   clear: both;
@@ -1276,6 +1279,87 @@ footer .copyright .bullet {
   font-weight: 200;
   letter-spacing: 2px;
 }
+.contact-us {
+  text-align: center;
+  background-color: #EE3526;
+  color: #fff;
+  padding-bottom: 70px;
+}
+.contact-us header {
+  padding-top: 50px;
+  padding-bottom: 120px;
+}
+.contact-us header .divider.icon .restore-icon {
+  font-size: 1.5em;
+}
+.contact-us .divider.icon .restore-icon {
+  color: #fff;
+}
+.contact-us h1 {
+  font-size: 2.4em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.contact-us p {
+  font-weight: 200;
+}
+.contact-us .btn-wrap {
+  margin-top: 40px;
+}
+.contact-us input {
+  display: block;
+  width: 100%;
+  margin: 15px auto 21px;
+  padding: 0.75em 1em;
+  background-color: rgba(255, 255, 255, 0.25);
+  outline: none;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+  text-align: left;
+  -webkit-appearance: none;
+}
+.contact-us input::-webkit-input-placeholder {
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+.contact-us button.custom {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 2px;
+}
+.contact-info {
+  background-color: #A1A6BB;
+  color: #fff;
+}
+.contact-info .col {
+  margin-bottom: 70px;
+}
+.contact-info .icon-wrap {
+  font-size: 1.8em;
+  color: #374146;
+  margin-bottom: 10px;
+}
+.contact-info h3 {
+  font-size: 1.2em;
+}
+.contact-info h4 {
+  margin: 30px 0;
+}
+.contact-info .info {
+  font-weight: 100;
+}
+.contact-info .info a,
+.contact-info .info a:hover,
+.contact-info .info a:visited {
+  color: #fff;
+}
+.contact-info .info span {
+  display: block;
+}
 @media screen and (min-width: 600px) {
   body {
     text-align: left;
@@ -1422,6 +1506,17 @@ footer .copyright .bullet {
   .pray .form-wrap {
     margin: 110px auto 70px;
   }
+  .contact-us header {
+    padding-top: 85px;
+    padding-bottom: 80px;
+  }
+  .contact-us header .divider.icon .restore-icon {
+    font-size: 1.7em;
+  }
+  .contact-us h1 {
+    font-size: 3em;
+    line-height: 1;
+  }
 }
 @media screen and (min-width: 768px) {
   blockquote {
@@ -1562,6 +1657,9 @@ footer .copyright .bullet {
   .pray .form-wrap {
     width: 560px;
     margin-bottom: 140px;
+  }
+  .contact-us header {
+    padding-top: 120px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1828,5 +1926,18 @@ footer .copyright .bullet {
   }
   .pray button.custom:hover {
     background-color: #686F6E;
+  }
+  .contact-us .sec-wrap {
+    width: 760px;
+    padding: 0;
+  }
+  .contact-us header {
+    text-align: center;
+  }
+  .contact-us header .divider.icon .restore-icon {
+    font-size: 1.667em;
+  }
+  .contact-us h1 {
+    font-size: 3.33em;
   }
 }

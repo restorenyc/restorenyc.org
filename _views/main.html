@@ -49,6 +49,8 @@
 	{% assign template = meta.sectionTemplate %}
 	{% if template == 'team-bio' %}
 		{% include 'views/partials/team-bio' %}
+	{% elsif template == 'contact-us' %}
+		{% include 'views/partials/contact-us' %}
 
 	{% else %}
 		{% include 'views/partials/section' %}

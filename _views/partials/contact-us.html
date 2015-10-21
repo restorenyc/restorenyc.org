@@ -1,0 +1,64 @@
+{% if section.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+
+<section class="contact-us {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}} {% if bgImage %}background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}}){% endif %}">
+	<div class="sec-wrap {% if bgImage %}vertical-align{% endif %}" style="{{section.meta.sectionWrapStyles}}">
+
+		<header>
+			<div class="divider icon"><span class="r-icon restore-icon"></span></div>
+			{% include 'views/utils/title-single' %}
+		</header>
+
+		{{section.body}}
+
+		<div class="form-wrap">
+			<form name="ccoptin" class="stay-informed" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post">
+				<input type="hidden" name="llr" value="omfa8lkab">
+				<input type="hidden" name="m" value="1110646461838">
+				<input type="hidden" name="p" value="oi">
+				<input type="hidden" name="sit" value="9lip5aehb">
+				<input type="hidden" name="f" value="9811f77e-f28c-474d-b223-b2a5de9ed748">
+				<input type="text" name="ea" value="" maxlength="80" placeholder="Email Address">
+				<input type="text" name="ea" value="" maxlength="80" placeholder="Email Address">
+				<div class="btn-wrap">
+					<button type="submit" class="btn custom" name="go">Submit</button>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</section>
+<section class="contact-info">
+	<div class="sec-wrap">
+		<div class="row">
+			<div class="col">
+				<div class="icon-wrap">
+					<i class="fa fa-phone"></i>
+				</div>
+				<div class="info">
+					<h3>OFFICE</h3>
+					<p>
+						<span>(212) 840-8484</span>
+						<a href="mailto:info@restorenyc.org">info@restorenyc.org</a>
+					</p>
+				</div>
+			</div>
+			<div class="col">
+				<div class="icon-wrap">
+					<i class="fa fa-bullhorn"></i>
+				</div>
+				<div class="info">
+					<h3>REPORT SUSPICIOUS ACTIVITY</h3>
+					<h4>National Human Trafficking Resource Center</h4>
+					<p>
+						<span>CALL: (888) 373-7888 (NHTRC)</span>
+						<span>TEXT: "HELP" or "INFO" to 233733</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
