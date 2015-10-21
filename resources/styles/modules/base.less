@@ -239,8 +239,8 @@
 	color:#fff;
 	padding-bottom:70px;
 	header {
-		padding-top:100px;
-		padding-bottom:80px;
+		padding-top:50px;
+		padding-bottom:120px;
 		.divider.icon .restore-icon {
 			font-size:1.5em;
 		}
@@ -251,5 +251,36 @@
 	}
 	p {
 		font-weight:200;
+	}
+	.form-wrap {
+		margin:70px auto 30px;
+	}
+	input {
+		display:block;
+		width:100%;
+		margin:15px auto 21px;
+		padding:0.75em 1em;
+		background-color:#fff;
+		outline:none;
+		border:none;
+		font-size:1em;
+		color:@restore-light-grey;
+		text-align:center;
+		-webkit-appearance: none;
+		&::-webkit-input-placeholder {
+			color:@restore-light-grey;
+			letter-spacing:1px;
+			font-weight:200;
+		}
+	}
+	.btn-wrap {
+		margin-top:40px;
+	}
+	button.custom {
+		background-color:transparent;
+		border:1px solid #fff;
+		color:#fff;
+		font-weight:200;
+		letter-spacing:2px;
 	}
 }

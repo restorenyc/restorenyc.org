@@ -1232,8 +1232,8 @@ footer .copyright .bullet {
   padding-bottom: 70px;
 }
 .pray header {
-  padding-top: 100px;
-  padding-bottom: 80px;
+  padding-top: 50px;
+  padding-bottom: 120px;
 }
 .pray header .divider.icon .restore-icon {
   font-size: 1.5em;
@@ -1244,6 +1244,37 @@ footer .copyright .bullet {
 }
 .pray p {
   font-weight: 200;
+}
+.pray .form-wrap {
+  margin: 70px auto 30px;
+}
+.pray input {
+  display: block;
+  width: 100%;
+  margin: 15px auto 21px;
+  padding: 0.75em 1em;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  font-size: 1em;
+  color: #686F6E;
+  text-align: center;
+  -webkit-appearance: none;
+}
+.pray input::-webkit-input-placeholder {
+  color: #686F6E;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+.pray .btn-wrap {
+  margin-top: 40px;
+}
+.pray button.custom {
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 @media screen and (min-width: 600px) {
   body {
@@ -1378,7 +1409,8 @@ footer .copyright .bullet {
     padding-bottom: 44px;
   }
   .pray header {
-    padding-top: 150px;
+    padding-top: 85px;
+    padding-bottom: 80px;
   }
   .pray header .divider.icon .restore-icon {
     font-size: 1.7em;
@@ -1386,6 +1418,9 @@ footer .copyright .bullet {
   .pray h1 {
     font-size: 3em;
     line-height: 1;
+  }
+  .pray .form-wrap {
+    margin: 110px auto 70px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1522,8 +1557,11 @@ footer .copyright .bullet {
     font-size: 1.5em;
   }
   .pray header {
-    padding-top: 200px;
-    padding-bottom: 100px;
+    padding-top: 120px;
+  }
+  .pray .form-wrap {
+    width: 560px;
+    margin-bottom: 140px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1766,18 +1804,29 @@ footer .copyright .bullet {
   .infobox .content .btn-wrap {
     margin-top: 50px;
   }
+  .pray {
+    text-align: left;
+  }
   .pray .sec-wrap {
     width: 760px;
     padding: 0;
   }
   .pray header {
-    padding-top: 170px;
-    padding-bottom: 80px;
+    text-align: center;
   }
   .pray header .divider.icon .restore-icon {
     font-size: 1.667em;
   }
   .pray h1 {
     font-size: 3.33em;
+  }
+  .pray .form-wrap {
+    width: auto;
+  }
+  .pray input {
+    text-align: left;
+  }
+  .pray button.custom:hover {
+    background-color: #686F6E;
   }
 }
