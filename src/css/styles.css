@@ -729,6 +729,11 @@ footer .copyright .bullet {
   line-height: 0;
   vertical-align: middle;
 }
+footer .copyright a,
+footer .copyright a:hover,
+footer .copyright a:visited {
+  color: #fff;
+}
 .home .sec-wrap {
   padding: 0 25px;
 }
