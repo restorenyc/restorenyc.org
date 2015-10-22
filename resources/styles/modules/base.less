@@ -291,6 +291,18 @@
 	background-color:@restore-red;
 	color:#fff;
 	padding-bottom:70px;
+	#gFormReponse {
+		position:absolute;
+		left:-10000px;
+		opacity:0;
+		font-size:1em;
+		font-weight:300;
+		.transition(opacity);
+		&.show {
+			position:static;
+			opacity:1;
+		}
+	}
 	header {
 		padding-top:50px;
 		padding-bottom:120px;
@@ -313,9 +325,28 @@
 		margin-top:40px;
 	}
 	.form-wrap {
-
+		ul {
+			list-style:none;
+			text-align:left;
+			padding-left:19px;
+		}
+		li {
+			position:relative;
+			margin-bottom:10px;
+			input[type=checkbox] {
+				position: absolute;
+				top:4px;
+				left:0;
+				z-index:1;
+			}
+			.ss-choice-label {
+				display:inline-block;
+				padding-left:30px;
+			}
+		}
 	}
-	input {
+	input[type=text],
+	textarea {
 		display:block;
 		width:100%;
 		margin:15px auto 21px;
@@ -344,12 +375,9 @@
 .contact-info {
 	background-color:@restore-purple;
 	color:#fff;
-	.col {
-		margin-bottom:70px;
-	}
 	.icon-wrap {
 		font-size:1.8em;
-		color:@restore-dark-grey;
+		color:#fff;
 		margin-bottom:10px;
 	}
 	h3 {
@@ -359,6 +387,7 @@
 		margin: 30px 0;
 	}
 	.info {
+		padding-bottom:70px;
 		font-weight:100;
 		a, a:hover, a:visited {
 			color:#fff;

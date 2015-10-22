@@ -101,7 +101,11 @@
 				<div class="bottom clearfix">
 					<div class="logo-wrap">
 						<span class="r-icon restore-logo"></span>
-						<h1>Rebuilding the Life Intended</h1>
+						{% if home? %}
+							<h1>Rebuilding the Life Intended</h1>
+						{% else %}
+							<h2>Rebuilding the Life Intended</h2>
+						{% endif %}
 					</div>
 					<div class="social">
 						{{site.pages['footer'].pages['social-media'].body}}
