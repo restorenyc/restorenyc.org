@@ -1944,7 +1944,7 @@ footer .copyright .bullet {
     font-size: 3.33em;
   }
 }
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1280px) {
   .banner-lead .bg-wrap video {
     width: 100%;
     height: auto;
