@@ -50,27 +50,6 @@
 		{% include 'views/partials/site-nav' %}
 
 		<div id="main">
-			{% if home? %}
-			<!-- <section class="dynamic-lead full-width">
-				<div class="dl-wrap">
-					<article>
-						<header>
-							<h2>REBUILDING <span class="f-w-thin">THE LIFE INTENDED</span></h2>
-						</header>
-						<figure>
-							<img style="background-image:url(/src/images/home/bg-slider-heart.jpg);" src="/src/images/base/clear.gif"/>
-						</figure>
-						<div class="article-content">
-							<div class="btn-wrap">
-								<a class="btn" href="#">Get involved</a>
-								<a class="btn fill-red" href="#">Give</a>
-							</div>
-						</div>
-					</article>
-				</div>
-			</section> -->
-
-			{% endif %}
 			{{ content }}
 		</div>
 		<footer class="flush-top">
@@ -78,11 +57,8 @@
 				<div class="top clearfix">
 					<div class="header">
 						<h2>Stay Informed</h2>
-<!-- BEGIN: Constant Contact Basic Opt-in Email List Form -->
-
-     <!-- END: Constant Contact Basic Opt-in Email List Form -->
-
-     					<form name="ccoptin" class="stay-informed" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post">
+						<!-- BEGIN: Constant Contact Basic Opt-in Email List Form -->
+						<form name="ccoptin" class="stay-informed" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post">
 							<input type="hidden" name="llr" value="omfa8lkab"/ >
 							<input type="hidden" name="m" value="1110646461838" />
 							<input type="hidden" name="p" value="oi">
@@ -93,6 +69,7 @@
 								<button type="submit" class="btn large fill-dark-grey" name="go">Submit</button>
 							</div>
 						</form>
+						<!-- END: Constant Contact Basic Opt-in Email List Form -->
 					</div>
 					<div class="links clearfix">
 						{{site.pages['footer'].pages['links'].body}}
