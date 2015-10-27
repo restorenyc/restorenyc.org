@@ -14,8 +14,7 @@
 					</video>
 				{% endif %}
 				{% if section.meta.bgImage %}
-					<figure>
-						<img style="background-image:url({{section.meta.bgImage}});" src="/src/images/base/clear.gif"/>
+					<figure class="portrait" data-img-url="{{section.meta.backgroundImage}}" data-img-pos="{{section.meta.backgroundPosition}}">
 					</figure>
 				{% endif %}
 			</div>

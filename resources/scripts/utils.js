@@ -16,6 +16,9 @@ var Utils = (function() {
 				pattern = /Android|iPhone|iPad|PlayBook|Mobile|IEMobile/i;
 			return pattern.test(ua);
 		},
+		isHome: function() {
+			return Utils.$body.hasClass('home');
+		},
 		removeBgVideo: function() {
 			if(Utils.isMobile()) {
 				$('.bg-video').remove();

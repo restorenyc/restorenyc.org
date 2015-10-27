@@ -47,23 +47,25 @@
 		z-index:-1;
 		width:100%;
 		height:100%;
+		background-color:@restore-red;
 		video {
+			background-color:#000;
 			height:100%;
 			display:none;
 		}
-		figure {
+		.portrait {
+			width:100%;
+			height:100%;
 			margin:0;
 			line-height:0;
-			width:100%;
-			height:100%;
-			.transition(opacity, 1s, @ease-time);
-		}
-		img {
-			width:100%;
-			height:100%;
 			background-size:cover;
 			background-repeat:no-repeat;
 			background-position:center top;
+			.transition(opacity, 1s, @ease-time);
+			opacity:0;
+		}
+		.loaded {
+			opacity:1;
 		}
 	}
 }
