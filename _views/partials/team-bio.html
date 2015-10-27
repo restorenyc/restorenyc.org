@@ -1,3 +1,4 @@
+{% assign team = site.pages['about-us'].pages['our-team'] %}
 <section class="team-bio {{meta.sectionClass}}" style="{{meta.sectionStyles}}">
 	<div class="sec-wrap" style="{{meta.sectionWrapStyles}}">
 		<header>
@@ -9,11 +10,10 @@
 		<div class="content">
 			{{body}}
 		</div>
-		{% assign staff = site.pages['about-us'].pages['our-team'].pages['staff'] %}
-		{% if staff.meta['sectionLinkUrl'] %}
+		{% if parent.meta['sectionLinkUrl'] %}
 			<aside>
 				<div class="btn-wrap">
-					<a class="btn f-c-red" href="{{staff.meta['sectionLinkUrl']}}">{{staff.meta['sectionLinkText']}}</a>
+					<a class="btn f-c-red" href="{{parent.meta['sectionLinkUrl']}}">{{parent.meta['sectionLinkText']}}</a>
 				</div>
 			</aside>
 		{% endif %}
