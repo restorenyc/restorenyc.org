@@ -185,7 +185,7 @@ img {
   width: 100%;
 }
 h1 {
-  font-size: 3em;
+  font-size: 2em;
 }
 h2 {
   font-size: 1.6em;
@@ -548,6 +548,38 @@ section {
 .f-c-red {
   color: #EE3526 !important;
 }
+input[type=text],
+textarea {
+  display: block;
+  width: 100%;
+  margin: 15px auto 21px;
+  padding: 0.75em 1em;
+  background-color: rgba(255, 255, 255, 0.25);
+  outline: none;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+  text-align: left;
+  -webkit-appearance: none;
+}
+input[type=text]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+input[type=text]::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+input[type=text]:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #fff;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
 .mh {
   position: relative;
   padding: 10px 0 8px;
@@ -656,24 +688,6 @@ footer h2 {
 }
 footer .input-wrap {
   text-align: center;
-}
-footer input[type=text] {
-  display: block;
-  width: 100%;
-  margin: 15px auto 21px;
-  padding: 0.75em 1em;
-  background-color: transparent;
-  outline: none;
-  border: 2px solid #F9C5C3;
-  font-size: 1em;
-  color: #fff;
-  text-align: center;
-  -webkit-appearance: none;
-}
-footer input[type=text]::-webkit-input-placeholder {
-  color: #fff;
-  font-style: italic;
-  letter-spacing: 1px;
 }
 footer .links {
   margin-top: 80px;
@@ -1398,26 +1412,6 @@ footer .copyright a:visited {
 .contact-us .form-wrap li .ss-choice-label {
   display: inline-block;
   padding-left: 30px;
-}
-.contact-us input[type=text],
-.contact-us textarea {
-  display: block;
-  width: 100%;
-  margin: 15px auto 21px;
-  padding: 0.75em 1em;
-  background-color: rgba(255, 255, 255, 0.25);
-  outline: none;
-  border: none;
-  font-size: 1em;
-  color: #fff;
-  text-align: left;
-  -webkit-appearance: none;
-}
-.contact-us input[type=text]::-webkit-input-placeholder,
-.contact-us textarea::-webkit-input-placeholder {
-  color: #fff;
-  letter-spacing: 1px;
-  font-weight: 200;
 }
 .contact-us button.custom {
   background-color: transparent;
