@@ -22,15 +22,11 @@
 			</div>
 		</header>
 		<div class="slider-text">
-			<div class="gallery-cell">
-				{{section.body}}
-			</div>
-			<div class="gallery-cell">
-				{{section.body}}
-			</div>
-			<div class="gallery-cell">
-				{{section.body}}
-			</div>
+			{% for slide in section.pages %}
+				<div class="gallery-cell">
+					{{slide.body}}
+				</div>
+			{% endfor %}
 		</div>
 	</div>
 </section>
