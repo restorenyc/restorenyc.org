@@ -76,8 +76,6 @@ var Utils = (function() {
 		init: function() {
 			this.el = Utils.isHome() ? $('.banner-lead'): $('.single-header');
 			this.loadHeaderImage();
-			console.log(Utils.isHome());
-			console.log(this.el);
 		},
 		loadHeaderImage: function() {
 			var self = this;
