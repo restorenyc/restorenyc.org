@@ -1,0 +1,14 @@
+<section class="sec-image full-width {{section.meta.sectionClass}}">
+	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		<figure>
+			<div class="image-wrap">
+				{{section.body}}
+			</div>
+			{% if section.meta.imageCaption %}
+				<div class="caption-wrap">
+					<figcaption>{{section.meta.imageCaption}}</figcation>
+				</div>
+			{% endif %}
+		</figure>
+	</div>
+</section>

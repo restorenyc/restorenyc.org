@@ -62,3 +62,26 @@
 		font-size:1.4em;
 	}
 }
+.sec-image {
+	.image-wrap {
+		margin-bottom:20px;
+	}
+	.caption-wrap {
+		position:relative;
+		padding-top:5px;
+		padding-right:45%;
+		&:before {
+			width:55%;
+			height:4px;
+		}
+	}
+	&.align-right {
+		.caption-wrap {
+			padding-right:20px;
+			padding-left:45%;
+		}
+		figcaption {
+			text-align:right;
+		}
+	}
+}

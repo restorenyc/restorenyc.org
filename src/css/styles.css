@@ -1469,6 +1469,40 @@ footer .copyright a:visited {
   padding: 0px 0;
   text-align: center;
 }
+.sec-image p {
+  margin: 0;
+}
+.sec-image figure {
+  padding: 0;
+  margin: 0;
+}
+.sec-image figcaption {
+  font-size: 0.8em;
+  font-style: italic;
+}
+.sec-image .image-wrap {
+  margin-bottom: 14px;
+}
+.sec-image .caption-wrap {
+  position: relative;
+  padding: 0 20px;
+}
+.sec-image .caption-wrap:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background-color: #A1A6BB;
+}
+.sec-image.align-right figcaption {
+  text-align: right;
+}
+.sec-image.align-right .caption-wrap:before {
+  left: auto;
+  right: 0;
+}
 @media screen and (min-width: 600px) {
   body {
     text-align: left;
@@ -1809,6 +1843,25 @@ footer .copyright a:visited {
   .contact-us #gFormReponse {
     font-size: 1.4em;
   }
+  .sec-image .image-wrap {
+    margin-bottom: 20px;
+  }
+  .sec-image .caption-wrap {
+    position: relative;
+    padding-top: 5px;
+    padding-right: 45%;
+  }
+  .sec-image .caption-wrap:before {
+    width: 55%;
+    height: 4px;
+  }
+  .sec-image.align-right .caption-wrap {
+    padding-right: 20px;
+    padding-left: 45%;
+  }
+  .sec-image.align-right figcaption {
+    text-align: right;
+  }
 }
 @media screen and (min-width: 1024px) {
   h1 {
@@ -2008,6 +2061,12 @@ footer .copyright a:visited {
   .banner-lead .bg-wrap figure {
     opacity: 0;
   }
+  .subheader + section {
+    padding-top: 110px;
+  }
+  .subheader + section.flush-top {
+    padding-top: 0px;
+  }
   .subheader p {
     text-align: center;
   }
@@ -2117,6 +2176,30 @@ footer .copyright a:visited {
   }
   .page404 .r-icon {
     font-size: 8em;
+  }
+  .sec-image .image-wrap {
+    text-align: center;
+  }
+  .sec-image .image-wrap img {
+    width: 640px;
+  }
+  .sec-image .caption-wrap {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .sec-image figcaption {
+    width: 640px;
+    margin: 0 auto;
+    padding-right: 250px;
+  }
+  .sec-image.align-right .caption-wrap {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .sec-image.align-right figcaption {
+    text-align: right;
+    padding-right: 0;
+    padding-left: 250px;
   }
 }
 @media screen and (min-width: 1280px) {

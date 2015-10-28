@@ -3,7 +3,10 @@
 }
 .subheader {
 	& + section {
-	//	padding-top:5px;
+		padding-top:110px;
+	}
+	& + section.flush-top {
+		padding-top:0px;
 	}
 	p {
 		text-align:center;
@@ -127,5 +130,33 @@
 .page404 {
 	.r-icon {
 		font-size:8em;
+	}
+}
+.sec-image {
+	.image-wrap {
+		text-align:center;
+		img {
+			width:640px;
+		}
+	}
+	.caption-wrap {
+		padding-left:0;
+		padding-right:0;
+	}
+	figcaption {
+		width:640px;
+		margin:0 auto;
+		padding-right:250px;
+	}
+	&.align-right {
+		.caption-wrap {
+			padding-right:0;
+			padding-left:0;
+		}
+		figcaption {
+			text-align:right;
+			padding-right:0;
+			padding-left:250px;
+		}
 	}
 }
