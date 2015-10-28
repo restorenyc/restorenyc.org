@@ -689,6 +689,9 @@ footer h2 {
 footer .input-wrap {
   text-align: center;
 }
+footer input[type=text] {
+  text-align: center;
+}
 footer .links {
   margin-top: 80px;
 }
