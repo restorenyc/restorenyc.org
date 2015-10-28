@@ -922,7 +922,6 @@ footer .copyright a:visited {
 .upcoming-events .calendar article h3 {
   margin: 0.4em 0;
   font-size: 1em;
-  font-style: italic;
 }
 .upcoming-events .calendar .cal-time {
   display: inline-block;
@@ -1245,6 +1244,9 @@ footer .copyright a:visited {
 }
 .infobox:first-of-type {
   margin-top: 80px;
+}
+.grid-2 .infobox:first-of-type {
+  margin-top: 0;
 }
 .infobox ul {
   text-align: left;
@@ -2040,6 +2042,9 @@ footer .copyright a:visited {
   }
   .infobox:first-of-type {
     margin-top: 120px;
+  }
+  .grid-2 .infobox:first-of-type {
+    margin-top: 0;
   }
   .infobox .icon-wrapper {
     width: 125px;
