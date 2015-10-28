@@ -3,3 +3,5 @@ RedirectMatch 301 /about-us/our-team/staff/$ /about-us/our-team
 RedirectMatch 301 /our-work/$ /our-work/vision-and-mission
 RedirectMatch 301 /about-us/$ /about-us/our-team/
 RedirectMatch 301 /get-involved/$ /get-involved/volunteer
+
+ErrorDocument 404 /404.html
