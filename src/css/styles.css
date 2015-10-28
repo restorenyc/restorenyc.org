@@ -679,15 +679,10 @@ footer .links {
   margin-top: 80px;
 }
 footer .links ul {
-  display: inline-block;
   list-style: none;
   padding: 0;
   margin: 0;
   vertical-align: top;
-  text-align: left;
-}
-footer .links ul:first-child {
-  margin-right: 20px;
 }
 footer .links li {
   padding-bottom: 10px;
@@ -1530,6 +1525,16 @@ footer .copyright a:visited {
     width: 60%;
     margin: 40px auto;
   }
+  footer .links ul {
+    display: inline-block;
+    text-align: left;
+  }
+  footer .links ul:first-child {
+    margin-right: 20px;
+  }
+  footer .links li {
+    max-width: 200px;
+  }
   .home .sec-wrap {
     padding-left: 75px;
     padding-right: 75px;
@@ -1668,7 +1673,7 @@ footer .copyright a:visited {
     text-align: left;
   }
   footer .footer-wrap {
-    padding: 65px 70px;
+    padding: 65px 40px;
   }
   footer .header,
   footer .links {
@@ -1683,6 +1688,7 @@ footer .copyright a:visited {
     margin-right: 30px;
   }
   footer .links li {
+    max-width: 135px;
     padding-bottom: 15px;
   }
   footer h2 {
@@ -1760,7 +1766,7 @@ footer .copyright a:visited {
     width: 150px;
   }
   .single-header h1.small-font {
-    font-size: inherit;
+    font-size: 3em;
   }
   .subheader + .content.flush-top {
     padding: 70px 0 60px 0;
@@ -1941,7 +1947,7 @@ footer .copyright a:visited {
     font-size: 1.125em;
   }
   footer .logo-wrap {
-    padding-right: 124px;
+    padding-right: 164px;
   }
   .sm-tweet {
     height: 640px;
