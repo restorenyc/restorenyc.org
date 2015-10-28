@@ -14,7 +14,7 @@
 	{% elsif template == 'section' %}
 		{% include 'views/partials/section' %}
 	{% elsif template == 'single' %}
-		{% include 'views/partials/single' %}
+		{% include 'views/singles/single' %}
 	{% elsif template == 'banner-lead' %}
 		{% include 'views/partials/banner-lead' %}
 	{% elsif template == 'twitter' %}
@@ -48,9 +48,9 @@
 	{% endcomment %}
 	{% assign template = meta.sectionTemplate %}
 	{% if template == 'team-bio' %}
-		{% include 'views/partials/team-bio' %}
+		{% include 'views/singles/team-bio' %}
 	{% elsif template == 'contact-us' %}
-		{% include 'views/partials/contact-us' %}
+		{% include 'views/singles/contact-us' %}
 
 	{% else %}
 		{% include 'views/partials/section' %}
@@ -60,5 +60,5 @@
 	{% comment %}
 		// single fallback
 	{% endcomment %}
-	{% include 'views/partials/single' %}
+	{% include 'views/singles/single' %}
 {% endif %}

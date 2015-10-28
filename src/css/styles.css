@@ -970,7 +970,7 @@ footer .copyright a:visited {
   width: 60%;
 }
 .get-involved-icons .item {
-  width: 125px;
+  width: 115px;
   display: inline-block;
   overflow: hidden;
   text-align: center;
@@ -1056,6 +1056,9 @@ footer .copyright a:visited {
   margin: 0;
   line-height: 1;
   color: #fff;
+}
+.single-header h1.small-font {
+  font-size: 1.90em;
 }
 .single-header.bg-image {
   position: relative;
@@ -1576,6 +1579,9 @@ footer .copyright a:visited {
     padding-right: .5em;
     margin: 10px;
   }
+  .single-header h1.small-font {
+    font-size: 2.5em;
+  }
   .subheader .sec-wrap {
     padding-left: 75px;
     padding-right: 75px;
@@ -1752,6 +1758,9 @@ footer .copyright a:visited {
   }
   .get-involved-icons .item {
     width: 150px;
+  }
+  .single-header h1.small-font {
+    font-size: inherit;
   }
   .subheader + .content.flush-top {
     padding: 70px 0 60px 0;

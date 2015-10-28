@@ -1,3 +1,4 @@
 {% if title != '' %}
 	<h1 {% if meta.headerClass %} class="{{meta.headerClass}}"{% endif %}>{% include 'views/utils/title' %}</h1>
+	<span>{{section.meta | json}}</span>
 {% endif %}

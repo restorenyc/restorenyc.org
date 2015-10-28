@@ -3,17 +3,17 @@
 		<article>
 			<div class="article-content">
 				<header>
-					{% include 'views/utils/title-subpage' %}
+					{% include 'views/utils/title-subheader' %}
 				</header>
 				{{section.body}}
 			</div>
 			<div class="bg-wrap">
-				{% if section.meta.bgVideo %}
+				{% if section.meta.backgroundVideo %}
 					<video autoplay="true" loop="true" class="bg-video" preload="none">
-						{{section.meta.bgVideo}}
+						{{section.meta.backgroundVideo}}
 					</video>
 				{% endif %}
-				{% if section.meta.bgImage %}
+				{% if section.meta.backgroundImage %}
 					<figure class="portrait" data-img-url="{{section.meta.backgroundImage}}" data-img-pos="{{section.meta.backgroundPosition}}">
 					</figure>
 				{% endif %}

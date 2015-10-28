@@ -1,4 +1,5 @@
 {% assign team = site.pages['about-us'].pages['our-team'] %}
+{% assign parentTitle = {{parent.title | replace: '[[', '' | replace: ']]', '' | replace: '__',''}} %}
 <section class="team-bio {{meta.sectionClass}}" style="{{meta.sectionStyles}}">
 	<div class="sec-wrap" style="{{meta.sectionWrapStyles}}">
 		<header>

@@ -6,7 +6,7 @@
 
 <section class="{{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}} {% if bgImage %}background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}}){% endif %}">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}} {% if bgImage %}vertical-align{% endif %}" style="{{section.meta.sectionWrapStyles}}">
-		{% include 'views/utils/title-subpage' %}
+		{% include 'views/utils/title-subheader' %}
 
 		{{section.body}}
 
