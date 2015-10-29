@@ -13,8 +13,15 @@ h3 {
 
 }
 h1,h2,h3,h4,h5,h6 {
-	&.line:after {
-		width:54px;
+	&.line {
+		&:after {
+			width:54px;
+		}
+		&.align-center {
+			&:after {
+				margin-left:-27px;
+			}
+		}
 	}
 }
 .sec-wrap {

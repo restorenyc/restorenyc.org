@@ -171,7 +171,7 @@ body {
   font-family: proxima-nova, sans-serif;
   font-weight: 300;
   color: #374146;
-  line-height: 1.3;
+  line-height: 1.5;
   font-size: 20px;
   text-align: center;
 }
@@ -272,7 +272,7 @@ h6.purple:after {
 p {
   margin-top: 0;
 }
-p:only-child {
+p:only-of-type {
   margin-top: 1em;
 }
 strong {
@@ -304,6 +304,13 @@ blockquote:after {
   top: -5px;
   left: -70px;
   line-height: 1;
+}
+blockquote span {
+  display: block;
+  font-style: normal;
+  font-size: 0.733em;
+  font-weight: 400;
+  margin-top: 0.8em;
 }
 .title {
   color: #777;
@@ -423,9 +430,6 @@ section {
 }
 .flush-top {
   padding-top: 0;
-}
-.flush-top p:only-child {
-  margin-top: 0;
 }
 .flush-top-half {
   padding-top: 35px;
@@ -757,28 +761,6 @@ footer .copyright a:visited {
 .home .single-header {
   height: 360px;
 }
-.num-home {
-  text-align: right;
-  background-color: #EE3526;
-  color: #fff;
-}
-.num-home .sec-wrap {
-  padding-bottom: 100px;
-}
-.num-home .fp-tableCell {
-  vertical-align: bottom;
-}
-.num-home article {
-  padding-bottom: 50px;
-}
-.num-home .site-logo {
-  font-size: 140px;
-}
-.num-home h1 {
-  margin-top: -20px;
-  font-size: 30px;
-  font-style: italic;
-}
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background: #EAEAEA;
@@ -792,6 +774,9 @@ footer .copyright a:visited {
 }
 .mission-vision .content {
   padding: 5px;
+}
+.our-mission {
+  text-align: center;
 }
 .sm-tweet {
   text-align: center;
@@ -956,7 +941,6 @@ footer .copyright a:visited {
   display: block;
 }
 .get-involved-icons {
-  height: 580px;
   text-align: center;
 }
 .get-involved-icons a {
@@ -1295,6 +1279,9 @@ footer .copyright a:visited {
   margin-bottom: 85px;
   padding: 0 30px;
 }
+.icon-over-text .header-link {
+  display: block;
+}
 .icon-over-text .icon-wrapper {
   font-size: 3.8em;
 }
@@ -1503,6 +1490,23 @@ footer .copyright a:visited {
   left: auto;
   right: 0;
 }
+.shop-col .columns-2 li {
+  margin-bottom: 20px;
+  -webkit-column-break-inside: avoid;
+  /* Chrome, Safari, Opera */
+  page-break-inside: avoid;
+  /* Firefox */
+  break-inside: avoid;
+  /* IE 10+ */
+}
+.shop-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.shop-col h3 {
+  font-size: 1em;
+}
 @media screen and (min-width: 600px) {
   body {
     text-align: left;
@@ -1537,12 +1541,29 @@ footer .copyright a:visited {
     width: 44px;
     height: 2px;
   }
+  h1.line.align-center:after,
+  h2.line.align-center:after,
+  h3.line.align-center:after,
+  h4.line.align-center:after,
+  h5.line.align-center:after,
+  h6.line.align-center:after {
+    left: 50%;
+    margin-left: -22px;
+  }
   .bg-image {
     height: 700px;
   }
   .btn {
     font-size: 1em;
     min-width: 160px;
+  }
+  .columns-2 {
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
   }
   .mh .menu-btn {
     right: 15px;
@@ -1675,6 +1696,9 @@ footer .copyright a:visited {
   .contact-us h1 {
     font-size: 3em;
     line-height: 1;
+  }
+  .shop-col li div {
+    margin-left: 20px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1862,6 +1886,17 @@ footer .copyright a:visited {
   .sec-image.align-right figcaption {
     text-align: right;
   }
+  .sec-infobox .row {
+    display: block;
+    margin-bottom: 50px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .sec-infobox .infobox.col-1-2 {
+    width: 48%;
+    margin: 0 0.8%;
+  }
 }
 @media screen and (min-width: 1024px) {
   h1 {
@@ -1877,6 +1912,14 @@ footer .copyright a:visited {
   h5.line:after,
   h6.line:after {
     width: 54px;
+  }
+  h1.line.align-center:after,
+  h2.line.align-center:after,
+  h3.line.align-center:after,
+  h4.line.align-center:after,
+  h5.line.align-center:after,
+  h6.line.align-center:after {
+    margin-left: -27px;
   }
   .sec-wrap {
     width: 1024px;

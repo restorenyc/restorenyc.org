@@ -21,6 +21,12 @@ h1,h2,h3,h4,h5,h6 {
 			width:44px;
 			height:2px;
 		}
+		&.align-center {
+			&:after {
+				left:50%;
+				margin-left:-22px;
+			}
+		}
 	}
 }
 .bg-image {
@@ -29,4 +35,14 @@ h1,h2,h3,h4,h5,h6 {
 .btn {
 	font-size:1em;
 	min-width:160px;
+}
+
+//Columns
+.columns-2 {
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	column-count: 2;
+	column-gap: 20px;
 }

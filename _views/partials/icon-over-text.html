@@ -1,10 +1,21 @@
+{% if subsection.meta.link %}
+	{% assign link = {{subsection.meta.link}} %}
+{% endif %}
+
 <article class="icon-over-text {{subsection.meta.sectionClass}} {% if gridSize %}col-{{subsection.meta.gridColSize | fallback:'1'}}-{{gridSize}}{% endif %}">
 	<header>
+		{% if link %}<a class="header-link" href="{{link}}" target="_blank">{% endif %}
 		{% if subsection.meta.headerIconClass %}
 			<div class="icon-wrapper">
 				<i class="{{subsection.meta.headerIconClass}}"></i>
 			</div>
 		{% endif %}
+		{% if subsection.meta.headerImageUrl %}
+			<div class="image-wrapper">
+				<img src="{{subsection.meta.headerImageUrl}}" />
+			</div>
+		{% endif %}
+		{% if link %}</a>{% endif %}
 		{% include 'views/utils/title-post' %}
 	</header>
 	<div class="content">
