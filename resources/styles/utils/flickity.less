@@ -14,18 +14,41 @@
 	.arrow {
 		fill:#fff;
 	}
+	&.previous {
+		left:0;
+	}
+	&.next {
+		right:0;
+	}
 }
+
 
 .bg-image {
 	.flickity-page-dots {
 		bottom:-95px;
 	}
 }
+.cell-wrap {
+	padding:0 20px;
+	text-align:center;
+}
 @media screen and (min-width:600px) {
 	.bg-image {
 		.flickity-page-dots {
 			bottom:-155px;
 		}
+	}
+	.flickity-prev-next-button {
+		&.previous {
+			left:10px;
+		}
+		&.next {
+			right:10px;
+		}
+	}
+	.cell-wrap {
+		width:70%;
+		margin:0 auto;
 	}
 }
 
@@ -42,5 +65,9 @@
 		.flickity-page-dots {
 			bottom:-95px;
 		}
+	}
+	.cell-wrap {
+		width:50%;
+		margin:0 auto;
 	}
 }

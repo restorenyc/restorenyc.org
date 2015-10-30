@@ -82,17 +82,41 @@
 .flickity-prev-next-button .arrow {
   fill: #fff;
 }
+.flickity-prev-next-button.previous {
+  left: 0;
+}
+.flickity-prev-next-button.next {
+  right: 0;
+}
 .bg-image .flickity-page-dots {
   bottom: -95px;
+}
+.cell-wrap {
+  padding: 0 20px;
+  text-align: center;
 }
 @media screen and (min-width: 600px) {
   .bg-image .flickity-page-dots {
     bottom: -155px;
   }
+  .flickity-prev-next-button.previous {
+    left: 10px;
+  }
+  .flickity-prev-next-button.next {
+    right: 10px;
+  }
+  .cell-wrap {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 @media screen and (min-width: 1024px) {
   .bg-image .flickity-page-dots {
     bottom: -95px;
+  }
+  .cell-wrap {
+    width: 50%;
+    margin: 0 auto;
   }
 }
 /**
@@ -387,6 +411,11 @@ a.btn.fill-purple {
   border-color: #A1A6BB;
   color: #fff;
 }
+.btn.fill-white,
+a.btn.fill-white {
+  background-color: #fff;
+  color: #374146;
+}
 .btn.icon,
 a.btn.icon {
   padding-left: 0.6em;
@@ -441,10 +470,10 @@ section {
   padding-bottom: 25px;
 }
 .vertical-align,
-.get-involved-icons .img-wrap img,
 .banner-lead .article-content,
 .infobox .icon-wrapper .fa,
-.infobox .icon-wrapper .r-icon {
+.infobox .icon-wrapper .r-icon,
+.sec-inline-icons .img-wrap img {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -765,16 +794,6 @@ footer .copyright a:visited {
 .fp-slidesNav ul li a span {
   background: #EAEAEA;
 }
-.mission-vision .icon-wrapper {
-  width: 30%;
-  margin: 0 auto;
-}
-.mission-vision h2 {
-  margin: 0.5em 0;
-}
-.mission-vision .content {
-  padding: 5px;
-}
 .our-mission {
   text-align: center;
 }
@@ -939,37 +958,6 @@ footer .copyright a:visited {
 }
 .billboard .content img {
   display: block;
-}
-.get-involved-icons {
-  text-align: center;
-}
-.get-involved-icons a {
-  display: block;
-}
-.get-involved-icons h2 {
-  margin-bottom: 30px;
-}
-.get-involved-icons h3 {
-  color: #374146;
-  font-size: 1em;
-}
-.get-involved-icons .img-wrap {
-  width: 70px;
-  height: 70px;
-  border: 4px solid #EE3526;
-  border-radius: 50%;
-  background-color: #fff;
-  margin: 0 auto;
-}
-.get-involved-icons .img-wrap img {
-  width: 60%;
-}
-.get-involved-icons .item {
-  width: 115px;
-  display: inline-block;
-  overflow: hidden;
-  text-align: center;
-  margin: 7px;
 }
 .banner-lead {
   padding-top: 0;
@@ -1507,6 +1495,38 @@ footer .copyright a:visited {
 .shop-col h3 {
   font-size: 1em;
 }
+.sec-inline-icons {
+  text-align: center;
+}
+.sec-inline-icons a:not(.btn) {
+  display: block;
+}
+.sec-inline-icons h2 {
+  margin-bottom: 30px;
+}
+.sec-inline-icons h3 {
+  color: #374146;
+  font-size: 1em;
+}
+.sec-inline-icons .img-wrap {
+  width: 70px;
+  height: 70px;
+  border: 4px solid #EE3526;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 auto;
+}
+.sec-inline-icons .img-wrap img {
+  width: 60%;
+}
+.sec-inline-icons .item {
+  width: 115px;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  margin: 7px;
+  vertical-align: top;
+}
 @media screen and (min-width: 600px) {
   body {
     text-align: left;
@@ -1616,9 +1636,6 @@ footer .copyright a:visited {
   .upcoming-events .sec-wrap {
     padding: 0 20%;
   }
-  .get-involved-icons h2 {
-    margin-bottom: 50px;
-  }
   .banner-lead {
     height: 700px;
   }
@@ -1699,6 +1716,9 @@ footer .copyright a:visited {
   }
   .shop-col li div {
     margin-left: 20px;
+  }
+  .sec-inline-icons h2 {
+    margin-bottom: 50px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -1810,18 +1830,6 @@ footer .copyright a:visited {
     display: table-cell;
     vertical-align: middle;
   }
-  .get-involved-icons h3 {
-    font-size: 1.3em;
-    margin: 0.5em;
-  }
-  .get-involved-icons .img-wrap {
-    width: 100px;
-    height: 100px;
-    border: 5px solid #EE3526;
-  }
-  .get-involved-icons .item {
-    width: 150px;
-  }
   .single-header h1.small-font {
     font-size: 3em;
   }
@@ -1896,6 +1904,18 @@ footer .copyright a:visited {
   .sec-infobox .infobox.col-1-2 {
     width: 48%;
     margin: 0 0.8%;
+  }
+  .sec-inline-icons h3 {
+    font-size: 1.3em;
+    margin: 0.5em;
+  }
+  .sec-inline-icons .img-wrap {
+    width: 100px;
+    height: 100px;
+    border: 5px solid #EE3526;
+  }
+  .sec-inline-icons .item {
+    width: 150px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -1974,6 +1994,10 @@ footer .copyright a:visited {
   .btn.fill-purple:hover {
     background-color: #fff;
     color: #A1A6BB;
+  }
+  .btn.fill-white:hover {
+    background-color: #374146;
+    color: #fff;
   }
   .mh {
     margin: 0 auto;
@@ -2080,17 +2104,6 @@ footer .copyright a:visited {
   }
   .upcoming-events aside .btn.fill-red {
     color: #fff;
-  }
-  .get-involved-icons h3 {
-    margin: 0.5em;
-  }
-  .get-involved-icons .img-wrap {
-    width: 120px;
-    height: 120px;
-  }
-  .get-involved-icons .item {
-    width: 200px;
-    margin: 10px 20px;
   }
   .banner-lead .btn-wrap .btn {
     width: 200px;
@@ -2243,6 +2256,17 @@ footer .copyright a:visited {
     text-align: right;
     padding-right: 0;
     padding-left: 250px;
+  }
+  .sec-inline-icons h3 {
+    margin: 0.5em;
+  }
+  .sec-inline-icons .img-wrap {
+    width: 120px;
+    height: 120px;
+  }
+  .sec-inline-icons .item {
+    width: 200px;
+    margin: 10px 20px;
   }
 }
 @media screen and (min-width: 1280px) {

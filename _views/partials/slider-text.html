@@ -14,17 +14,21 @@
 {% else %}
 	{% assign bgImage = false %}
 {% endif %}
-<section class="full-width {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" {% if bgImage %}style="background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}})"{% endif %}>
+<section class="full-width {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}}{% if bgImage %} background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}})"{% endif %} >
 	<div class="sec-wrap {% if bgImage %}vertical-align{% endif %}">
-		<header>
-			<div class="icon-wrapper">
-				<i class="fa fa-twitter"></i>
-			</div>
-		</header>
+		{% if section.meta.headerIconClass %}
+			<header>
+				<div class="icon-wrapper">
+					<i class="{{section.meta.headerIconClass}}"></i>
+				</div>
+			</header>
+		{% endif %}
 		<div class="slider-text">
 			{% for slide in section.pages %}
 				<div class="gallery-cell">
-					{{slide.body}}
+					<div class="cell-wrap">
+						{{slide.body}}
+					</div>
 				</div>
 			{% endfor %}
 		</div>
