@@ -7,7 +7,7 @@
 					{% if single.url == '/' or single.pages.size < 1 %}
 						<li class="item"><a href="{{single.url}}">{{single.title}}</a>
 					{% else %}
-						<li class="item has-sub">{{single.title}} <i class="sub-icon fa fa-caret-down"></i>
+						<li class="item has-sub">{{single.title}} <i class="sub-icon fa fa-caret-right"></i>
 					{% endif %}
 						{% for subpage in single.pages %}
 							{% if subpage.title contains '__' %}

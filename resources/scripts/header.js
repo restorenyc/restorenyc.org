@@ -18,7 +18,8 @@
 							'background-image': 'url(' + url +')',
 							'background-position': position
 						})
-						.addClass('loaded');
+						.addClass('loaded')
+						.closest('section').addClass('ready');
 				});
 				img.src = url;
 

@@ -4,6 +4,7 @@
 	z-index:10;
 	box-shadow:0 1px 5px rgba(0,0,0,0.10);
 	background-color:#fff;
+	.transition(all, 0.3s, @ease-time);
 	.site-logo {
 		line-height:1;
 		margin:0 0 0 20px;
@@ -20,6 +21,7 @@
 		color:@restore-light-grey;
 		padding:5px;
 		cursor:pointer;
+		.transition(color, 0.3s);
 		span {
 			display:none;
 		}
@@ -57,13 +59,17 @@
 	z-index:100;
 	background-color:rgba(255,255,255,0.95);
 	opacity:0;
-	.transition(opacity 300ms @ease-time);
+	padding:50px 30px 30px;
+	.transition(all, 0.3s);
+	& * {
+		-webkit-tap-highlight-color: rgba(0,0,0,0);
+	}
 	.close {
 		position:absolute;
 		display:inline-block;
 		padding:10px;
-		top:5px;
-		right:40px;
+		top:7px;
+		right:15px;
 		z-index:10;
 		cursor:pointer;
 		font-weight:600;
@@ -76,36 +82,59 @@
 	}
 	li {
 		margin:10px 0;
-		padding: 5px 0;
 	}
 	.item {
 		position:relative;
 		color:@restore-dark-grey;
 		font-weight:600;
 		cursor:pointer;
+		font-size:0.8em;
 		> a, > a:hover, > a:visited {
 			color:@restore-dark-grey;
 			font-weight:600;
+			padding: 5px 0;
+			display:inline-block;
+		}
+		.sub-icon {
+			font-size:0.75em;
+			margin-left:5px;
+			color:@restore-red;
+			.transition(all, 0.3s);
 		}
 		&.open {
-		}
+			.sub-icon {
+				-webkit-transform-origin:50%;
+				-moz-transform-origin:50%;
+				-ms-transform-origin:50%;
+				transform-origin:50%;
+				-webkit-transform:rotate(90deg);
+				-moz-transform:rotate(90deg);
+				-ms-transform:rotate(90deg);
+				transform:rotate(90deg);
+			}
 			.submenu {
 				//position:static;
 				//opacity:1;
 			}
+		}
 	}
 	.submenu {
 		display:none;
 		//background-color:@restore-red;
 	}
 	.subitem {
+		padding-left:15px;
 		a, a:hover, a:visited {
 			color:@restore-red;
 			font-weight:300;
+			line-height:0.8;
+			padding: 5px 0;
+			display:inline-block;
 		}
 	}
 
 }
+
 .nav-open {
 	#site-nav {
 		left:0;
@@ -113,3 +142,33 @@
 	}
 }
 
+
+.csstransforms3d {
+	#site-nav {
+		//z-index:0;
+		left:100%;
+		opacity:1;
+		text-align:left;
+		width:250px;
+		background-color:rgba(255,255,255,0.93);
+		overflow-y:scroll;
+		.close {
+			display:none;
+		}
+	}
+	.nav-open {
+			height:100%;
+			overflow:hidden;
+			position:fixed;
+		#site-nav {
+			transform:translate3d(-250px, 0, 0);
+		}
+		.mh{
+			background-color:@restore-red;
+			transform:translate3d(-250px, 0, 0);
+			.menu-btn {
+				color:#fff;
+			}
+		}
+	}
+}
