@@ -80,6 +80,13 @@
 	}
 	.item {
 		position:relative;
+		color:@restore-dark-grey;
+		font-weight:600;
+		cursor:pointer;
+		> a, > a:hover, > a:visited {
+			color:@restore-dark-grey;
+			font-weight:600;
+		}
 		&.open {
 		}
 			.submenu {
@@ -88,9 +95,14 @@
 			}
 	}
 	.submenu {
-		font-style:italic;
-		//display:none;
+		display:none;
 		//background-color:@restore-red;
+	}
+	.subitem {
+		a, a:hover, a:visited {
+			color:@restore-red;
+			font-weight:300;
+		}
 	}
 
 }

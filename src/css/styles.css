@@ -711,9 +711,24 @@ textarea:-ms-input-placeholder {
 }
 #site-nav .item {
   position: relative;
+  color: #374146;
+  font-weight: 600;
+  cursor: pointer;
+}
+#site-nav .item > a,
+#site-nav .item > a:hover,
+#site-nav .item > a:visited {
+  color: #374146;
+  font-weight: 600;
 }
 #site-nav .submenu {
-  font-style: italic;
+  display: none;
+}
+#site-nav .subitem a,
+#site-nav .subitem a:hover,
+#site-nav .subitem a:visited {
+  color: #EE3526;
+  font-weight: 300;
 }
 .nav-open #site-nav {
   left: 0;
@@ -1645,6 +1660,12 @@ footer .copyright a:visited {
   text-align: center;
   margin: 7px;
   vertical-align: top;
+}
+.slider-text .profile.img-wrap {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 30px;
 }
 @media screen and (min-width: 600px) {
   body {
