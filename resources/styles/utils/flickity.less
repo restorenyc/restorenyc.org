@@ -31,6 +31,9 @@
 .cell-wrap {
 	padding:0 20px;
 	text-align:center;
+	&.full {
+		padding:0;
+	}
 }
 @media screen and (min-width:600px) {
 	.bg-image {
@@ -49,6 +52,10 @@
 	.cell-wrap {
 		width:70%;
 		margin:0 auto;
+		&.full {
+			width:auto;
+			margin:0;
+		}
 	}
 }
 
@@ -69,5 +76,9 @@
 	.cell-wrap {
 		width:50%;
 		margin:0 auto;
+		&.full {
+			max-width:1024px;
+			margin:0 auto;
+		}
 	}
 }

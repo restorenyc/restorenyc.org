@@ -1,0 +1,58 @@
+{% assign flickity = true %}
+
+{% capture footer_scripts_jquery %}
+	{{footer_scripts_jquery}}
+	(function(){
+		var billboard = $('.slider-billboard').flickity({
+				pageDots:false
+			}),
+			data = billboard.data('flickity'),
+			nav = $('.billboard').find('nav'),
+			navItems = nav.find('li');
+
+		function updateNav() {
+			navItems.filter('.is-selected')
+				.removeClass('is-selected');
+			navItems.eq(data.selectedIndex)
+				.addClass('is-selected');
+		}
+
+		billboard.on( 'cellSelect', function() {
+			updateNav();
+		});
+
+		nav.on( 'click', 'li', function() {
+			var index = $(this).index();
+			billboard.flickity( 'select', index );
+		});
+		updateNav();
+	})();
+
+{% endcapture %}
+
+<section class="full-width billboard {{section.meta.sectionClass}}"  style="{{section.meta.sectionStyles}}">
+	<div class="sec-wrap">
+		<div class="slider-billboard">
+			{% for slide in section.pages %}
+				{% if slide.meta.backgroundImage %}
+					<div class="gallery-cell">
+						<div class="cell-wrap full">
+							{% if slide.meta.link %}<a class="link" href="{{slide.meta.link}}">{% endif %}
+							<div class="image-wrap">
+								<img src="{{slide.meta.backgroundImage}}"/>
+							</div>
+							{% if slide.meta.link %}</a>{% endif %}
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+		<nav>
+			<ul>
+				{% for slide in section.pages %}
+					<li>{{slide.title | replace:'__','' | replace:'[[','' | replace: ']]',''}}</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+</section>

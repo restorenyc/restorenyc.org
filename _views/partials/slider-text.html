@@ -1,12 +1,8 @@
-{% capture header_styles %}
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css">
-{% endcapture %}
+{% assign flickity = true %}
 
-{% capture footer_scripts %}
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script>
-	<script type="text/javascript">
-		$('.slider-text').flickity();
-	</script>
+{% capture footer_scripts_jquery %}
+	{{footer_scripts_jquery}}
+	$('.slider-text').flickity();
 {% endcapture %}
 
 {% if section.meta.backgroundImage %}
@@ -14,7 +10,7 @@
 {% else %}
 	{% assign bgImage = false %}
 {% endif %}
-<section class="full-width {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}}{% if bgImage %} background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}})"{% endif %} >
+<section class="full-width {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}}{% if bgImage %} background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}}){% endif %}">
 	<div class="sec-wrap {% if bgImage %}vertical-align{% endif %}">
 		{% if section.meta.headerIconClass %}
 			<header>
