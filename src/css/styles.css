@@ -216,6 +216,11 @@ a:visited {
   text-decoration: none;
   color: #EE3526;
 }
+a img,
+a:hover img,
+a:visited img {
+  border: none;
+}
 img {
   width: 100%;
 }
