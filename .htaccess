@@ -4,4 +4,37 @@ RedirectMatch 301 /our-work/$ /our-work/vision-and-mission
 RedirectMatch 301 /about-us/$ /about-us/our-team/
 RedirectMatch 301 /get-involved/$ /get-involved/volunteer
 
+#migration to new site
+Redirect 301 /the-issue /our-work/approach/
+Redirect 301 /causes /our-work/approach/
+Redirect 301 /the-numbers /our-work/approach/
+Redirect 301 /the-united-states /our-work/approach/
+Redirect 301 /our-outreach-program /our-work/outreach-program/
+Redirect 301 /our-safehome /our-work/safehome-program/
+Redirect 301 /staff /about-us/our-team
+Redirect 301 /board-of-directors /about-us/board-of-directors/
+Redirect 301 /strategic-advisory-board /about-us/strategic-advisory-board/
+Redirect 301 /partners /our-work/partners
+Redirect 301 /about-us/careers-opportunities /get-involved/join-our-team/
+Redirect 301 /media /our-work/vision-and-mission/
+Redirect 301 /annual-reports /about-us/annual-reports/
+Redirect 301 /how-to-help /get-involved/volunteer/
+Redirect 301 /donate /give
+Redirect 301 /fundraise /get-involved/fundraise/
+Redirect 301 /get-involved /get-involved/volunteer/
+Redirect 301 /spread-the-word /get-involved/fundraise/
+Redirect 301 /the-workplace /get-involved/volunteer/
+Redirect 301 /church-and-faith /get-involved/pray/
+Redirect 301 /shop-and-support-restore /get-involved/shop/
+Redirect 301 /events /
+Redirect 301 /founders-story /about-us/our-story/
+Redirect 301 /2015-nyc-marathon https://donate.restorenyc.org/search/fundraisers?type=Fundraiser&cid=6651&eid=11564&fb=0
+Redirect 301 /life-at-our-safehome /our-work/safehome-program/
+Redirect 301 /myrestore_campaign-tools /get-involved/fundraise/
+Redirect 301 /faqs /our-work/vision-and-mission/
+Redirect 301 /founder /about-us/our-story/
+Redirect 301 /homepage /
+Redirect 301 /blog /
+Redirect 301 /biographies /about-us/our-team/
+
 ErrorDocument 404 /404.html

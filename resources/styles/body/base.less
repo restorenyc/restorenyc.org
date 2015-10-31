@@ -409,3 +409,21 @@ textarea {
 		z-index:10;
 	}
 }
+
+//Columns
+.columns-2 {
+	ul {
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+	li {
+		margin-bottom:40px;
+		-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+		page-break-inside: avoid; /* Firefox */
+		break-inside: avoid; /* IE 10+ */
+	}
+	h3 {
+		font-size:1em;
+	}
+}
