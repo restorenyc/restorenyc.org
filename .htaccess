@@ -1,10 +1,21 @@
-Redirect 301 /give https://donate.restorenyc.org/checkout/donation?eid=51308
+RewriteEngine On
+RewriteBase /
+
+## FORCE NO-WWW
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+## NEW SITE REDIRECT MATCHES
 RedirectMatch 301 /about-us/our-team/staff/$ /about-us/our-team
 RedirectMatch 301 /our-work/$ /our-work/vision-and-mission
 RedirectMatch 301 /about-us/$ /about-us/our-team/
 RedirectMatch 301 /get-involved/$ /get-involved/volunteer
 
-#migration to new site
+## CUSTOM REDIRECTS (ADD HERE)
+Redirect 301 /give https://donate.restorenyc.org/checkout/donation?eid=51308
+
+
+## MIGRATION: REDIRECT OLD LINKS TO NEW SITE
 Redirect 301 /the-issue /our-work/approach/
 Redirect 301 /causes /our-work/approach/
 Redirect 301 /the-numbers /our-work/approach/
@@ -26,15 +37,16 @@ Redirect 301 /spread-the-word /get-involved/fundraise/
 Redirect 301 /the-workplace /get-involved/volunteer/
 Redirect 301 /church-and-faith /get-involved/pray/
 Redirect 301 /shop-and-support-restore /get-involved/shop/
-Redirect 301 /events /
+Redirect 301 /events http://restorenyc.org/
 Redirect 301 /founders-story /about-us/our-story/
 Redirect 301 /2015-nyc-marathon https://donate.restorenyc.org/search/fundraisers?type=Fundraiser&cid=6651&eid=11564&fb=0
 Redirect 301 /life-at-our-safehome /our-work/safehome-program/
 Redirect 301 /myrestore_campaign-tools /get-involved/fundraise/
 Redirect 301 /faqs /our-work/vision-and-mission/
 Redirect 301 /founder /about-us/our-story/
-Redirect 301 /homepage /
-Redirect 301 /blog /
+Redirect 301 /homepage http://restorenyc.org/
+Redirect 301 /blog http://restorenyc.org./
 Redirect 301 /biographies /about-us/our-team/
 
+## 404: PAGE NOT FOUND
 ErrorDocument 404 /404.html

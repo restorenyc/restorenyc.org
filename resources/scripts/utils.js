@@ -11,11 +11,11 @@ var Utils = (function() {
 		$lb: $('#lightbox'),
 		init: function() {
 			Utils.removeBgVideo();
-			if(Utils.isIE()) {
+			if(Utils.isLegacyIE()) {
 				$('input, textarea').placeholder();
 			}
 		},
-		isIE: function() {
+		isLegacyIE: function() {
 			return Utils.$html.hasClass('ie8') || Utils.$html.hasClass('ie9');
 		},
 		isMobile: function() {

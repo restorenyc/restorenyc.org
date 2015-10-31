@@ -1764,23 +1764,6 @@ footer .copyright a:visited {
   left: auto;
   right: 0;
 }
-.shop-col .columns-2 li {
-  margin-bottom: 20px;
-  -webkit-column-break-inside: avoid;
-  /* Chrome, Safari, Opera */
-  page-break-inside: avoid;
-  /* Firefox */
-  break-inside: avoid;
-  /* IE 10+ */
-}
-.shop-col ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.shop-col h3 {
-  font-size: 1em;
-}
 .sec-inline-icons {
   text-align: center;
 }
@@ -2420,6 +2403,12 @@ footer .copyright a:visited {
   }
   .banner-lead .bg-wrap figure {
     opacity: 0;
+  }
+  .banner-lead.no-video .bg-wrap video {
+    display: none;
+  }
+  .banner-lead.no-video .bg-wrap figure {
+    opacity: 1;
   }
   .subheader + section {
     padding-top: 110px;

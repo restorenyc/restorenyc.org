@@ -11,11 +11,11 @@ var Utils = (function() {
 		$lb: $('#lightbox'),
 		init: function() {
 			Utils.removeBgVideo();
-			if(Utils.isIE()) {
+			if(Utils.isLegacyIE()) {
 				$('input, textarea').placeholder();
 			}
 		},
-		isIE: function() {
+		isLegacyIE: function() {
 			return Utils.$html.hasClass('ie8') || Utils.$html.hasClass('ie9');
 		},
 		isMobile: function() {
@@ -124,7 +124,7 @@ var Utils = (function() {
 				video = el.find('video'),
 				filetype,
 				src;
-			if(!Utils.isMobile() && el.length > 0 && video.length > 0) {
+			if(!Utils.isLegacyIE() && !Utils.isMobile() && el.length > 0 && video.length > 0) {
 				src = video.attr('data-src');
 				filetype = src.substr(src.lastIndexOf('.')+1);
 				// var source = document.createElement('source');
@@ -134,6 +134,8 @@ var Utils = (function() {
 					video.addClass('loaded');
 				});
 				video.attr('src', src);
+			} else {
+				el.addClass('no-video');
 			}
 		}
 	};

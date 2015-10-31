@@ -30,7 +30,7 @@
 				video = el.find('video'),
 				filetype,
 				src;
-			if(!Utils.isMobile() && el.length > 0 && video.length > 0) {
+			if(!Utils.isLegacyIE() && !Utils.isMobile() && el.length > 0 && video.length > 0) {
 				src = video.attr('data-src');
 				filetype = src.substr(src.lastIndexOf('.')+1);
 				// var source = document.createElement('source');
@@ -40,6 +40,8 @@
 					video.addClass('loaded');
 				});
 				video.attr('src', src);
+			} else {
+				el.addClass('no-video');
 			}
 		}
 	};
