@@ -8,6 +8,7 @@ var Utils = (function() {
 		$body: $('body'),
 		$main: $('#main'),
 		$nav: $('#site-nav'),
+		$lb: $('#lightbox'),
 		init: function() {
 			Utils.removeBgVideo();
 		},
@@ -23,6 +24,18 @@ var Utils = (function() {
 			if(Utils.isMobile()) {
 				$('.bg-video').remove();
 			}
+		},
+		lightbox: function(state, html) {
+			var container = Utils.$lb.find('.content');
+			console.log(container);
+			if(state === "on") {
+				container.empty();
+				container.html(html);
+				Utils.$lb.addClass('open');
+			} else {
+				container.empty();
+				Utils.$lb.removeClass('open');
+			}
 		}
 	};
 })(jQuery);
@@ -36,29 +49,15 @@ var Utils = (function() {
 				.removeClass('open')
 				.find('.submenu').slideUp();
 		},
-		fixPosition: function() {
-			Utils.$body.css({
-				'height': window.innerHeight + 'px',
-				'overflow': 'hidden',
-				'position': 'fixed'
-			});
-		},
-		resetPosition: function() {
-			Utils.$body.css({
-				'height': 'auto',
-				'overflow': 'auto',
-				'position': 'static'
-			});
-		},
 		bindEvents: function() {
 			var self = this;
 			Utils.$body
 				.on('click', '.menu-btn', function(e) {
 					if(Utils.$body.hasClass('nav-open')) {
-						//nav.resetPosition();
+						Utils.lightbox('off');
 						Utils.$body.removeClass('nav-open');
 					} else {
-						//nav.fixPosition();
+						Utils.lightbox('on');
 						Utils.$body.addClass('nav-open');
 					}
 				})
@@ -67,13 +66,16 @@ var Utils = (function() {
 				})
 				.on('click', '#site-nav .has-sub', function(e) {
 					var el = $(e.target);
-					if(el.hasClass('open')){
-						e.preventDefault();
-						nav.closeSubmenu();
-					} else {
-						nav.closeSubmenu();
-						el.addClass('open');
-						el.find('.submenu').slideDown();
+
+					if(el.parent('.subitem').length < 1) {
+						if(el.hasClass('open')){
+							e.preventDefault();
+							nav.closeSubmenu();
+						} else {
+							nav.closeSubmenu();
+							el.addClass('open');
+							el.find('.submenu').slideDown();
+						}
 					}
 				});
 		}

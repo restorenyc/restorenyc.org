@@ -253,9 +253,7 @@ section {
 .vertical-align {
 	position: relative;
 	top: 50%;
-	-webkit-transform: translateY(-50%);
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
+	.transform(translateY(-50%));
 }
 .align-left {
 	text-align:left;
@@ -392,5 +390,22 @@ textarea {
 		color:#fff;
 		font-weight:200;
 		letter-spacing:1px;
+	}
+}
+
+//lightbox
+#lightbox {
+	opacity:0;
+	background-color:rgba(0,0,0,0.5);
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index:-10;
+	.transition(opacity);
+	&.open {
+		opacity:1;
+		z-index:10;
 	}
 }

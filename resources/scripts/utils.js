@@ -8,6 +8,7 @@ var Utils = (function() {
 		$body: $('body'),
 		$main: $('#main'),
 		$nav: $('#site-nav'),
+		$lb: $('#lightbox'),
 		init: function() {
 			Utils.removeBgVideo();
 		},
@@ -22,6 +23,18 @@ var Utils = (function() {
 		removeBgVideo: function() {
 			if(Utils.isMobile()) {
 				$('.bg-video').remove();
+			}
+		},
+		lightbox: function(state, html) {
+			var container = Utils.$lb.find('.content');
+			console.log(container);
+			if(state === "on") {
+				container.empty();
+				container.html(html);
+				Utils.$lb.addClass('open');
+			} else {
+				container.empty();
+				Utils.$lb.removeClass('open');
 			}
 		}
 	};
