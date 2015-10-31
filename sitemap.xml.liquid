@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for single in site.pages %}
+	{% if single.title contains '__' %}
+	{% else %}
+		<url>
+			<loc>{{single.permalink}}</loc>
+			<lastmod>{{single.updated_at}}</lastmod>
+			<priority>1.0</priority>
+		</url>
+		{% for page in single.posts %}
+			{% if page.title contains '__' %}
+			{% else %}
+				<url>
+					<loc>{{page.permalink}}</loc>
+					<lastmod>{{page.updated_at}}</lastmod>
+					<priority>1.0</priority>
+				</url>
+				{% if page.slug == 'our-team' %}
+					{% for bio in page['staff'] %}
+						<url>
+							<loc>{{bio.permalink}}</loc>
+							<lastmod>{{bio.updated_at}}</lastmod>
+							<priority>1.0</priority>
+						</url>
+					{% endfor %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+{% endfor %}
+</urlset>
