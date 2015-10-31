@@ -4,6 +4,7 @@
 		init: function() {
 			this.el = Utils.isHome() ? $('.banner-lead'): $('.single-header');
 			this.loadHeaderImage();
+			this.loadVideo();
 		},
 		loadHeaderImage: function() {
 			var self = this;
@@ -22,7 +23,23 @@
 						.closest('section').addClass('ready');
 				});
 				img.src = url;
-
+			}
+		},
+		loadVideo: function() {
+			var el = $('.banner-lead'),
+				video = el.find('video'),
+				filetype,
+				src;
+			if(!Utils.isMobile() && el.length > 0 && video.length > 0) {
+				src = video.attr('data-src');
+				filetype = src.substr(src.lastIndexOf('.')+1);
+				// var source = document.createElement('source');
+				// source.setAttribute('src', src);
+				// source.setAttribute('type', 'video/'+filetype);
+				video.on('loadstart', function(){
+					video.addClass('loaded');
+				});
+				video.attr('src', src);
 			}
 		}
 	};

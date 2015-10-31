@@ -2386,6 +2386,15 @@ footer .copyright a:visited {
   }
   .banner-lead .bg-wrap video {
     display: block;
+    opacity: 0;
+    -webkit-transition: opacity 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    -moz-transition: opacity 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    -o-transition: opacity 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    -ms-transition: opacity 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    transition: opacity 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  }
+  .banner-lead .bg-wrap video.loaded {
+    opacity: 1;
   }
   .banner-lead .bg-wrap figure {
     opacity: 0;

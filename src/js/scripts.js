@@ -11,6 +11,12 @@ var Utils = (function() {
 		$lb: $('#lightbox'),
 		init: function() {
 			Utils.removeBgVideo();
+			if(Utils.isIE()) {
+				$('input, textarea').placeholder();
+			}
+		},
+		isIE: function() {
+			return Utils.$html.hasClass('ie8') || Utils.$html.hasClass('ie9');
 		},
 		isMobile: function() {
 			var ua = navigator.userAgent,
@@ -92,6 +98,7 @@ var Utils = (function() {
 		init: function() {
 			this.el = Utils.isHome() ? $('.banner-lead'): $('.single-header');
 			this.loadHeaderImage();
+			this.loadVideo();
 		},
 		loadHeaderImage: function() {
 			var self = this;
@@ -110,7 +117,23 @@ var Utils = (function() {
 						.closest('section').addClass('ready');
 				});
 				img.src = url;
-
+			}
+		},
+		loadVideo: function() {
+			var el = $('.banner-lead'),
+				video = el.find('video'),
+				filetype,
+				src;
+			if(!Utils.isMobile() && el.length > 0 && video.length > 0) {
+				src = video.attr('data-src');
+				filetype = src.substr(src.lastIndexOf('.')+1);
+				// var source = document.createElement('source');
+				// source.setAttribute('src', src);
+				// source.setAttribute('type', 'video/'+filetype);
+				video.on('loadstart', function(){
+					video.addClass('loaded');
+				});
+				video.attr('src', src);
 			}
 		}
 	};

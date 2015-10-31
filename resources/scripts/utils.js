@@ -11,6 +11,12 @@ var Utils = (function() {
 		$lb: $('#lightbox'),
 		init: function() {
 			Utils.removeBgVideo();
+			if(Utils.isIE()) {
+				$('input, textarea').placeholder();
+			}
+		},
+		isIE: function() {
+			return Utils.$html.hasClass('ie8') || Utils.$html.hasClass('ie9');
 		},
 		isMobile: function() {
 			var ua = navigator.userAgent,
