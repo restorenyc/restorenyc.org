@@ -18,7 +18,7 @@
 		{% endif %}
 
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-		<link rel="fluid-icon" href="/fluidicon.png" title="RestoreNYC">
+		<link rel="fluid-icon" href="{{site.permalink}}/fluidicon.png" title="RestoreNYC">
 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
 		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
 		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
@@ -29,7 +29,7 @@
 		<meta property="og:url" content="{{current.permalink| fallback:site.permalink}}">
 		<meta property="og:site_name" content="{{site.title}}">
 		<meta property="og:title" content="{{pageTitle | fallback:site.title}}">
-		<meta property="og:image" content="{{current.meta.metaImage | fallback:site.meta.metaImage}}" />
+		<meta property="og:image" content="{{site.permalink}}{{current.meta.metaImage | fallback:site.meta.metaImage}}" />
 		<meta property="og:description" content="{{current.meta.fbShare | fallback:current.meta.metaDescription | fallback:pageTitle}}">
 		<meta property="description" content="{{current.meta.metaDescription | fallback:site.meta.metaDescription}}">
 
@@ -37,7 +37,7 @@
 		<meta name="twitter:site" content="@restorenyc">
 		<meta name="twitter:title" content="{{pageTitle | fallback:site.title}}">
 		<meta name="twitter:description" content="{{current.meta.twitterShare | fallback:current.meta.metaDescription | fallback:pageTitle}}">
-		<meta name="twitter:image" content="{{current.meta.metaImage}}">
+		<meta name="twitter:image" content="{{site.permalink}}{{current.meta.metaImage}}">
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
