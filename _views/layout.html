@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lte IE 8]>   <html class="ie8 no-js">           <![endif]-->
+<!--[if IE 9]>       <html class="ie9 no-js">           <![endif]-->
+<!--[if !IE]><!-->   <html lang="en-US" class="no-js">  <!--<![endif]-->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Language" content="en">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta property="description" content="{{excerpt | fallback:site.meta.description | strip_html | truncate: 300 | escape}}">
-		<meta property='st:title' content='{{ pageTitle }}' />
 		{% if meta.redirect %}
 			<meta http-equiv="refresh" content="0;url={{meta.redirect}}">
 		{% endif %}
-		<meta name="robots" content="none">
 
 		{% if parentTitle %}
 			<title>{{parentTitle}} | {{pageTitle}}</title>
@@ -17,22 +17,44 @@
 			<title>{{pageTitle}}</title>
 		{% endif %}
 
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="fluid-icon" href="/fluidicon.png" title="RestoreNYC">
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+
+		<link rel="canonical" href="{{current.permalink| fallback:site.permalink}}" />
+
+		<meta property="og:url" content="{{current.permalink| fallback:site.permalink}}">
+		<meta property="og:site_name" content="{{site.title}}">
+		<meta property="og:title" content="{{pageTitle | fallback:site.title}}">
+		<meta property="og:image" content="{{current.meta.metaImage | fallback:site.meta.metaImage}}" />
+		<meta property="og:description" content="{{current.meta.fbShare | fallback:current.meta.metaDescription | fallback:pageTitle}}">
+		<meta property="description" content="{{current.meta.metaDescription | fallback:site.meta.metaDescription}}">
+
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:site" content="@restorenyc">
+		<meta name="twitter:title" content="{{pageTitle | fallback:site.title}}">
+		<meta name="twitter:description" content="{{current.meta.twitterShare | fallback:current.meta.metaDescription | fallback:pageTitle}}">
+		<meta name="twitter:image" content="{{current.meta.metaImage}}">
+
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
 			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<!--[if gt IE 8]>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.1.3/jquery.placeholder.min.js"></script>
+		<![endif]-->
 		<script src="/src/lib/modernizer.js"></script>
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/{{site.meta.fontAwesomeVersion}}/css/font-awesome.min.css">
 		{% if flickity %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css">{% endif %}
 		{{ header_styles }}
 		<link rel="stylesheet" type="text/css" href="/src/css/styles.css">
 		{{ header_scripts }}
-		<!-- design@restorenyc.org -->
 		<script src="//use.typekit.net/oln3ahs.js"></script>
-		<!-- jayme@restorenyc.org -->
-		<!-- <script src="//use.typekit.net/prz1lek.js"></script> -->
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
 	<body class="{% if home? %}{{'home'}}{% endif %}">
@@ -96,6 +118,12 @@
 		</div>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		{% if flickity %}<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script>{% endif%}
+		<script>
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', '{{site.meta.googleAnalyticsTag}}', 'auto');
+			ga('send', 'pageview');
+			</script>
+		<script async src='//www.google-analytics.com/analytics.js'></script>
 		<script type="text/javascript" src="/src/js/scripts.js"></script>
 		{{ footer_scripts }}
 		{% if footer_scripts_jquery %}
