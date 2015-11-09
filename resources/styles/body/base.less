@@ -399,7 +399,6 @@ textarea {
 //lightbox
 #lightbox {
 	opacity:0;
-	background-color:rgba(0,0,0,0.5);
 	position:fixed;
 	width:100%;
 	height:100%;
@@ -410,6 +409,11 @@ textarea {
 	&.open {
 		opacity:1;
 		z-index:10;
+	}
+	.wrap {
+		width:100%;
+		height:100%;
+		background-color:rgba(0,0,0,0.5);
 	}
 }
 

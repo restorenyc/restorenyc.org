@@ -7,6 +7,7 @@ var Utils = (function() {
 		$html: $('html'),
 		$body: $('body'),
 		$main: $('#main'),
+		$mh: $('.mh'),
 		$nav: $('#site-nav'),
 		$lb: $('#lightbox'),
 		init: function() {
@@ -32,15 +33,21 @@ var Utils = (function() {
 			}
 		},
 		lightbox: function(state, html) {
-			var container = Utils.$lb.find('.content');
-			console.log(container);
+			var wrap = Utils.$lb.find('.wrap'),
+				container = Utils.$lb.find('.content');
 			if(state === "on") {
 				container.empty();
 				container.html(html);
 				Utils.$lb.addClass('open');
+				wrap.on('click.lbOpen', function() {
+					if(Utils.$body.hasClass('nav-open')) {
+						Utils.$mh.find('.menu-btn').trigger('click');
+					}
+				});
 			} else {
 				container.empty();
 				Utils.$lb.removeClass('open');
+				wrap.off('.lbOpen');
 			}
 		}
 	};
