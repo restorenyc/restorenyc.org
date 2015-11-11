@@ -5,7 +5,7 @@
 {% endif %}
 {% assign gridSize = 3 %}
 
-<section class="grid-2 {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}} {% if bgImage %}background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}}){% endif %}">
+<section class="grid-3 {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" style="{{section.meta.sectionStyles}} {% if bgImage %}background-image:url({{section.meta.backgroundImage | replace:' ', '%20'}}){% endif %}">
 	<div class="sec-wrap {% if bgImage %}vertical-align{% endif %}" style="{{section.meta.sectionWrapStyles}}">
 		{% include 'views/utils/title-subheader' %}
 
