@@ -253,6 +253,14 @@ h6.sub {
   font-style: italic;
   margin-top: -1.3em;
 }
+h1.thin,
+h2.thin,
+h3.thin,
+h4.thin,
+h5.thin,
+h6.thin {
+  font-weight: 100;
+}
 h1.light,
 h2.light,
 h3.light,
@@ -1627,6 +1635,11 @@ footer .copyright a:visited {
   position: static;
   opacity: 1;
 }
+.contact-us a,
+.contact-us a:hover,
+.contact-us a:visited {
+  color: #fff;
+}
 .contact-us header {
   padding-top: 50px;
   padding-bottom: 120px;
@@ -1675,7 +1688,7 @@ footer .copyright a:visited {
   letter-spacing: 2px;
 }
 .contact-info {
-  background-color: #A1A6BB;
+  background-color: #EE3526;
   color: #fff;
 }
 .contact-info .icon-wrap {

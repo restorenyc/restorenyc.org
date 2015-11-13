@@ -39,6 +39,8 @@
 		{% include 'views/partials/image' %}
 	{% elsif template == 'billboard' %}
 		{% include 'views/partials/billboard' %}
+	{% elsif template == 'contact-us' %}
+		{% include 'views/partials/contact-us' %}
 
 	{% else %}
 		{% include 'views/partials/section' %}
@@ -51,8 +53,6 @@
 	{% assign template = meta.sectionTemplate %}
 	{% if template == 'team-bio' %}
 		{% include 'views/singles/team-bio' %}
-	{% elsif template == 'contact-us' %}
-		{% include 'views/singles/contact-us' %}
 
 	{% else %}
 		{% include 'views/partials/section' %}
