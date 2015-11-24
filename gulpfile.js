@@ -8,26 +8,38 @@ var gulp = require('gulp'),
 	notify = require('gulp-notify'),
 	livereload = require('gulp-livereload'),
 	del = require('del'),
+	replace = require('gulp-replace'),
 	jsmap = require('./resources/scripts/_scripts');
 
+function getDate() {
+	//timestamp
+	return new Date().getTime();
+}
+
 gulp.task('styles', function() {
-	return gulp.src('resources/styles/_styles.less')
+	gulp.src('resources/styles/_styles.less')
 		.pipe(less())
 		.pipe(rename('styles.css'))
 		.pipe(gulp.dest('src/css'))
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifycss())
 		.pipe(gulp.dest('src/css'));
+	return gulp.src('_views/layout.html', { base: './' })
+		.pipe(replace(/(\/src\/css\/styles.css)(.*)"/, '$1?ver=' + getDate() + '"'))
+		.pipe(gulp.dest('./'));
 });
 
 gulp.task('scripts', function() {
 	var src = jsmap();
-	return gulp.src(src)
+	gulp.src(src)
 		.pipe(concat('scripts.js'))
 		.pipe(gulp.dest('src/js'))
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(uglify())
 		.pipe(gulp.dest('src/js'));
+	return gulp.src('_views/layout.html', { base: './' })
+		.pipe(replace(/(\/src\/js\/scripts.js)(.*)"/, '$1?ver=' + getDate() + '"'))
+		.pipe(gulp.dest('./'));
 });
 
 gulp.task('clean', function(cb) {
