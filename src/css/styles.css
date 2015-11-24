@@ -1551,6 +1551,7 @@ footer .copyright a:visited {
 }
 .icon-over-text .header-link {
   display: block;
+  color: #374146;
 }
 .icon-over-text .icon-wrapper {
   font-size: 3.8em;

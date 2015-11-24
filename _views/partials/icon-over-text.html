@@ -16,7 +16,9 @@
 			</div>
 		{% endif %}
 		{% if link %}</a>{% endif %}
-		{% include 'views/utils/title-post' %}
+		{% if link %}<a class="header-link" href="{{link}}" target="_blank">{% endif %}
+			{% include 'views/utils/title-post' %}
+		{% if link %}</a>{% endif %}
 	</header>
 	<div class="content">
 		{{subsection.body}}
