@@ -22,6 +22,9 @@
   .col-3-4 {
     width: 75%;
   }
+  .row .col-full-width {
+    width: 100%;
+  }
 }
 @media screen and (min-width: 768px) {
   .col-1-2 {
@@ -33,6 +36,9 @@
   .full-width .col-1-2 {
     width: 50%;
     float: left;
+  }
+  .row .col-full-width {
+    width: 100%;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -56,6 +62,9 @@
   }
   .col-3-4 {
     width: 75%;
+  }
+  .row .col-full-width {
+    width: 100%;
   }
 }
 /* Opt-in outside padding */
