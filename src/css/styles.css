@@ -752,7 +752,7 @@ textarea:-ms-input-placeholder {
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.95);
   opacity: 0;
-  padding: 50px 30px 30px;
+  padding: 12px 30px 30px;
   -webkit-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
   -moz-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
   -o-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
@@ -771,6 +771,13 @@ textarea:-ms-input-placeholder {
   z-index: 10;
   cursor: pointer;
   font-weight: 600;
+}
+#site-nav .nav-logo {
+  font-size: 1.5em;
+  text-align: center;
+}
+#site-nav .site-menu {
+  margin-top: 33px;
 }
 #site-nav ul {
   list-style: none;
@@ -837,7 +844,7 @@ textarea:-ms-input-placeholder {
   display: inline-block;
 }
 #site-nav .footer {
-  margin-top: 80px;
+  margin-top: 65px;
   position: relative;
 }
 #site-nav .social-media {
