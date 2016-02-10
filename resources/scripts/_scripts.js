@@ -5,6 +5,7 @@ module.exports = function() {
 	return [
 		path + 'utils.js',
 		path + 'nav.js',
-		path + 'header.js'
+		path + 'header.js',
+		path + 'billboard.js'
 	];
 };

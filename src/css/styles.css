@@ -82,6 +82,8 @@
   opacity: 0.3;
 }
 .flickity-prev-next-button {
+  width: 34px;
+  height: 34px;
   background: transparent;
   opacity: 0.3;
 }
@@ -101,6 +103,7 @@
   bottom: -95px;
 }
 .cell-wrap {
+  position: relative;
   padding: 0 20px;
   text-align: center;
 }
@@ -110,12 +113,6 @@
 @media screen and (min-width: 600px) {
   .bg-image .flickity-page-dots {
     bottom: -155px;
-  }
-  .flickity-prev-next-button.previous {
-    left: 10px;
-  }
-  .flickity-prev-next-button.next {
-    right: 10px;
   }
   .cell-wrap {
     width: 70%;
@@ -129,6 +126,16 @@
 @media screen and (min-width: 1024px) {
   .bg-image .flickity-page-dots {
     bottom: -95px;
+  }
+  .flickity-prev-next-button {
+    width: 44px;
+    height: 44px;
+  }
+  .flickity-prev-next-button.previous {
+    left: 10px;
+  }
+  .flickity-prev-next-button.next {
+    right: 10px;
   }
   .cell-wrap {
     width: 50%;
@@ -1155,12 +1162,15 @@ footer .copyright a:visited {
 }
 .billboard .slider-billboard {
   background-color: #686F6E;
+  padding: 30px;
 }
 .billboard .image-wrap {
   position: relative;
   height: 0;
   overflow: hidden;
-  padding-bottom: 62.5%;
+  padding-bottom: 56.25%;
+  z-index: 1;
+  background-color: #374146;
 }
 .billboard .image-wrap img {
   position: absolute;
@@ -1168,6 +1178,109 @@ footer .copyright a:visited {
   height: 100%;
   top: 0;
   left: 0;
+}
+.billboard .image-wrap .play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: #fff;
+  display: none;
+}
+.billboard .image-wrap .play-btn .outer {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 0px 0px 7px #999;
+  -moz-box-shadow: inset 0px 0px 7px #999;
+  box-shadow: inset 0px 0px 7px #999;
+}
+.billboard .image-wrap .play-btn .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 14px solid #fff;
+  z-index: 2;
+  -webkit-transform: translate(-35%, -50%);
+  -moz-transform: translate(-35%, -50%);
+  -o-transform: translate(-35%, -50%);
+  -ms-transform: translate(-35%, -50%);
+  transform: translate(-35%, -50%);
+}
+.billboard .image-wrap .play-btn .inner-shadow {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 18px solid #999;
+  opacity: 0.2;
+  z-index: 1;
+  -webkit-transform: translate(-35%, -50%);
+  -moz-transform: translate(-35%, -50%);
+  -o-transform: translate(-35%, -50%);
+  -ms-transform: translate(-35%, -50%);
+  transform: translate(-35%, -50%);
+}
+.billboard .video .play-btn {
+  display: block;
+}
+.billboard .video-wrap {
+  position: absolute;
+  padding-bottom: 56.25%;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  top: 0;
+  z-index: 0;
+  opacity: 0;
+  background-color: #000;
+  -webkit-transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -moz-transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -o-transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -ms-transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  transition: opacity 1s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+}
+.billboard .video-wrap .play {
+  opacity: 1;
+  z-index: 2;
+}
+.billboard .video-wrap iframe,
+.billboard .video-wrap object,
+.billboard .video-wrap embed {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s;
+  -moz-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s;
+  -o-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s;
+  -ms-transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s;
+  transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0.7s;
+}
+.billboard .gallery-cell.play .video-wrap {
+  z-index: 2;
+  opacity: 1;
+}
+.billboard .gallery-cell.play .video-wrap iframe,
+.billboard .gallery-cell.play .video-wrap object,
+.billboard .gallery-cell.play .video-wrap embed {
+  opacity: 1;
 }
 .billboard .flickity-page-dots {
   bottom: 10px;
@@ -1926,6 +2039,25 @@ footer .copyright a:visited {
   .upcoming-events .sec-wrap {
     padding: 0 20%;
   }
+  .billboard .slider-billboard {
+    background-color: #686F6E;
+    padding: 40px;
+  }
+  .billboard .image-wrap .play-btn .outer {
+    width: 70px;
+    height: 70px;
+    border-width: 3px;
+  }
+  .billboard .image-wrap .play-btn .inner {
+    border-top-width: 14px;
+    border-bottom-width: 14px;
+    border-left-width: 28px;
+  }
+  .billboard .image-wrap .play-btn .inner-shadow {
+    border-top-width: 16px;
+    border-bottom-width: 16px;
+    border-left-width: 32px;
+  }
   .banner-lead {
     height: 700px;
   }
@@ -2115,6 +2247,21 @@ footer .copyright a:visited {
     font-size: 40px;
     display: table-cell;
     vertical-align: middle;
+  }
+  .billboard .image-wrap .play-btn .outer {
+    width: 90px;
+    height: 90px;
+    border-width: 4px;
+  }
+  .billboard .image-wrap .play-btn .inner {
+    border-top-width: 18px;
+    border-bottom-width: 18px;
+    border-left-width: 36px;
+  }
+  .billboard .image-wrap .play-btn .inner-shadow {
+    border-top-width: 20px;
+    border-bottom-width: 20px;
+    border-left-width: 40px;
   }
   .single-header h1.small-font {
     font-size: 3em;
@@ -2400,6 +2547,30 @@ footer .copyright a:visited {
   }
   .upcoming-events aside .btn.fill-red {
     color: #fff;
+  }
+  .billboard .slider-billboard {
+    padding: 50px;
+  }
+  .billboard .flickity-prev-next-button.previous {
+    left: 5px;
+  }
+  .billboard .flickity-prev-next-button.next {
+    right: 5px;
+  }
+  .billboard .image-wrap .play-btn .outer {
+    width: 120px;
+    height: 120px;
+    border-width: 4px;
+  }
+  .billboard .image-wrap .play-btn .inner {
+    border-top-width: 23px;
+    border-bottom-width: 23px;
+    border-left-width: 46px;
+  }
+  .billboard .image-wrap .play-btn .inner-shadow {
+    border-top-width: 25px;
+    border-bottom-width: 25px;
+    border-left-width: 50px;
   }
   .banner-lead .btn-wrap .btn {
     width: 200px;
