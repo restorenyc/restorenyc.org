@@ -140,7 +140,7 @@ var Billboard = (function($){
 								});
 						}
 					});
-					//self.startTimer(i);
+					self.startTimer(i);
 				}
 			});
 		}
