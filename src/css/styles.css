@@ -512,8 +512,7 @@ section {
 .vertical-align,
 .banner-lead .article-content,
 .infobox .icon-wrapper .fa,
-.infobox .icon-wrapper .r-icon,
-.sec-inline-icons .img-wrap img {
+.infobox .icon-wrapper .r-icon {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -1899,6 +1898,7 @@ footer .copyright a:visited {
 }
 .sec-inline-icons a:not(.btn) {
   display: block;
+  position: relative;
 }
 .sec-inline-icons h2 {
   margin-bottom: 30px;
@@ -1907,16 +1907,35 @@ footer .copyright a:visited {
   color: #374146;
   font-size: 1em;
 }
-.sec-inline-icons .img-wrap {
+.sec-inline-icons .border {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -35px;
   width: 70px;
   height: 70px;
   border: 4px solid #EE3526;
   border-radius: 50%;
+  z-index: 1;
   background-color: #fff;
+}
+.sec-inline-icons .img-wrap {
+  position: relative;
+  width: 70px;
+  height: 70px;
   margin: 0 auto;
+  z-index: 2;
 }
 .sec-inline-icons .img-wrap img {
+  position: relative;
+  top: 50%;
   width: 60%;
+  margin-top: -30%;
+  -webkit-transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -moz-transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -o-transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -ms-transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
 }
 .sec-inline-icons .item {
   width: 115px;
@@ -2343,10 +2362,15 @@ footer .copyright a:visited {
     font-size: 1.3em;
     margin: 0.5em;
   }
+  .sec-inline-icons .border {
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    border: 5px solid #EE3526;
+  }
   .sec-inline-icons .img-wrap {
     width: 100px;
     height: 100px;
-    border: 5px solid #EE3526;
   }
   .sec-inline-icons .item {
     width: 150px;
@@ -2742,6 +2766,14 @@ footer .copyright a:visited {
   .sec-inline-icons h3 {
     margin: 0.5em;
   }
+  .sec-inline-icons .border {
+    width: 120px;
+    height: 120px;
+    margin-left: -60px;
+    -webkit-animation: spinAround 9s linear infinite;
+    -moz-animation: spinAround 9s linear infinite;
+    animation: spinAround 9s linear infinite;
+  }
   .sec-inline-icons .img-wrap {
     width: 120px;
     height: 120px;
@@ -2749,6 +2781,40 @@ footer .copyright a:visited {
   .sec-inline-icons .item {
     width: 200px;
     margin: 10px 20px;
+  }
+  .sec-inline-icons a:hover .border {
+    border-style: dashed;
+  }
+  .sec-inline-icons a:hover .img-wrap img {
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -o-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+  @-webkit-keyframes spinAround {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-moz-keyframes spinAround {
+    from {
+      -moz-transform: rotate(0deg);
+    }
+    to {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  @keyframes spinAround {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 }
 @media screen and (min-width: 1280px) {

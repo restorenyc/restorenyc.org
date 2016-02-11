@@ -161,6 +161,14 @@
 	h3 {
 		margin:0.5em;
 	}
+	.border {
+		width:120px;
+		height:120px;
+		margin-left:-60px;
+		-webkit-animation:spinAround 9s linear infinite;
+		-moz-animation:spinAround 9s linear infinite;
+		animation:spinAround 9s linear infinite;
+	}
 	.img-wrap {
 		width:120px;
 		height:120px;
@@ -168,5 +176,37 @@
 	.item {
 		width:200px;
 		margin:10px 20px;
+	}
+}
+.sec-inline-icons a:hover {
+	.border {
+		border-style:dashed;
+	}
+	.img-wrap img {
+		.transform(scale(1.15));
+	}
+}
+@-webkit-keyframes spinAround {
+	from {
+		-webkit-transform: rotate(0deg)
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@-moz-keyframes spinAround {
+	from {
+		-moz-transform: rotate(0deg)
+	}
+	to {
+		-moz-transform: rotate(360deg);
+	}
+}
+@keyframes spinAround {
+	from {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(360deg);
 	}
 }
