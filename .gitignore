@@ -20,4 +20,4 @@ config.ru
 .Trashes
 ehthumbs.db
 Thumbs.db
-Archive*
+Archive*.zip
