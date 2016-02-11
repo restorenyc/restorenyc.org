@@ -12,7 +12,7 @@
 		{% endif %}
 		{% if subsection.meta.headerImageUrl %}
 			<div class="image-wrapper">
-				<img src="{{subsection.meta.headerImageUrl}}" />
+				<img src="{{subsection.meta.headerImageUrl}}" {% if subsection.meta.headerImageWidth %}style="width:{{subsection.meta.headerImageWidth}};"{% endif %}/>
 			</div>
 		{% endif %}
 		{% if link %}</a>{% endif %}
