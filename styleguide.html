@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--[if lte IE 8]>   <html class="ie8 no-js">           <![endif]-->
+<!--[if IE 9]>       <html class="ie9 no-js">           <![endif]-->
+<!--[if !IE]><!-->   <html lang="en-US" class="no-js">  <!--<![endif]-->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="Content-Language" content="en">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="none" />
+
+		<title>Restore NYC | Web Style Guide</title>
+
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="fluid-icon" href="{{site.permalink}}/fluidicon.png" title="RestoreNYC">
+		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+		<script src="/src/lib/modernizer.js"></script>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/{{site.meta.fontAwesomeVersion}}/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/src/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="/src/lib/prism.css">
+		<script src="//use.typekit.net/oln3ahs.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+		<style>
+			.site-title {
+				position:absolute;
+				top:5px;
+				right:20px;
+			}
+			.site-title h1 {
+				color:#ccc;
+				font-weight:500;
+				font-size:1.6em;
+			}
+			.col-1-2 {
+				text-align: left;
+				padding:0 10px;
+			}
+			pre {
+				font-size:16px;
+			}
+			.sec-wrap {
+				padding-left:0;
+				padding-right:0;
+			}
+			code {
+				word-break:break-word;
+			}
+		</style>
+	</head>
+	<body class="styleguide">
+		<header class="mh">
+			<div class="site-logo">
+				<a href="/">
+					<span class="r-icon restore-logo"></span>
+				</a>
+			</div>
+			<div class="site-title">
+				<h1>Styleguide</h1>
+			</div>
+		</header>
+
+		<pre>
+	<code class="language-css">
+		.example {
+			font-family: Georgia, Times, serif;
+			color: #555;
+			text-align: center;
+		}
+	</code>
+</pre>
+		<div id="main">
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<h1>Header 1</h1>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h1>Header1&lt;/h1></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h2>Header 2</h2>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h2>Header2&lt;/h2></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h3>Header 3</h3>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h3>Header3&lt;/h3></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h4>Header 4</h4>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h4>Header4&lt;/h4></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<h2 class="line red">Header With Red Line</h2>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h2 class="line red">Header With Red Line&lt;/h2></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h2 class="line purple">Header With Purple Line</h2>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h2 class="line purple">Header With Purple Line&lt;/h2></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<h2 class="thin">Header (font weight: thin)</h2>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h2 class="thin">Header Thin&lt;/h2></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h2 class="light">Header (font weight: light)</h2>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h2 class="light">Header Light&lt;/h2></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h2 class="reg">Header (font weight: reg)</h2>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h2 class="reg">Header Regular&lt;/h2></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<a href="http://google.com">This is a link to google</a>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;a href="http://google.com">This is a link to google&lt;/a></code></pre>
+						</div>
+						<div class="col-1-2">
+							<a href="http://restorenyc.org" target="_blank">This link opens a new tab/page</a>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;a href="http://google.com" target="_blank">This is a link opens a new tab&lt;/a></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<a href="https://www.ijm.org/">
+								<img src="https://www.ijm.org/sites/all/themes/ijm_2_5/images/ijm-logo.jpg" style="width:100px; vertical-align:middle;">
+							</a>
+							<span>This is a clickable image</span>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;a href="https://www.ijm.org/">
+	&lt;img src="https://www.ijm.org/sites/all/themes/ijm_2_5/images/ijm-logo.jpg">
+&lt;/a></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<p>Normal paragraph text can be <strong>highlighted</strong> in different ways</p>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;p>Normal text can be &lt;strong>bolded&lt;/strong> in different ways&lt;/p></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<p>Bold text can be <strong class="red">colored red</strong> too for emphasis</p>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;p>Bold text can be &lt;strong class="red">colored red&lt;/strong> too for emphasis&lt;/p></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<p>paragragh text can be <mark>highlighted</mark> as well.
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;p>paragragh text can be &lt;mark>highlighted&lt;/mark> as well.&lt;/p></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<p>Add a font treatment to the highlight to change the <mark class="f-w-semi f-c-black">font weight</mark> or <mark class="f-w-thin f-c-red">font color</mark></p>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;p>Add a font treatment to the highlight to change the &lt;mark class="f-w-semi f-c-black">font weight&lt;/mark> or &lt;mark class="f-w-bold f-c-red">font color&lt;/mark>&lt;/p></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<blockquote>This is a very important quote</blockquote>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;blockquote>This is a very important quote&lt;/blockquote></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<blockquote>This is a very important quote with a reference <span>-Author name</span></blockquote>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;blockquote>This is a very important quote with a reference &lt;span>-Author name&lt;/span>&lt;/blockquote></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<ul>
+								<li>List Item 1</li>
+								<li>List Item 2</li>
+								<li>List Item 3</li>
+								<li>List Item 4</li>
+							</ul>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;ul>
+	&lt;li>List Item 1&lt;/li>
+	&lt;li>List Item 2&lt;/li>
+	&lt;li>List Item 3&lt;/li>
+	&lt;li>List Item 4&lt;/li>
+&lt;/ul></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<ul class="bullet">
+								<li>List Item 1</li>
+								<li>List Item 2</li>
+								<li>List Item 3</li>
+								<li>List Item 4</li>
+							</ul>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;ul class="bullet">
+	&lt;li>List Item 1&lt;/li>
+	&lt;li>List Item 2&lt;/li>
+	&lt;li>List Item 3&lt;/li>
+	&lt;li>List Item 4&lt;/li>
+&lt;/ul></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<span>Standard buttons should include a "wrapper div"  to add the proper margin around the button.  Use this HTML when adding a button</span>
+							<div class="btn-wrap">
+								<a href="/give" class="btn">GIVE</a>
+							</div>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;div class="btn-wrap">
+	&lt;a href="/give" class="btn">Standard Button&lt;/a>
+&lt;div>
+</code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<a href="/give" class="btn">Standard Button</a>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;a href="/give" class="btn">Standard Button&lt;/a></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<a href="/give" class="btn fill-red">Red Fill Button</a>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;a href="/give" class="btn fill-red">Red Fill Button&lt;/a></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<a href="/give" class="btn fill-dark-grey">Dark Grey Fill Button</a>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;a href="/give" class="btn fill-dark-grey">Dark Grey Fill Button&lt;/a></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<a href="/give" class="btn fill-purple">Purple Fill Button</a>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;a href="/give" class="btn fill-purple">Purple Fill Button&lt;/a></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<a href="/give" class="btn fill-white">White Fill Button</a>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;a href="/give" class="btn fill-white">White Fill Button&lt;/a></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<span>Dividers add up 30px margin between blocks of content</span>
+							<div class="divider"></div>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;div class="divider">&lt;/div></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<span>Different divider styles</span>
+							<div class="divider icon">
+								<span class="r-icon restore-icon "></span>
+							</div>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;div class="divider">
+	&lt;span class="r-icon restore-icon">&lt;/span>
+&lt;/div></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<div class="divider line red"></div>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;div class="divider line red">&lt;/div></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<div class="divider line purple"></div>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;div class="divider line purple">&lt;/div></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<div class="divider arrow"></div>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;div class="divider arrow">&lt;/div></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section>
+				<div class="sec-wrap">
+					<div class="row">
+						<div class="col-1-2">
+							<h3 class="f-w-thin">Font Weight Thin</h3>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h3 class="f-w-thin">Font Weight Thin&lt;/h3></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h3 class="f-w-light">Font Weight Light</h3>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h3 class="f-w-light">Font Weight Light&lt;/h3></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h3 class="f-w-reg">Font Weight Reg</h3>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h3 class="f-w-reg">Font Weight Reg&lt;/h3></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h3 class="f-w-semi">Font Weight Semi</h3>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h3 class="f-w-semi">Font Weight Semi&lt;/h3></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h3 class="f-w-bold">Font Weight Bold</h3>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h3 class="f-w-bold">Font Weight Bold&lt;/h3></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h3 class="f-c-white" style="background-color:#555;">Font Color White</h3>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h3 class="f-c-white">Font Color White&lt;/h3></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h3 class="f-c-black">Font Color Black</h3>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h3 class="f-c-black">Font Color Black&lt;/h3></code></pre>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-1-2">
+							<h3 class="f-c-red">Font Color Red</h3>
+						</div>
+						<div class="col-1-2">
+							<pre><code class="language-markup">&lt;h3 class="f-c-red">Font Color Red&lt;/h3></code></pre>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		<footer class="flush-top">
+			<div class="footer-wrap" >
+				<div class="copyright">&copy; RESTORE NYC</div>
+			</div>
+		</footer>
+		<div id="lightbox">
+			<div class="wrap"></div>
+			<div class="content"></div>
+		</div>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script>
+		<script type="text/javascript" src="/src/js/scripts.js"></script>
+		<script type="text/javascript" src="/src/lib/prism.js"></script>
+	</body>
+</html>
