@@ -2785,13 +2785,6 @@ footer .copyright a:visited {
   .sec-inline-icons a:hover .border {
     border-style: dashed;
   }
-  .sec-inline-icons a:hover .img-wrap img {
-    -webkit-transform: scale(1.15);
-    -moz-transform: scale(1.15);
-    -o-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    transform: scale(1.15);
-  }
   @-webkit-keyframes spinAround {
     from {
       -webkit-transform: rotate(0deg);
