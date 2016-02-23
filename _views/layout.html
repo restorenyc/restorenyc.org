@@ -70,7 +70,7 @@
 		{% include 'views/partials/site-nav' %}
 
 		<div id="main">
-			{{ content }}
+			{{ content | strip_newlines}}
 		</div>
 		<footer class="flush-top">
 			<div class="footer-wrap">

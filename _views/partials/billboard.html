@@ -7,20 +7,23 @@
 				{% if slide.meta.backgroundImage %}
 					<div class="gallery-cell" {% if slide.meta.video %} data-video="{{slide.meta.video}}"{% endif %}>
 						<div class="cell-wrap full">
-							{% if slide.meta.link and slide.meta.video == "" %}<a class="link" href="{{slide.meta.link}}">{% endif %}
+						{% if slide.meta.video %}
+							<div class="image-wrap">
+								<img src="{{slide.meta.backgroundImage}}"/>
+								<div class="play-btn">
+									<div class="outer"></div>
+									<div class="inner-shadow"></div>
+									<div class="inner"></div>
+								</div>
+							</div>
+							<div class="video-wrap"></div>
+						{% else %}
+							{% if slide.meta.link %}<a class="link" href="{{slide.meta.link}}" {% if slide.meta.linkTarget %}target="{{slide.meta.linkTarget}}"{% endif %}>{% endif %}
 								<div class="image-wrap">
 									<img src="{{slide.meta.backgroundImage}}"/>
-									<div class="play-btn">
-										<div class="outer"></div>
-										<div class="inner-shadow"></div>
-										<div class="inner"></div>
-									</div>
 								</div>
-							{% if slide.meta.video %}
-								<div class="video-wrap">
-								</div>
-							{% endif %}
-							{% if slide.meta.link and slide.meta.video != "" %}</a>{% endif %}
+							{% if slide.meta.link %}</a>{% endif %}
+						{% endif %}
 						</div>
 					</div>
 				{% endif %}
