@@ -33,7 +33,7 @@ Redirect 301 /spread-the-word /get-involved/fundraise/
 Redirect 301 /the-workplace /get-involved/volunteer/
 Redirect 301 /church-and-faith /get-involved/pray/
 Redirect 301 /shop-and-support-restore /get-involved/shop/
-Redirect 301 /events http://restorenyc.org/
+#Redirect 301 /events http://restorenyc.org/
 Redirect 301 /founders-story /about-us/our-story/
 Redirect 301 /2015-nyc-marathon https://donate.restorenyc.org/search/fundraisers?type=Fundraiser&cid=6651&eid=11564&fb=0
 Redirect 301 /life-at-our-safehome /our-work/safehome-program/
