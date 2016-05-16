@@ -1,14 +1,20 @@
+{% if subsection.meta.link %}
+	{% assign link = {{subsection.meta.link}} %}
+{% endif %}
+
 <article class="infobox {{subsection.meta.sectionClass}} {% if gridSize %}col-{{subsection.meta.gridColSize | fallback:'1'}}-{{gridSize}}{% endif %}">
 	<header>
-		{% if subsection.meta.headerIconClass %}
-			<div class="icon-wrapper">
-				<i class="{{subsection.meta.headerIconClass}} vertical-align"></i>
-			</div>
-		{% endif %}
-		{% if subsection.meta.headerImage %}
-			<img src="{{subsection.meta.headerImage}}" alt="{{subsection.title}}" />
-		{% endif %}
-		{% include 'views/utils/title-post' %}
+		{% if link %}<a class="header-link" href="{{link}}" {% if slide.meta.linkTarget %}target="{{slide.meta.linkTarget}}"{% endif %}>{% endif %}
+			{% if subsection.meta.headerIconClass %}
+				<div class="icon-wrapper">
+					<i class="{{subsection.meta.headerIconClass}} vertical-align"></i>
+				</div>
+			{% endif %}
+			{% if subsection.meta.headerImage %}
+				<img src="{{subsection.meta.headerImage}}" alt="{{subsection.title}}" />
+			{% endif %}
+			{% include 'views/utils/title-post' %}
+		{% if slide.meta.link %}</a>{% endif %}
 	</header>
 	<div class="content">
 		{{subsection.body}}

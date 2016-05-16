@@ -694,6 +694,9 @@ textarea:-ms-input-placeholder {
 .columns-2 h3 {
   font-size: 1em;
 }
+.header-link {
+  display: block;
+}
 .mh {
   position: relative;
   padding: 10px 0 8px;
@@ -1678,7 +1681,6 @@ footer .copyright a:visited {
   padding: 0 30px;
 }
 .icon-over-text .header-link {
-  display: block;
   color: #374146;
 }
 .icon-over-text .icon-wrapper {
