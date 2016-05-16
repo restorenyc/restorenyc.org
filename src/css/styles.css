@@ -1654,6 +1654,7 @@ footer .copyright a:visited {
   position: relative;
   font-size: 36px;
   z-index: 2;
+  color: #374146;
 }
 .infobox .icon-wrapper .fa-balance-scale {
   margin-left: 4px;
@@ -1666,6 +1667,7 @@ footer .copyright a:visited {
   margin-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
+  color: #374146;
 }
 .infobox .content {
   padding: 0 30px 34px;
