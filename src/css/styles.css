@@ -694,7 +694,8 @@ textarea:-ms-input-placeholder {
 .columns-2 h3 {
   font-size: 1em;
 }
-.header-link {
+.header-link,
+.block-link {
   display: block;
 }
 .mh {

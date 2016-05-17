@@ -1,8 +1,14 @@
+{% if section.meta.link %}
+	{% assign link = {{section.meta.link}} %}
+{% endif %}
+
 <section class="sec-image full-width {{section.meta.sectionClass}}">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
 		<figure>
 			<div class="image-wrap">
-				{{section.body}}
+				{% if link %}<a class="block-link" href="{{link}}" {% if section.meta.linkTarget %}target="{{section.meta.linkTarget}}"{% endif %}>{% endif %}
+					{{section.body}}
+				{% if link %}</a>{% endif %}
 			</div>
 			{% if section.meta.imageCaption %}
 				<div class="caption-wrap">

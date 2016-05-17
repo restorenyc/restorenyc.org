@@ -4,7 +4,7 @@
 
 <article class="infobox {{subsection.meta.sectionClass}} {% if gridSize %}col-{{subsection.meta.gridColSize | fallback:'1'}}-{{gridSize}}{% endif %}">
 	<header>
-		{% if link %}<a class="header-link" href="{{link}}" {% if slide.meta.linkTarget %}target="{{slide.meta.linkTarget}}"{% endif %}>{% endif %}
+		{% if link %}<a class="header-link" href="{{link}}" {% if subsection.meta.linkTarget %}target="{{subsection.meta.linkTarget}}"{% endif %}>{% endif %}
 			{% if subsection.meta.headerIconClass %}
 				<div class="icon-wrapper">
 					<i class="{{subsection.meta.headerIconClass}} vertical-align"></i>
