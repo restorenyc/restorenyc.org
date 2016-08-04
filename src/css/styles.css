@@ -369,6 +369,9 @@ blockquote:after {
   left: -70px;
   line-height: 1;
 }
+blockquote.plain:after {
+  display: none;
+}
 blockquote span {
   display: block;
   font-style: normal;
