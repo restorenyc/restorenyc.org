@@ -10,8 +10,10 @@ var Utils = (function() {
 		$mh: $('.mh'),
 		$nav: $('#site-nav'),
 		$lb: $('#lightbox'),
+		gaLoaded: false,
 		init: function() {
 			Utils.removeBgVideo();
+			Utils.gaInit();
 			if(Utils.isLegacyIE()) {
 				$('input, textarea').placeholder();
 			}
@@ -49,11 +51,35 @@ var Utils = (function() {
 				Utils.$lb.removeClass('open');
 				wrap.off('.lbOpen');
 			}
-		}
+		},
+		// gaInit: function() {
+		// 	if(typeof window.ga !== 'undefined'){
+		// 		Utils.gaLoaded = true;
+		// 		$('body')
+		// 			.on('click', '[data-ga]', function(e){
+		// 				var attr = $(e.currentTarget).attr('data-ga');
+
+		// 				if(!attr) return;
+
+		// 				var fields = attr.split('--');
+
+		// 				if(fields[1] === 'click') {
+		// 					ga('send', {
+		// 						hitType: 'event',
+		// 						eventCategory: fields[0],
+		// 						eventAction: fields[1],
+		// 						eventLabel: fields[2],
+		// 						eventValue: fields[3]
+		// 					});
+		// 				}
+		// 			})
+		// 	}
+		// }
 	};
 })(jQuery);
 (function($) {
 	var nav = {
+		trackOpen: true,
 		init: function() {
 			this.bindEvents();
 		},
@@ -72,6 +98,15 @@ var Utils = (function() {
 					} else {
 						Utils.lightbox('on');
 						Utils.$body.addClass('nav-open');
+						// if(Utils.gaLoaded && nav.trackOpen) {
+						// 	ga('send', {
+						// 		hitType: 'event',
+						// 		eventCategory: 'nav',
+						// 		eventAction: 'click',
+						// 		eventLabel: 'open'
+						// 	});
+						// 	nav.trackOpen = false;
+						// }
 					}
 				})
 				.on('click', '#site-nav .close', function(e) {

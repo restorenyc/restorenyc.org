@@ -1,5 +1,6 @@
 (function($) {
 	var nav = {
+		trackOpen: true,
 		init: function() {
 			this.bindEvents();
 		},
@@ -18,6 +19,15 @@
 					} else {
 						Utils.lightbox('on');
 						Utils.$body.addClass('nav-open');
+						// if(Utils.gaLoaded && nav.trackOpen) {
+						// 	ga('send', {
+						// 		hitType: 'event',
+						// 		eventCategory: 'nav',
+						// 		eventAction: 'click',
+						// 		eventLabel: 'open'
+						// 	});
+						// 	nav.trackOpen = false;
+						// }
 					}
 				})
 				.on('click', '#site-nav .close', function(e) {

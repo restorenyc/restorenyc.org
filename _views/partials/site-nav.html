@@ -10,7 +10,7 @@
 			{% if single.title contains '__' %}
 				{% else %}
 					{% if single.url == '/' or single.meta.pageType == 'single' %}
-						<li class="item"><a href="{{single.url}}">{{single.title}}</a>
+						<li class="item"><a data-ga="nav--click--{{single.title}}" href="{{single.url}}">{{single.title}}</a>
 					{% else %}
 						<li class="item has-sub">{{single.title}} <i class="sub-icon fa fa-caret-right"></i>
 						{% for subpage in single.pages %}
@@ -19,7 +19,7 @@
 									{% if forloop.first %}
 										<ul class="submenu">
 									{% endif %}
-										<li class="subitem"><a href="{{subpage.url}}">{{subpage.title}}</a></li>
+										<li class="subitem"><a data-ga="nav--click--{{subpage.title}}" href="{{subpage.url}} ">{{subpage.title}}</a></li>
 									{% if forloop.last %}
 										</ul>
 									{% endif %}
@@ -33,8 +33,8 @@
 	<div class="footer">
 		<div class="social-media">
 			<ul>
-				<li><a href="https://www.facebook.com/sharer/sharer.php?u=http://restorenyc.org" target="_blank"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="https://twitter.com/share?text={{site.meta.twitterShare}}&url=http%3A%2F%2Frestorenyc.org" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				<li><a data-ga="nav--click--facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://restorenyc.org" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a data-ga="nav--click--twitter"href="https://twitter.com/share?text={{site.meta.twitterShare}}&url=http%3A%2F%2Frestorenyc.org" target="_blank"><i class="fa fa-twitter"></i></a></li>
 			</ul>
 		</div>
 	</div>
