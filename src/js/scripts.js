@@ -13,7 +13,7 @@ var Utils = (function() {
 		gaLoaded: false,
 		init: function() {
 			Utils.removeBgVideo();
-			Utils.gaInit();
+			//Utils.gaInit();
 			if(Utils.isLegacyIE()) {
 				$('input, textarea').placeholder();
 			}
