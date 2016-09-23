@@ -31,6 +31,7 @@
 					}
 				})
 				.on('click', '#site-nav .close', function(e) {
+					Utils.lightbox('off');
 					Utils.$body.removeClass('nav-open');
 				})
 				.on('click', '#site-nav .has-sub', function(e) {

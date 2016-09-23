@@ -3,6 +3,7 @@
 module.exports = function() {
 	var path = 'resources/scripts/';
 	return [
+		path + 'placeholder.js',
 		path + 'utils.js',
 		path + 'nav.js',
 		path + 'header.js',
