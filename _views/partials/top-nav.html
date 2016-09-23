@@ -1,0 +1,28 @@
+<ul id="top-menu">
+	{% for item in site.pages['site-nav'].pages %}
+		{% if item.meta.showOnly == 'mobile' %}
+		{% else %}
+			<li class="item {% if item.pages.size > 0 %}has-sub {% endif %}{{item.meta.sectionClass}}">
+				{% if item.pages.size > 0 %}
+					<span>{{item.title}}</span>
+					<ul class="submenu">
+						{% for subitem in item.pages %}
+							<li class="subitem">
+								<a href="{{subitem.meta.link}}" {% if subitem.meta.linkTarget %}target="{{subitem.meta.linkTarget}}"{% endif %}>{{subitem.title}}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% else %}
+					<a href="{{item.meta.link}}" {% if item.meta.linkTarget %}target="{{item.meta.linkTarget}}"{% endif %}>{{item.title}}</a>
+				{% endif %}
+			</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+<div class="mh-right">
+{% for asideItem in site.pages['desktop-nav-aside'].pages %}
+	{% if asideItem.meta.sectionTemplate == 'nav-btn' %}
+	<a href="{{asideItem.meta.link}}" class="nav-btn {{asideItem.meta.sectionClass}}" {% if asideItem.meta.linkTarget %}target="{{asideItem.meta.linkTarget}}"{% endif %}>{{asideItem.title}}</a>
+	{% endif%}
+{% endfor %}
+</div>

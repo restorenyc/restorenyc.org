@@ -1,41 +1,29 @@
 <nav id="site-nav">
 	<div class="nav-logo">
 		<a href="/">
-			<span class="r-icon restore-logo"></span>
+			<i class="r-icon restore-icon"></i>
+			<div>HOME</div>
 		</a>
 	</div>
-	<span class="close">X</span>
 	<ul class="site-menu">
-		{% for single in site.pages %}
-			{% if single.title contains '__' %}
-				{% else %}
-					{% if single.url == '/' or single.meta.pageType == 'single' %}
-						<li class="item"><a data-ga="nav--click--{{single.title}}" href="{{single.url}}">{{single.title}}</a>
+		{% for item in site.pages['site-nav'].pages %}
+			{% if item.meta.showOnly == 'desktop' %}
+			{% else %}
+				<li class="item {% if item.pages.size > 0 %}has-sub {% endif %}{% if item.meta.sectionTemplate == 'nav-btn' %}nav-btn {% endif %}{{item.meta.sectionClass}}">
+					{% if item.pages.size > 0 %}
+						<span>{{item.title}}</span>
+						<ul class="submenu">
+							{% for subitem in item.pages %}
+								<li class="subitem">
+									<a href="{{subitem.meta.link}}" {% if subitem.meta.linkTarget %}target="{{subitem.meta.linkTarget}}"{% endif %}>{{subitem.title}}</a>
+								</li>
+							{% endfor %}
+						</ul>
 					{% else %}
-						<li class="item has-sub">{{single.title}} <i class="sub-icon fa fa-caret-right"></i>
-						{% for subpage in single.pages %}
-							{% if subpage.title contains '__' %}
-								{% else %}
-									{% if forloop.first %}
-										<ul class="submenu">
-									{% endif %}
-										<li class="subitem"><a data-ga="nav--click--{{subpage.title}}" href="{{subpage.url}} ">{{subpage.title}}</a></li>
-									{% if forloop.last %}
-										</ul>
-									{% endif %}
-							{% endif %}
-						{% endfor %}
+						<a href="{{item.meta.link}}" {% if item.meta.linkTarget %}target="{{item.meta.linkTarget}}"{% endif %}>{{item.title}}</a>
 					{% endif %}
-					</li>
+				</li>
 			{% endif %}
 		{% endfor %}
 	</ul>
-	<div class="footer">
-		<div class="social-media">
-			<ul>
-				<li><a data-ga="nav--click--facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://restorenyc.org" target="_blank"><i class="fa fa-facebook"></i></a></li>
-				<li><a data-ga="nav--click--twitter"href="https://twitter.com/share?text={{site.meta.twitterShare}}&url=http%3A%2F%2Frestorenyc.org" target="_blank"><i class="fa fa-twitter"></i></a></li>
-			</ul>
-		</div>
-	</div>
 </nav>
