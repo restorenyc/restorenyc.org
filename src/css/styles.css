@@ -2968,6 +2968,9 @@ footer .copyright a:visited {
   }
 }
 @media screen and (min-width: 1280px) {
+  .banner-lead {
+    height: 620px;
+  }
   .banner-lead .bg-wrap video {
     width: 100%;
     height: auto;
