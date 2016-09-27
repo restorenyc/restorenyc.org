@@ -134,7 +134,6 @@ var Utils = (function() {
 
 					if(el.parent('.subitem').length < 1) {
 						if(el.hasClass('open')){
-							e.preventDefault();
 							nav.closeSubmenu();
 						} else {
 							nav.closeSubmenu();
