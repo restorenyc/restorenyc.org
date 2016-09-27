@@ -37,6 +37,7 @@ var Utils = (function() {
 		lightbox: function(state, html) {
 			var wrap = Utils.$lb.find('.wrap'),
 				container = Utils.$lb.find('.content');
+
 			if(state === "on") {
 				container.empty();
 				container.html(html);
@@ -49,7 +50,7 @@ var Utils = (function() {
 			} else {
 				container.empty();
 				Utils.$lb.removeClass('open');
-				wrap.off('.lbOpen');
+				wrap.off('click.lbOpen');
 			}
 		},
 		// gaInit: function() {

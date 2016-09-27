@@ -42,6 +42,7 @@ var Utils = (function() {
 		lightbox: function(state, html) {
 			var wrap = Utils.$lb.find('.wrap'),
 				container = Utils.$lb.find('.content');
+
 			if(state === "on") {
 				container.empty();
 				container.html(html);
@@ -54,7 +55,7 @@ var Utils = (function() {
 			} else {
 				container.empty();
 				Utils.$lb.removeClass('open');
-				wrap.off('.lbOpen');
+				wrap.off('click.lbOpen');
 			}
 		},
 		// gaInit: function() {
@@ -88,21 +89,31 @@ var Utils = (function() {
 		init: function() {
 			this.bindEvents();
 		},
+		closeNav: function() {
+			Utils.lightbox('off')
+			this.closeSubmenu();
+			Utils.$body.removeClass('nav-open');
+		},
 		closeSubmenu: function() {
 			Utils.$nav.find('.item.open')
 				.removeClass('open')
-				.find('.submenu').slideUp();
+				//.find('.submenu').slideUp();
 		},
 		bindEvents: function() {
 			var self = this;
 			Utils.$body
-				.on('click', '.menu-btn', function(e) {
+				.on('click', '.menu-btn, .menu-close', function(e) {
 					if(Utils.$body.hasClass('nav-open')) {
-						Utils.lightbox('off');
-						Utils.$body.removeClass('nav-open');
+						self.closeNav();
 					} else {
 						Utils.lightbox('on');
 						Utils.$body.addClass('nav-open');
+						$(window).on('resize.nav', window, function(e) {
+							if(this.outerWidth > 1024) {
+								self.closeNav();
+								$(window).off('resize.nav')
+							}
+						})
 						// if(Utils.gaLoaded && nav.trackOpen) {
 						// 	ga('send', {
 						// 		hitType: 'event',
@@ -119,19 +130,18 @@ var Utils = (function() {
 					Utils.$body.removeClass('nav-open');
 				})
 				.on('click', '#site-nav .has-sub', function(e) {
-					var el = $(e.target);
+					var el = $(e.target).closest('.item');
 
 					if(el.parent('.subitem').length < 1) {
 						if(el.hasClass('open')){
-							e.preventDefault();
 							nav.closeSubmenu();
 						} else {
 							nav.closeSubmenu();
 							el.addClass('open');
-							el.find('.submenu').slideDown();
+							//el.find('.submenu').slideDown();
 						}
 					}
-				});
+				})
 		}
 	};
 
