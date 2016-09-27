@@ -427,6 +427,7 @@ a.btn {
   border-width: 2px;
   font-size: 0.85em;
   padding: 0.6em 0.85em;
+  border-radius: 7px;
   cursor: pointer;
   -webkit-transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
   -moz-transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
