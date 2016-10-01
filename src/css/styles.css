@@ -2608,7 +2608,7 @@ footer .copyright a:visited {
   #top-menu .item > a:hover,
   #top-menu .item > a:visited,
   #top-menu .item > span {
-    padding: 0 25px;
+    padding: 0 35px;
     color: inherit;
     font-weight: 600;
     height: 100px;
@@ -2625,6 +2625,7 @@ footer .copyright a:visited {
   #top-menu .item > span {
     cursor: default;
   }
+  #top-menu .item:hover > a,
   #top-menu .item:hover > span {
     -webkit-transform: translateY(-20px);
     -moz-transform: translateY(-20px);
@@ -2663,6 +2664,9 @@ footer .copyright a:visited {
     background-color: inherit;
     color: inherit;
   }
+  #top-menu .subitem {
+    font-weight: 400;
+  }
   #top-menu .subitem:hover {
     font-weight: 600;
   }
@@ -2671,7 +2675,7 @@ footer .copyright a:visited {
   #top-menu .subitem > a:visited {
     color: inherit;
     display: block;
-    padding: 10px 0;
+    padding: 10px;
     cursor: pointer;
   }
   footer .footer-wrap {
