@@ -6,7 +6,7 @@
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
 		<figure>
 			<div class="image-wrap">
-				{% if link %}<a class="block-link" href="{{link}}" {% if section.meta.linkTarget %}target="{{section.meta.linkTarget}}"{% endif %}>{% endif %}
+				{% if link %}<a class="block-link" href="{{link}}"{% if section.meta.linkTarget %} target="{{section.meta.linkTarget}}"{% endif %}{% if section.meta.dataGa %} data-ga="{{section.meta.dataGa}}"{% endif %}>{% endif %}
 					{{section.body}}
 				{% if link %}</a>{% endif %}
 			</div>

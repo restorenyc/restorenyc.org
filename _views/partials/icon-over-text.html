@@ -4,7 +4,7 @@
 
 <article class="icon-over-text {{subsection.meta.sectionClass}} {% if gridSize %}col-{{subsection.meta.gridColSize | fallback:'1'}}-{{gridSize}}{% endif %}">
 	<header>
-		{% if link %}<a class="header-link" href="{{link}}" target="_blank">{% endif %}
+		{% if link %}<a class="header-link" href="{{link}}" target="_blank"{% if subsection.meta.dataGa %} data-ga="{{subsection.meta.dataGa}}"{% endif %}>{% endif %}
 		{% if subsection.meta.headerIconClass %}
 			<div class="icon-wrapper">
 				<i class="{{subsection.meta.headerIconClass}}"></i>
@@ -16,7 +16,7 @@
 			</div>
 		{% endif %}
 		{% if link %}</a>{% endif %}
-		{% if link %}<a class="header-link" href="{{link}}" target="_blank">{% endif %}
+		{% if link %}<a class="header-link" href="{{link}}" target="_blank"{% if subsection.meta.dataGa %} data-ga="{{subsection.meta.dataGa}}"{% endif %}>{% endif %}
 			{% include 'views/utils/title-post' %}
 		{% if link %}</a>{% endif %}
 	</header>
