@@ -4,16 +4,20 @@
 		{% else %}
 			<li class="item {% if item.pages.size > 0 %}has-sub {% endif %}{{item.meta.sectionClass}}">
 				{% if item.pages.size > 0 %}
-					<span>{{item.title}}</span>
+					{% if item.meta.link %}
+						<a href="{{item.meta.link}}"{% if item.meta.linkTarget %} target="{{item.meta.linkTarget}}"{% endif %} data-ga="nav--click--{{item.title}}">{{item.title}}</a>
+					{% else %}
+						<span>{{item.title}}</span>
+					{% endif %}
 					<ul class="submenu">
 						{% for subitem in item.pages %}
 							<li class="subitem">
-								<a href="{{subitem.meta.link}}" {% if subitem.meta.linkTarget %}target="{{subitem.meta.linkTarget}}"{% endif %}>{{subitem.title}}</a>
+								<a href="{{subitem.meta.link}}"{% if subitem.meta.linkTarget %} target="{{subitem.meta.linkTarget}}"{% endif %} data-ga="nav--click--{{subitem.title}}">{{subitem.title}}</a>
 							</li>
 						{% endfor %}
 					</ul>
 				{% else %}
-					<a href="{{item.meta.link}}" {% if item.meta.linkTarget %}target="{{item.meta.linkTarget}}"{% endif %}>{{item.title}}</a>
+					<a href="{{item.meta.link}}"{% if item.meta.linkTarget %} target="{{item.meta.linkTarget}}"{% endif %} data-ga="nav--click--{{item.title}}">{{item.title}}</a>
 				{% endif %}
 			</li>
 		{% endif %}
@@ -22,7 +26,7 @@
 <div class="mh-right">
 {% for asideItem in site.pages['desktop-nav-aside'].pages %}
 	{% if asideItem.meta.sectionTemplate == 'nav-btn' %}
-	<a href="{{asideItem.meta.link}}" class="nav-btn {{asideItem.meta.sectionClass}}" {% if asideItem.meta.linkTarget %}target="{{asideItem.meta.linkTarget}}"{% endif %}>{{asideItem.title}}</a>
+	<a href="{{asideItem.meta.link}}" class="nav-btn {{asideItem.meta.sectionClass}}"{% if asideItem.meta.linkTarget %} target="{{asideItem.meta.linkTarget}}"{% endif %} data-ga="nav--click--{{asideItem.title}}">{{asideItem.title}}</a>
 	{% endif%}
 {% endfor %}
 </div>

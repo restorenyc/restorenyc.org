@@ -15,12 +15,12 @@
 						<ul class="submenu">
 							{% for subitem in item.pages %}
 								<li class="subitem">
-									<a href="{{subitem.meta.link}}" {% if subitem.meta.linkTarget %}target="{{subitem.meta.linkTarget}}"{% endif %}>{{subitem.title}}</a>
+									<a href="{{subitem.meta.link}}"{% if subitem.meta.linkTarget %} target="{{subitem.meta.linkTarget}}"{% endif %} data-ga="nav--click--{{subitem.title}}">{{subitem.title}}</a>
 								</li>
 							{% endfor %}
 						</ul>
 					{% else %}
-						<a href="{{item.meta.link}}" {% if item.meta.linkTarget %}target="{{item.meta.linkTarget}}"{% endif %}>{{item.title}}</a>
+						<a href="{{item.meta.link}}"{% if item.meta.linkTarget %} target="{{item.meta.linkTarget}}"{% endif %} data-ga="nav--click--{{item.title}}">{{item.title}}</a>
 					{% endif %}
 				</li>
 			{% endif %}
