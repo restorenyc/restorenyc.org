@@ -15,6 +15,16 @@
 		{{section.body}}
 
 		<div class="form-wrap">
+		{% if section.meta.test %}
+			<form action="//restorenyc.us13.list-manage.com/subscribe/post?u=3ab98ba41ef52e8a3ed2e0745&amp;id=fec4a4262c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate stay-informed" target="_blank" novalidate>
+					<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_3ab98ba41ef52e8a3ed2e0745_fec4a4262c" tabindex="-1" value=""></div>
+					<input type="text" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email Address" required>
+					<div class="btn-wrap">
+						<button type="submit" class="btn custom" name="go">Subscribe</button>
+					</div>
+			</form>
+		{% else %}
 			<form name="ccoptin" class="stay-informed" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post">
 				<input type="hidden" name="llr" value="omfa8lkab">
 				<input type="hidden" name="m" value="1110646461838">
@@ -26,6 +36,8 @@
 					<button type="submit" class="btn custom" name="go">Subscribe</button>
 				</div>
 			</form>
+
+		{% endif %}
 		</div>
 
 	</div>
