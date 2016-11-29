@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
 	less = require('gulp-less'),
 	path = require('path'),
-	minifycss = require('gulp-minify-css'),
+	cleanCSS = require('gulp-clean-css'),
 	uglify = require('gulp-uglify'),
 	rename = require('gulp-rename'),
 	concat = require('gulp-concat'),
@@ -22,7 +22,7 @@ gulp.task('styles', function() {
 		.pipe(rename('styles.css'))
 		.pipe(gulp.dest('src/css'))
 		.pipe(rename({suffix: '.min'}))
-		.pipe(minifycss())
+		.pipe(cleanCSS())
 		.pipe(gulp.dest('src/css'));
 	return gulp.src('_views/layout.html', { base: './' })
 		.pipe(replace(/(\/src\/css\/styles.css)(.*)"/, '$1?ver=' + getDate() + '"'))
