@@ -7,6 +7,7 @@ module.exports = function() {
 		path + 'utils.js',
 		path + 'nav.js',
 		path + 'header.js',
-		path + 'billboard.js'
+		path + 'billboard.js',
+		path + 'video.js'
 	];
 };

@@ -1,0 +1,20 @@
+{% if subsection.meta.link %}
+	{% assign link = {{subsection.meta.link}} %}
+{% endif %}
+
+<section class="sec-image-subsection full-width {{subsection.meta.sectionClass}}">
+	<div class="sec-wrap {{subsection.meta.sectionWrapClass}}" style="{{subsection.meta.subsectionWrapStyles}}">
+		<figure>
+			<div class="image-wrap">
+				{% if link %}<a class="block-link" href="{{link}}"{% if subsection.meta.linkTarget %} target="{{subsection.meta.linkTarget}}"{% endif %}{% if subsection.meta.dataGa %} data-ga="{{subsection.meta.dataGa}}"{% endif %}>{% endif %}
+					{{subsection.body}}
+				{% if link %}</a>{% endif %}
+			</div>
+			{% if subsection.meta.imageCaption %}
+				<div class="caption-wrap">
+					<figcaption>{{subsection.meta.imageCaption}}</figcation>
+				</div>
+			{% endif %}
+		</figure>
+	</div>
+</section>

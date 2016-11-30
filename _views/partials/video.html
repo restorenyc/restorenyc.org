@@ -1,0 +1,26 @@
+{% if section.meta.link %}
+	{% assign link = {{section.meta.link}} %}
+{% endif %}
+
+<section class="sec-video {% if section.body != ''%}aside {% endif %}{{section.meta.sectionClass}}"{% if section.meta.video %} data-video="{{section.meta.video}}"{% endif %}>
+	<div class="sec-wrap clearfix {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+			{% if section.body != '' %}
+				<aside>
+					{{section.body}}
+				</aside>
+			{% endif %}
+			{% if section.meta.video %}
+				<div class="video">
+					<div class="image-wrap">
+						<img src="{{section.meta.backgroundImage}}"/>
+						<div class="play-btn">
+							<div class="outer"></div>
+							<div class="inner-shadow"></div>
+							<div class="inner"></div>
+						</div>
+					</div>
+					<div class="video-wrap"></div>
+				</div>
+			{% endif %}
+	</div>
+</section>

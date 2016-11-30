@@ -63,9 +63,13 @@
 		font-size:1.4em;
 	}
 }
-.sec-image {
+.sec-image,
+.sec-image-subsection {
 	.image-wrap {
 		margin-bottom:20px;
+	}
+	figcaption {
+		font-size:0.8em;
 	}
 	.caption-wrap {
 		position:relative;
@@ -84,6 +88,11 @@
 		figcaption {
 			text-align:right;
 		}
+	}
+}
+.sec-image-subsection {
+	.caption-wrap {
+		padding-right:0;
 	}
 }
 .sec-infobox {
@@ -116,5 +125,29 @@
 	}
 	.item {
 		width:150px;
+	}
+	.row {
+		display: block;
+	}
+}
+.sec-video {
+	.image-wrap {
+		.play-btn {
+			.outer {
+				width:90px;
+				height:90px;
+				border-width:4px;
+			}
+			.inner {
+				border-top-width:18px;
+				border-bottom-width:18px;
+				border-left-width:36px;
+			}
+			.inner-shadow {
+				border-top-width:20px;
+				border-bottom-width:20px;
+				border-left-width:40px;
+			}
+		}
 	}
 }

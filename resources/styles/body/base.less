@@ -58,8 +58,8 @@ h1,h2,h3,h4,h5,h6 {
 	}
 	&.line {
 		position:relative;
-		padding-bottom:50px;
-		line-height:1;
+		padding-bottom:40px;
+		line-height:1.15;
 		&:after {
 			content:"";
 			position:absolute;
@@ -68,6 +68,12 @@ h1,h2,h3,h4,h5,h6 {
 			bottom:20px;
 			width:44px;
 			height:2px;
+		}
+		&.align-left {
+			&:after {
+				margin-left:0;
+				left:0;
+			}
 		}
 	}
 	&.red:after {
@@ -201,6 +207,10 @@ a.btn {
 	&.fill-white {
 		background-color:#fff;
 		color:@restore-dark-grey;
+	}
+	&.outline-white {
+		border-color:#fff;
+		color:#fff;
 	}
 	&.icon {
 		padding-left:0.6em;
