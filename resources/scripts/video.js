@@ -58,13 +58,16 @@ var Video = (function($){
 			this.videoSections.each(function(i, video) {
 				var dataVideo = $(video).attr('data-video');
 				if(dataVideo && dataVideo !== "") {
-				console.log('bind')
-					var iframe = self.addVideo(dataVideo);
+
+					// var iframe = self.addVideo(dataVideo);
 					$(video)
-						.addClass('video')
+						//.addClass('video')
 						.on('click','.image-wrap', function() {
-							$(video).addClass('play');
-							$(video).find('.video-wrap').html(iframe);
+							//$(video).addClass('play');
+							//$(video).find('.video-wrap').html(iframe);
+							if(window.lity) {
+								var lightbox = lity(dataVideo);
+							}
 						});
 				}
 			});

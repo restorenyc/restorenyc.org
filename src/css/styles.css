@@ -500,6 +500,7 @@ a.btn.block {
   margin: 30px 0;
 }
 section {
+  position: relative;
   padding-top: 70px;
   padding-bottom: 50px;
   background-color: #fff;
@@ -619,6 +620,40 @@ section {
   border-right: 43px solid transparent;
   z-index: 1;
 }
+.divider.carrot {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.divider.carrot:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -40px;
+  width: 0;
+  height: 0;
+  border-top: 36px solid white;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  z-index: -1;
+}
+.divider.fill-dark-grey:before {
+  border-top-color: #374146;
+}
+.divider.fill-red {
+  border-top-color: #EE3526;
+}
+.divider.fill-red .restore-icon {
+  color: #fff;
+}
 .f-w-thin {
   font-weight: 100;
 }
@@ -718,6 +753,10 @@ textarea:-ms-input-placeholder {
 .header-link,
 .block-link {
   display: block;
+}
+.lity .lity-close {
+  top: 10px;
+  right: 10px;
 }
 .mh {
   position: relative;
@@ -1485,11 +1524,22 @@ footer .copyright a:visited {
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
+.home .principles {
+  background-image: url('/assets/2016-10-07_Watercolor-mark1.png'), url('/assets/2016-10-11_bridge-photo-small.jpg');
+  background-repeat: no-repeat, no-repeat;
+  background-position: center bottom, center bottom;
+  background-color: #f1f1ef;
+}
+.home .principles .who-we-serve {
+  color: #fff;
+  text-align: left;
+}
 .home .principle {
   padding: 20px 20px;
 }
 .home .principle .fa {
   font-size: 40px;
+  color: #EE3526;
 }
 .home .principle h3 {
   margin-top: 20px;
@@ -2438,8 +2488,20 @@ footer .copyright a:visited {
   .home a.btn {
     padding: .8em 3em;
   }
+  .home .principles {
+    background-image: url('/assets/2016-10-07_Watercolor-mark1.png'), url('/assets/2016-10-11_bridge-photo-large.jpg');
+    background-size: auto, 100%;
+  }
   .home .principles h3 {
     font-size: 28px;
+  }
+  .home .principles .who-we-serve p {
+    max-width: 60%;
+  }
+  .home .principles .principle {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .home .programs .panel {
     position: relative;
@@ -2869,6 +2931,22 @@ footer .copyright a:visited {
     border-left: 72px solid transparent;
     border-right: 72px solid transparent;
     z-index: 1;
+  }
+  .divider.carrot .restore-icon {
+    margin-left: -2px;
+  }
+  .divider.carrot:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -40px;
+    width: 0;
+    height: 0;
+    border-top: 36px solid white;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    z-index: -1;
   }
   .btn:hover {
     background-color: #EE3526;
@@ -3312,6 +3390,20 @@ footer .copyright a:visited {
     text-align: right;
     padding-right: 0;
     padding-left: 250px;
+  }
+  .sec-image-subsection {
+    width: 49.5%;
+    display: inline-block;
+  }
+  .sec-image-subsection:nth-of-type(1) {
+    padding-right: 2%;
+  }
+  .sec-image-subsection:nth-of-type(2) {
+    padding-left: 2%;
+  }
+  .sec-image-subsection figcaption {
+    width: auto;
+    padding-right: 0;
   }
   .sec-inline-icons h3 {
     margin: 0.5em;

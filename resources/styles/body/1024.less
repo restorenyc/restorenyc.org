@@ -67,6 +67,24 @@ blockquote {
 			z-index:1;
 		}
 	}
+	&.carrot {
+		.restore-icon {
+			margin-left: -2px;
+		}
+		&:before {
+			content:"";
+			position:absolute;
+			top:0px;
+			left:50%;
+			margin-left:-40px;
+			width:0;
+			height:0;
+			border-top:36px solid white;
+			border-left:40px solid transparent;
+			border-right:40px solid transparent;
+			z-index:-1;
+		}
+	}
 }
 .btn {
 	&:hover {
