@@ -1,0 +1,27 @@
+{% assign hero = site.pages['hero'] %}
+{% if hero.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+
+<div id="hero" class="vertical-align {{hero.meta.sectionClass}}{% if bgImage %} hero-bg-image{% endif %}" style="{{hero.meta.sectionStyles}}">
+	<div class="sec-wrap {{hero.meta.sectionWrapClass}} {% if bgImage %}vertical-align{% endif %}" style="{{hero.meta.sectionWrapStyles}}">
+		<header>
+			{{hero.body}}
+		</header>
+	</div>
+	<div class="bg-wrap">
+		{% if hero.meta.backgroundVideo %}
+			<video autoplay="true" loop="true" class="bg-video" preload="none" data-src="{{hero.meta.backgroundVideo}}">
+			</video>
+		{% endif %}
+		{% if hero.meta.backgroundImage %}
+			<figure class="portrait" data-img-url="{{hero.meta.backgroundImage}}" data-img-pos="{{hero.meta.backgroundPosition}}">
+			</figure>
+		{% endif %}
+	</div>
+	<div class="nav-down">
+		<img src="/assets/downwards-arrow-key.png"/>
+	</div>
+</div>

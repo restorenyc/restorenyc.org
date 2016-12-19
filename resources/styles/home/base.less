@@ -391,6 +391,17 @@
 
 
 .home {
+	.banner-lead{
+		display: none;
+	}
+	#main {
+		&.locked {
+			position: fixed;
+			top: 0;
+			z-index: 1;
+			width: 100%;
+		}
+	}
 	.btn,
 	a.btn {
 		font-size: 14px;
@@ -400,21 +411,14 @@
 	}
 
 	.principles {
-		background-image: url('/assets/2016-10-07_Watercolor-mark1.png'), url('/assets/2016-10-11_bridge-photo-small.jpg');
+		background-image: url('/assets/2016-12-01_Watercolor-mark1.png'), url('/assets/Principles_Bg-Image-small.jpg');
 		background-repeat: no-repeat, no-repeat;
-		background-position: center bottom, center bottom;
-
-		// background-image: url('/assets/2016-10-11_bridge-photo-small.jpg');
-		// background-repeat: no-repeat;
-		// background-position: center bottom;
-
-		background-color: #f1f1ef;
+		background-position: center 90%, center bottom;
+		background-color: #fff;
 
 		.who-we-serve {
 			color: #fff;
 			text-align: left;
-			// background-image: url('/assets/2016-10-07_Watercolor-mark1.png');
-			// background-repeat: no-repeat;
 		}
 	}
 
@@ -439,6 +443,13 @@
 		h3 {
 			font-size: 24px;
 			margin: 0 0 30px;
+		}
+		.our-approach-infographic {
+			background-image: url('/assets/Our-Approach_Our-Model-Infographic_600.png');
+			background-size: cover;
+			display: block;
+			height: 0;
+			padding-top: 100%;
 		}
 	}
 
