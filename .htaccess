@@ -5,7 +5,7 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 # NEW SITE REDIRECT MATCHES
 RedirectMatch 301 /about-us/our-team/staff/$ /about-us/our-team
-RedirectMatch 301 /our-work/$ /our-work/vision-and-mission
+RedirectMatch 301 /our-work/$ /our-work/approach
 RedirectMatch 301 /about-us/$ /about-us/our-story/
 RedirectMatch 301 /get-involved/$ /get-involved/volunteer
 
