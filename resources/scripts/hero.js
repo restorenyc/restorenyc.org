@@ -100,6 +100,7 @@
 
 			$(window).on('resize', function() {
 				this.fixPosition();
+				$('html, body').scrollTop(0)
 			}.bind(this));
 
 			$('.nav-down').click(function(){
