@@ -1,3 +1,4 @@
+@principles-bg: '/assets/Principles_Bg-Image-large.jpg';
 
 .sm-tweet {
 	height:640px;
@@ -72,36 +73,75 @@
 
 .home {
 	.programs {
-		.sec-wrap {
-			text-align: center;
+		// .sec-wrap {
+		// 	text-align: center;
 
-			> article:nth-child(2) {
-				margin: 0 42px;
-			}
-		}
+		// 	> article:nth-child(2) {
+		// 		margin: 0 42px;
+		// 	}
+		// }
 		.panel {
-			vertical-align: top;
-			display: inline-block;
+			//vertical-align: top;
+			//display: inline-block;
 			width: 29%;
 			margin-bottom: 0;
 
-			header {
-				width: 100%;
-				padding-bottom: 100%;
-				display: block;
-			}
-			.content {
-				width: auto;
-				position: static;
-				.transform(translateY(0));
-				text-align: left;
-			}
+			// header {
+			// 	width: 100%;
+			// 	padding-bottom: 100%;
+			// 	display: block;
+			// }
+			// .content {
+			// 	width: auto;
+			// 	position: static;
+			// 	.transform(translateY(0));
+			// 	text-align: left;
+			// }
 		}
 	}
 	.principles {
-		max-width: 1024px;
+		max-width: 1100px;
 		margin-left: auto;
 		margin-right: auto;
+		background-position: center top;
+background-image: url(@principles-bg);
+background-image: -webkit-gradient(linear, left top, right top,
+	color-stop(0%,rgba(255,255,255,1)),
+	color-stop(12%,rgba(255,255,255,0)),
+	color-stop(88%,rgba(255,255,255,0)),
+	color-stop(100%,rgba(255,255,255,1))
+), url(@principles-bg);
+background-image: -webkit-linear-gradient(left,
+	rgba(255,255,255,1) 0%,
+	rgba(255,255,255,0) 8%,
+	rgba(255,255,255,0) 92%,
+	rgba(255,255,255,1) 100%
+), url(@principles-bg);
+background-image: -moz-linear-gradient(left,
+	rgba(255,255,255,1) 0%,
+	rgba(255,255,255,0) 8%,
+	rgba(255,255,255,0) 90%,
+	rgba(255,255,255,1) 100%
+), url(@principles-bg);
+background-image: -ms-linear-gradient(left,
+	rgba(255,255,255,1) 0%,
+	rgba(255,255,255,0) 8%,
+	rgba(255,255,255,0) 92%,
+	rgba(255,255,255,1) 100%
+), url(@principles-bg);
+background-image: -o-linear-gradient(left,
+	rgba(255,255,255,1) 0%,
+	rgba(255,255,255,0) 8%,
+	rgba(255,255,255,0) 92%,
+	rgba(255,255,255,1) 100%
+),url(@principles-bg);
+background-image: linear-gradient(left,
+	rgba(255,255,255,1) 0%,
+	rgba(255,255,255,0) 8%,
+	rgba(255,255,255,0) 92%,
+	rgba(255,255,255,1) 100%
+),url(@principles-bg);
+
 	}
 	.sec-image-subsection {
 		padding-bottom: 20px;

@@ -70,9 +70,9 @@
 		padding: .8em 3em;
 	}
 	.principles {
-		background-image: url('/assets/2016-12-01_Watercolor-mark1.png'), url('/assets/Principles_Bg-Image-large.jpg');
-		background-position: 160% 90%, center bottom;
-		background-size: auto, 100%;
+		///assets/2016-12-01_Watercolor-mark1.png
+		background-image: url('/assets/Principles_Bg-Image-large.jpg');
+		background-size: 100%;
 
 		h3 {
 			font-size: 28px;
@@ -93,28 +93,57 @@
 	}
 	.our-approach {
 		.our-approach-infographic {
-			background-image: url('/assets/Our-Approach_Our-Model-Infographic.png');
+			background-image: url('/assets/2016-12-19_Our-Model.png');
 			padding-top: 64.93%;
 		}
 	}
-	.programs {
-		.panel {
-			position: relative;
-		}
-		header {
-			width: 45%;
-			padding-bottom: 45%;
-			display: inline-block;
-		}
-		.content {
-			width: 50%;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			.transform(translateY(-50%));
+	// .programs {
+	// 	.panel {
+	// 		position: relative;
+	// 	}
+	// 	header {
+	// 		width: 45%;
+	// 		padding-bottom: 45%;
+	// 		display: inline-block;
+	// 	}
+	// 	.content {
+	// 		width: 50%;
+	// 		position: absolute;
+	// 		left: 50%;
+	// 		top: 50%;
+	// 		.transform(translateY(-50%));
 
-			.btn {
-				min-width: auto;
+	// 		.btn {
+	// 			min-width: auto;
+	// 		}
+	// 	}
+	// }
+
+	.programs {
+		.sec-wrap {
+			text-align: center;
+
+			> article:nth-child(2) {
+				margin: 0 42px;
+			}
+		}
+		.panel {
+			vertical-align: top;
+			display: inline-block;
+			width: 49%;
+			max-width: 300px;
+			margin-bottom: 40px;
+
+			header {
+				width: 100%;
+				padding-bottom: 100%;
+				display: block;
+			}
+			.content {
+				width: auto;
+				position: static;
+				.transform(translateY(0));
+				text-align: left;
 			}
 		}
 	}
