@@ -70,6 +70,13 @@
 	-ms-transform: @prop;
 	transform: @prop;
 }
+.transform-origin (@prop) {
+	-webkit-transform-origin: @prop;
+	-moz-transform-origin: @prop;
+	-o-transform-origin: @prop;
+	-ms-transform-origin: @prop;
+	transform-origin: @prop;
+}
 .keyframes(@name; @arguments) {
 	@-moz-keyframes @name { @arguments(); }
 	@-webkit-keyframes @name { @arguments(); }
