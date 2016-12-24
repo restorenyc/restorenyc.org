@@ -6,6 +6,7 @@
 			if(this.el.length > 0) {
 				this.loadHeaderImage();
 				this.loadVideo();
+				this.bindClickEvents();
 				this.bindEvents();
 				this.fixPosition();
 			}
@@ -79,6 +80,7 @@
 		bindEvents: function() {
 			$(window).on('scroll', function() {
 				var vpH = this.getViewport().height;
+				var mainH = Utils.$main.height();
 				var top = window.scrollY;
 				var ratio = top/vpH;
 				var opacity = (ratio < 0.35) ? 0.35 : (ratio < 1) ? ratio : 1;
@@ -86,13 +88,15 @@
 				if(this.isMobileVP()) return;
 
 				if(top > (vpH - 5)) {
+					console.log('if')
 					Utils.$main.css('opacity', 1);
 					$('#hero').css('margin-bottom', 0);
 					Utils.$main.removeClass('locked');
 				}
 				else {
+					console.log('else')
 					Utils.$main.css('opacity', opacity)
-					$('#hero').css('margin-bottom', vpH)
+					$('#hero').css('margin-bottom', vpH + mainH)
 					Utils.$main.addClass('locked');
 				}
 			//	this.fixPosition();
@@ -103,6 +107,8 @@
 				$('html, body').scrollTop(0)
 			}.bind(this));
 
+		},
+		bindClickEvents: function() {
 			$('.nav-down').click(function(){
 				var nav = Utils.$mh;
 				var offset = this.isMobileVP() ? nav.height() : 0;
@@ -110,7 +116,6 @@
 				$('html, body').animate({ scrollTop: this.getViewport().height - offset}, 600);
 				return false;
 			}.bind(this));
-
 		}
 	};
 
