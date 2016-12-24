@@ -183,24 +183,25 @@
 		width:120px;
 		height:120px;
 		margin-left:-60px;
-		-webkit-animation:spinAround 9s linear infinite;
-		-moz-animation:spinAround 9s linear infinite;
-		animation:spinAround 9s linear infinite;
+		//.animation(spinAround 9s linear infinite);
 	}
 	.img-wrap {
 		width:120px;
 		height:120px;
 	}
 	.item {
+		overflow: visible;
 		width:185px;
 		margin:10px 20px;
 	}
 }
 .sec-inline-icons a:hover {
 	.border {
-		border-style:dashed;
+		.animation(pulse 0.3s linear infinite alternate);
+		//border-style:dashed;
 	}
 	.img-wrap img {
+		.animation(pulse 0.3s linear infinite alternate);
 		//.transform(scale(1.15));
 	}
 }
@@ -251,27 +252,20 @@
 	}
 }
 
-@-webkit-keyframes spinAround {
+.keyframes(spinAround, {
 	from {
-		-webkit-transform: rotate(0deg)
+		.transform(rotate(0deg));
 	}
 	to {
-		-webkit-transform: rotate(360deg);
+		.transform(rotate(360deg));
 	}
-}
-@-moz-keyframes spinAround {
-	from {
-		-moz-transform: rotate(0deg)
+});
+
+.keyframes(pulse, {
+	0 {
+		.transform(scale(1));
 	}
-	to {
-		-moz-transform: rotate(360deg);
+	100% {
+		.transform(scale(1.05));
 	}
-}
-@keyframes spinAround {
-	from {
-		transform: rotate(0deg)
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
+});
