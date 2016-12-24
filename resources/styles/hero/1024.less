@@ -1,7 +1,19 @@
+html {
+	overflow-y: scroll;
+}
+body {
+	overflow: visible;
+}
+
 #hero {
 	.vertical-align {
 		//transform: translateY(-70%);
 	}
+
+	header {
+		margin-top: 280px;
+	}
+
 	h2 {
 		font-size: 48px;
 		&.line {
@@ -17,7 +29,8 @@
 	video {
 		display: block;
 		position: relative;
-		height: 100%;
+		min-width: 100%;
+		min-height: 100%;
 		top: 0;
 		left: 50%;
 		opacity: 0;
