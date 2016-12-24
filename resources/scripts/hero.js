@@ -7,8 +7,8 @@
 				this.loadHeaderImage();
 				this.loadVideo();
 				this.bindClickEvents();
-				this.bindEvents();
-				this.fixPosition();
+				//this.bindEvents();
+				//this.fixPosition();
 			}
 		},
 		isMobileVP: function() {
