@@ -26,6 +26,7 @@
 		display:block;
 	}
 	.nav-btn {
+		position: relative;
 		font-size:0.6em;
 		font-weight:600;
 		border:1px solid @restore-red;
@@ -34,19 +35,40 @@
 		display:block;
 		border-radius:8px;
 		text-align:center;
-		.transition(all, 0.5s, @ease-time);
+		.transform(perspective(1px) translateZ(0));
+		.transition(color, 0.5s, @ease-time);
+
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			border-radius:7px;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: @restore-red;
+			.transform-origin(50% 100%);
+			.transform(scaleY(0));
+			.transition(transform, 0.3s, ease-out);
+		}
 
 		&:hover {
-			background-color:@restore-red;
+			//background-color:@restore-red;
 			color:#fff;
+			&:before {
+				.transform(scaleY(1));
+			}
 		}
 
 		&.fill-red {
 			background-color:@restore-red;
 			color:#fff;
 
+			&:before {
+				background-color: #fff;
+			}
 			&:hover {
-				background-color:#fff;
 				color:@restore-red;
 			}
 		}
