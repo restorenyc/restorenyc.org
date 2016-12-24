@@ -5,8 +5,8 @@
 	{% assign bgImage = false %}
 {% endif %}
 
-<div id="hero" class="vertical-align {{hero.meta.sectionClass}}{% if bgImage %} hero-bg-image{% endif %}" style="{{hero.meta.sectionStyles}}">
-	<div class="sec-wrap {{hero.meta.sectionWrapClass}} {% if bgImage %}vertical-align{% endif %}" style="{{hero.meta.sectionWrapStyles}}">
+<div id="hero" class="{{hero.meta.sectionClass}}{% if bgImage %} hero-bg-image{% endif %}" style="{{hero.meta.sectionStyles}}">
+	<div class="sec-wrap {{hero.meta.sectionWrapClass}}" style="{{hero.meta.sectionWrapStyles}}">
 		<header>
 			{{hero.body}}
 		</header>
