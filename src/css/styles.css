@@ -1569,15 +1569,18 @@ footer .copyright a:visited {
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
-.home .principles {
-  background-image: url('/assets/Principles_Bg-Image-small.jpg');
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-color: #fff;
-}
-.home .principles .who-we-serve {
+.home .who-we-serve {
   color: #fff;
   text-align: left;
+  background-image: url('/assets/1400xWho-we-serve.jpg');
+  background-position: center top;
+  background-size: cover;
+}
+.home .who-we-serve p {
+  max-width: 700px;
+}
+.home .principles {
+  background-color: #eee;
 }
 .home .principle {
   padding: 20px 0px;
@@ -1617,8 +1620,8 @@ footer .copyright a:visited {
   height: 0;
   padding-top: 100%;
 }
-.home .programs {
-  color: #fff;
+.home .programs h2 {
+  margin-bottom: 20px;
 }
 .home .programs .sec-wrap {
   padding: 0 30px;
@@ -1638,6 +1641,7 @@ footer .copyright a:visited {
 .home .panel header h3 {
   margin-top: 20px;
   font-size: 20px;
+  color: #fff;
 }
 .home .panel .header-wrap {
   position: absolute;
@@ -1654,12 +1658,18 @@ footer .copyright a:visited {
 .home .panel .content p {
   font-size: 14px;
 }
+.home .panel .content .btn-wrap {
+  text-align: center;
+}
 .home .panel .content .btn {
-  min-width: 100%;
+  min-width: 80%;
 }
 .home .get-involved {
   margin-top: -10px;
   height: 740px;
+}
+.home .get-involved h2 {
+  color: #EE3526;
 }
 #hero {
   width: 100%;
@@ -2735,10 +2745,6 @@ footer .copyright a:visited {
   .home a.btn {
     padding: .8em 3em;
   }
-  .home .principles {
-    background-image: url('/assets/Principles_Bg-Image-large.jpg');
-    background-size: 100%;
-  }
   .home .principles h3 {
     font-size: 28px;
   }
@@ -2757,8 +2763,9 @@ footer .copyright a:visited {
   .home .programs .sec-wrap {
     text-align: center;
   }
-  .home .programs .sec-wrap > article:nth-child(2) {
-    margin: 0 42px;
+  .home .programs .sec-wrap > article {
+    margin-left: 42px;
+    margin-right: 42px;
   }
   .home .programs .panel {
     vertical-align: top;
@@ -3019,6 +3026,10 @@ footer .copyright a:visited {
     padding-left: 45px;
     padding-right: 45px;
   }
+  .home .programs .sec-wrap > article {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
   .single-header h1.small-font {
     font-size: 3em;
   }
@@ -3257,9 +3268,6 @@ footer .copyright a:visited {
   #hero .bg-wrap {
     padding-top: 100px;
   }
-  .home #main {
-    padding-top: 100px;
-  }
   .mh {
     height: 100px;
     padding: 0;
@@ -3289,61 +3297,22 @@ footer .copyright a:visited {
     display: block;
     border-radius: 8px;
     text-align: center;
-    -webkit-transform: perspective(1px) translateZ(0);
-    -moz-transform: perspective(1px) translateZ(0);
-    -o-transform: perspective(1px) translateZ(0);
-    -ms-transform: perspective(1px) translateZ(0);
-    transform: perspective(1px) translateZ(0);
-    -webkit-transition: color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
-    -moz-transition: color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
-    -o-transition: color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
-    -ms-transition: color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
-    transition: color 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
-  }
-  .mh .nav-btn:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    border-radius: 7px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #EE3526;
-    -webkit-transform-origin: 50% 100%;
-    -moz-transform-origin: 50% 100%;
-    -o-transform-origin: 50% 100%;
-    -ms-transform-origin: 50% 100%;
-    transform-origin: 50% 100%;
-    -webkit-transform: scaleY(0);
-    -moz-transform: scaleY(0);
-    -o-transform: scaleY(0);
-    -ms-transform: scaleY(0);
-    transform: scaleY(0);
-    -webkit-transition: transform 0.3s ease-out 0s;
-    -moz-transition: transform 0.3s ease-out 0s;
-    -o-transition: transform 0.3s ease-out 0s;
-    -ms-transition: transform 0.3s ease-out 0s;
-    transition: transform 0.3s ease-out 0s;
+    -webkit-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    -moz-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    -o-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    -ms-transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+    transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
   }
   .mh .nav-btn:hover {
+    background-color: #EE3526;
     color: #fff;
-  }
-  .mh .nav-btn:hover:before {
-    -webkit-transform: scaleY(1);
-    -moz-transform: scaleY(1);
-    -o-transform: scaleY(1);
-    -ms-transform: scaleY(1);
-    transform: scaleY(1);
   }
   .mh .nav-btn.fill-red {
     background-color: #EE3526;
     color: #fff;
   }
-  .mh .nav-btn.fill-red:before {
-    background-color: #fff;
-  }
   .mh .nav-btn.fill-red:hover {
+    background-color: #fff;
     color: #EE3526;
   }
   #site-nav {
@@ -3523,28 +3492,46 @@ footer .copyright a:visited {
     border-bottom-width: 25px;
     border-left-width: 50px;
   }
+  .home .programs .sec-wrap > article {
+    margin: 0;
+  }
+  .home .programs .sec-wrap > article:nth-of-type(2) {
+    margin: 0 42px;
+  }
   .home .programs .panel {
     width: 29%;
     margin-bottom: 0;
   }
   .home .principles {
-    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
     background-position: center top;
-    background-image: url('/assets/Principles_Bg-Image-large.jpg');
-    background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, #ffffff), color-stop(12%, rgba(255, 255, 255, 0)), color-stop(88%, rgba(255, 255, 255, 0)), color-stop(100%, #ffffff)), url('/assets/Principles_Bg-Image-large.jpg');
-    background-image: -webkit-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0) 92%, #ffffff 100%), url('/assets/Principles_Bg-Image-large.jpg');
-    background-image: -moz-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0) 90%, #ffffff 100%), url('/assets/Principles_Bg-Image-large.jpg');
-    background-image: -ms-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0) 92%, #ffffff 100%), url('/assets/Principles_Bg-Image-large.jpg');
-    background-image: -o-linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0) 92%, #ffffff 100%), url('/assets/Principles_Bg-Image-large.jpg');
-    background-image: linear-gradient(left, #ffffff 0%, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0) 92%, #ffffff 100%), url('/assets/Principles_Bg-Image-large.jpg');
+    background-image: url('/assets/1400x788_Plant3.jpg');
+    background-size: cover;
+  }
+  .home .principles .principle {
+    max-width: 290px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .home .principles .principle:nth-of-type(2) {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .home .principles h3 {
+    margin-top: 35px;
+    font-size: 24px;
+    line-height: 30px;
+    min-height: 60px;
   }
   .home .sec-image-subsection {
     padding-bottom: 20px;
   }
   .home .sec-image-subsection .image-wrap img {
     width: 100%;
+  }
+  .home .get-involved.bg-image {
+    height: 780px;
   }
   html {
     overflow-y: scroll;

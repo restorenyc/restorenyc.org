@@ -407,17 +407,24 @@
 		padding-right: 1.5em;
 	}
 
+	.who-we-serve {
+		color: #fff;
+		text-align: left;
+		background-image: url('/assets/1400xWho-we-serve.jpg');
+		background-position: center top;
+		background-size: cover;
+
+		p {
+			max-width: 700px;
+		}
+	}
+
 	.principles {
 		// url('/assets/2016-12-01_Watercolor-mark1.png')
-		background-image: url('/assets/Principles_Bg-Image-small.jpg');
-		background-repeat: no-repeat;
-		background-position: center bottom;
-		background-color: #fff;
-
-		.who-we-serve {
-			color: #fff;
-			text-align: left;
-		}
+		//background-image: url('/assets/Principles_Bg-Image-small.jpg');
+		//background-repeat: no-repeat;
+		//background-position: center bottom;
+		background-color: #eee;
 	}
 
 	.principle {
@@ -464,7 +471,9 @@
 	}
 
 	.programs {
-		color: #fff;
+		h2 {
+			margin-bottom: 20px;
+		}
 		.sec-wrap {
 			padding: 0 30px;
 		}
@@ -485,6 +494,7 @@
 			h3 {
 				margin-top: 20px;
 				font-size: 20px;
+				color: #fff;
 			}
 		}
 		.header-wrap {
@@ -499,13 +509,20 @@
 			p {
 				font-size: 14px;
 			}
+			.btn-wrap {
+				text-align: center;
+			}
 			.btn {
-				min-width: 100%;
+				min-width: 80%;
 			}
 		}
 	}
 	.get-involved {
 		margin-top: -10px;
 		height: 740px;
+
+		h2 {
+			color: @restore-red;
+		}
 	}
 }

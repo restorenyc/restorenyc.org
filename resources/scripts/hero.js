@@ -111,7 +111,7 @@
 		bindClickEvents: function() {
 			$('.nav-down').click(function(){
 				var nav = Utils.$mh;
-				var offset = this.isMobileVP() ? nav.height() : 0;
+				var offset = nav.height();
 
 				$('html, body').animate({ scrollTop: this.getViewport().height - offset}, 600);
 				return false;
