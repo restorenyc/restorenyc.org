@@ -50,7 +50,8 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/{{site.meta.fontAwesomeVersion}}/css/font-awesome.min.css">
 		{% if flickity %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css">{% endif %}
 		{{ header_styles }}
-		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.css?ver=1475290378032">
+		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.css?ver=1483374136633">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.1/lity.min.css">
 		{{ header_scripts }}
 		<script src="//use.typekit.net/oln3ahs.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -80,55 +81,60 @@
 
 		{% include 'views/partials/site-nav' %}
 
+		{% if home? %}
+			{% include 'views/partials/hero' %}
+		{% endif %}
+
 		<div id="main">
 			{{ content | strip_newlines}}
+			<footer class="flush-top">
+				<div class="footer-wrap">
+					<div class="top clearfix">
+						<div class="header">
+							<h2>Stay Informed</h2>
+							<!-- BEGIN: Constant Contact Basic Opt-in Email List Form -->
+							<form name="ccoptin" class="stay-informed" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post">
+								<input type="hidden" name="llr" value="omfa8lkab"/ >
+								<input type="hidden" name="m" value="1110646461838" />
+								<input type="hidden" name="p" value="oi">
+								<input type="hidden" name="sit" value="9lip5aehb">
+								<input type="hidden" name="f" value="68e36c27-5051-4c9d-b5f3-471899ca929b">
+								<div class="input-wrap" />
+									<input type="text" name="ea" placeholder="Email" maxlength="50" />
+									<button type="submit" class="btn large fill-dark-grey" name="go">Submit</button>
+								</div>
+							</form>
+							<!-- END: Constant Contact Basic Opt-in Email List Form -->
+						</div>
+						<div class="links clearfix">
+							{{site.pages['footer'].pages['links'].body}}
+						</div>
+					</div>
+					<div class="bottom clearfix">
+						<div class="logo-wrap">
+							<span class="r-icon restore-logo"></span>
+							{% if home? %}
+								<h1>Rebuilding the Life Intended</h1>
+							{% else %}
+								<h2>Rebuilding the Life Intended</h2>
+							{% endif %}
+						</div>
+						<div class="social">
+							{{site.pages['footer'].pages['social-media'].body}}
+						</div>
+					</div>
+					<div class="copyright">{{site.pages['footer'].pages['copyright'].body}}</div>
+				</div>
+			</footer>
 		</div>
-		<footer class="flush-top">
-			<div class="footer-wrap">
-				<div class="top clearfix">
-					<div class="header">
-						<h2>Stay Informed</h2>
-						<!-- BEGIN: Constant Contact Basic Opt-in Email List Form -->
-						<form name="ccoptin" class="stay-informed" action="http://visitor.r20.constantcontact.com/d.jsp" target="_blank" method="post">
-							<input type="hidden" name="llr" value="omfa8lkab"/ >
-							<input type="hidden" name="m" value="1110646461838" />
-							<input type="hidden" name="p" value="oi">
-							<input type="hidden" name="sit" value="9lip5aehb">
-							<input type="hidden" name="f" value="68e36c27-5051-4c9d-b5f3-471899ca929b">
-							<div class="input-wrap" />
-								<input type="text" name="ea" placeholder="Email" maxlength="50" />
-								<button type="submit" class="btn large fill-dark-grey" name="go">Submit</button>
-							</div>
-						</form>
-						<!-- END: Constant Contact Basic Opt-in Email List Form -->
-					</div>
-					<div class="links clearfix">
-						{{site.pages['footer'].pages['links'].body}}
-					</div>
-				</div>
-				<div class="bottom clearfix">
-					<div class="logo-wrap">
-						<span class="r-icon restore-logo"></span>
-						{% if home? %}
-							<h1>Rebuilding the Life Intended</h1>
-						{% else %}
-							<h2>Rebuilding the Life Intended</h2>
-						{% endif %}
-					</div>
-					<div class="social">
-						{{site.pages['footer'].pages['social-media'].body}}
-					</div>
-				</div>
-				<div class="copyright">{{site.pages['footer'].pages['copyright'].body}}</div>
-			</div>
-		</footer>
 		<div id="lightbox">
 			<div class="wrap"></div>
 			<div class="content"></div>
 		</div>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		{% if flickity %}<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script>{% endif%}
-		<script type="text/javascript" src="/src/js/scripts.js?ver=1475288437230"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.1/lity.min.js"></script>
+		<script type="text/javascript" src="/src/js/scripts.js?ver=1483368980131"></script>
 		{{ footer_scripts }}
 		{% if footer_scripts_jquery %}
 			<script type="text/javascript">

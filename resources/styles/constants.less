@@ -43,6 +43,9 @@
 @restore-logo: "\e601";
 @restore-tree: "\e602";
 @restore-icon: "\e600";
+@restore-close: "\e117";
+@restore-zoom-in: "\e987";
+
 
 
 // Animation Timings
@@ -66,4 +69,21 @@
 	-o-transform: @prop;
 	-ms-transform: @prop;
 	transform: @prop;
+}
+.transform-origin (@prop) {
+	-webkit-transform-origin: @prop;
+	-moz-transform-origin: @prop;
+	-o-transform-origin: @prop;
+	-ms-transform-origin: @prop;
+	transform-origin: @prop;
+}
+.keyframes(@name; @arguments) {
+	@-moz-keyframes @name { @arguments(); }
+	@-webkit-keyframes @name { @arguments(); }
+	@keyframes @name { @arguments(); }
+}
+.animation(@arguments) {
+	-webkit-animation: @arguments;
+	-moz-animation: @arguments;
+	animation: @arguments;
 }

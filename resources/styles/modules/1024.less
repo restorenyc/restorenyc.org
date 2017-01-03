@@ -129,7 +129,8 @@
 		font-size:8em;
 	}
 }
-.sec-image {
+.sec-image,
+.sec-image-subsection {
 	.image-wrap {
 		text-align:center;
 		img {
@@ -157,6 +158,23 @@
 		}
 	}
 }
+.sec-image-subsection {
+	width: 49.5%;
+	display: inline-block;
+
+	&:nth-of-type(1) {
+		padding-right: 2%;
+	}
+
+	&:nth-of-type(2) {
+		padding-left: 2%;
+	}
+
+	figcaption {
+		width: auto;
+		padding-right: 0;
+	}
+}
 .sec-inline-icons {
 	h3 {
 		margin:0.5em;
@@ -165,48 +183,89 @@
 		width:120px;
 		height:120px;
 		margin-left:-60px;
-		-webkit-animation:spinAround 9s linear infinite;
-		-moz-animation:spinAround 9s linear infinite;
-		animation:spinAround 9s linear infinite;
+		//.animation(spinAround 9s linear infinite);
 	}
 	.img-wrap {
 		width:120px;
 		height:120px;
 	}
 	.item {
-		width:200px;
+		overflow: visible;
+		width:185px;
 		margin:10px 20px;
 	}
 }
 .sec-inline-icons a:hover {
 	.border {
-		border-style:dashed;
+		.animation(pulse 0.3s linear infinite alternate);
+		//border-style:dashed;
 	}
 	.img-wrap img {
+		.animation(pulse 0.3s linear infinite alternate);
 		//.transform(scale(1.15));
 	}
 }
-@-webkit-keyframes spinAround {
-	from {
-		-webkit-transform: rotate(0deg)
+.sec-video {
+	padding-bottom: 0;
+
+	.sec-wrap {
+		padding: 0;
 	}
-	to {
-		-webkit-transform: rotate(360deg);
+	aside {
+		width: 380px;
+		text-align: left;
+		position: absolute;
+		padding: 0 30px 0 45px;
+		top: 50%;
+		.transform(translateY(-50%));
+
+		>p {
+			font-size: 32px;
+		}
+
+		.btn {
+			padding: .8em 1em;
+		}
+	}
+	.video {
+		width: 644px;
+		float: right;
+	}
+	.image-wrap {
+		.play-btn {
+			.outer {
+				width:120px;
+				height:120px;
+				border-width:4px;
+			}
+			.inner {
+				border-top-width:23px;
+				border-bottom-width:23px;
+				border-left-width:46px;
+			}
+			.inner-shadow {
+				border-top-width:25px;
+				border-bottom-width:25px;
+				border-left-width:50px;
+			}
+		}
 	}
 }
-@-moz-keyframes spinAround {
+
+.keyframes(spinAround, {
 	from {
-		-moz-transform: rotate(0deg)
+		.transform(rotate(0deg));
 	}
 	to {
-		-moz-transform: rotate(360deg);
+		.transform(rotate(360deg));
 	}
-}
-@keyframes spinAround {
-	from {
-		transform: rotate(0deg)
+});
+
+.keyframes(pulse, {
+	0 {
+		.transform(scale(1));
 	}
-	to {
-		transform: rotate(360deg);
+	100% {
+		.transform(scale(1.05));
 	}
-}
+});

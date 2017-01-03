@@ -10,6 +10,7 @@ config.ru
 #*.exe
 #*.o
 #*.so
+/node_modules
 
 # OS generated files #
 ######################

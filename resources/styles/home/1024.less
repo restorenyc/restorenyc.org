@@ -1,5 +1,5 @@
-.home {
-}
+@principles-bg: '/assets/Principles_Bg-Image-large.jpg';
+
 .sm-tweet {
 	height:640px;
 	text-align:center;
@@ -68,5 +68,110 @@
 				border-left-width:50px;
 			}
 		}
+	}
+}
+
+.home {
+	.programs {
+		.sec-wrap {
+			> article {
+				margin: 0;
+			}
+			> article:nth-of-type(2) {
+				margin: 0 42px;
+			}
+		}
+		.panel {
+			//vertical-align: top;
+			//display: inline-block;
+			width: 29%;
+			margin-bottom: 0;
+
+			// header {
+			// 	width: 100%;
+			// 	padding-bottom: 100%;
+			// 	display: block;
+			// }
+			// .content {
+			// 	width: auto;
+			// 	position: static;
+			// 	.transform(translateY(0));
+			// 	text-align: left;
+			// }
+		}
+	}
+	.principles {
+		//max-width: 1100px;
+		margin-left: auto;
+		margin-right: auto;
+		background-position: center top;
+		background-image: url('/assets/1400x788_Plant3.jpg');
+		background-size: cover;
+// background-image: url(@principles-bg);
+// background-image: -webkit-gradient(linear, left top, right top,
+// 	color-stop(0%,rgba(255,255,255,1)),
+// 	color-stop(12%,rgba(255,255,255,0)),
+// 	color-stop(88%,rgba(255,255,255,0)),
+// 	color-stop(100%,rgba(255,255,255,1))
+// ), url(@principles-bg);
+// background-image: -webkit-linear-gradient(left,
+// 	rgba(255,255,255,1) 0%,
+// 	rgba(255,255,255,0) 8%,
+// 	rgba(255,255,255,0) 92%,
+// 	rgba(255,255,255,1) 100%
+// ), url(@principles-bg);
+// background-image: -moz-linear-gradient(left,
+// 	rgba(255,255,255,1) 0%,
+// 	rgba(255,255,255,0) 8%,
+// 	rgba(255,255,255,0) 90%,
+// 	rgba(255,255,255,1) 100%
+// ), url(@principles-bg);
+// background-image: -ms-linear-gradient(left,
+// 	rgba(255,255,255,1) 0%,
+// 	rgba(255,255,255,0) 8%,
+// 	rgba(255,255,255,0) 92%,
+// 	rgba(255,255,255,1) 100%
+// ), url(@principles-bg);
+// background-image: -o-linear-gradient(left,
+// 	rgba(255,255,255,1) 0%,
+// 	rgba(255,255,255,0) 8%,
+// 	rgba(255,255,255,0) 92%,
+// 	rgba(255,255,255,1) 100%
+// ),url(@principles-bg);
+// background-image: linear-gradient(left,
+// 	rgba(255,255,255,1) 0%,
+// 	rgba(255,255,255,0) 8%,
+// 	rgba(255,255,255,0) 92%,
+// 	rgba(255,255,255,1) 100%
+// ),url(@principles-bg);
+
+		.principle {
+			max-width: 290px;
+			display: inline-block;
+			vertical-align: top;
+
+			&:nth-of-type(2) {
+				margin-left: 25px;
+				margin-right: 25px;
+			}
+		}
+
+		h3 {
+			margin-top: 35px;
+			font-size: 24px;
+			line-height: 30px;
+			min-height: 60px;
+		}
+	}
+	.sec-image-subsection {
+		padding-bottom: 20px;
+
+		.image-wrap img {
+			width: 100%;
+		}
+	}
+
+	.get-involved.bg-image {
+		height: 780px;
 	}
 }

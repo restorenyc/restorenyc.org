@@ -1,7 +1,7 @@
 //individual sections
 .home {
 	.sec-wrap {
-		padding:0 25px;
+		padding:0 15px;
 	}
 	.full-width {
 		.sec-wrap {
@@ -381,6 +381,148 @@
 			// 	border-top-color:#fff;
 			// 	z-index:1;
 			// }
+		}
+	}
+}
+.theme-dark-grey {
+	background-color: @restore-dark-grey;
+	color:#fff;
+}
+
+
+.home {
+	#main {
+		&.locked {
+			position: fixed;
+			top: 0;
+			z-index: 1;
+			width: 100%;
+		}
+	}
+	.btn,
+	a.btn {
+		font-size: 14px;
+		line-height: 1.3;
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+	}
+
+	.who-we-serve {
+		color: #fff;
+		text-align: left;
+		background-image: url('/assets/1400xWho-we-serve.jpg');
+		background-position: center top;
+		background-size: cover;
+
+		p {
+			max-width: 700px;
+		}
+	}
+
+	.principles {
+		// url('/assets/2016-12-01_Watercolor-mark1.png')
+		//background-image: url('/assets/Principles_Bg-Image-small.jpg');
+		//background-repeat: no-repeat;
+		//background-position: center bottom;
+		background-color: #eee;
+	}
+
+	.principle {
+		padding: 20px 0px;
+		.fa {
+			font-size: 40px;
+			color: @restore-red;
+		}
+		h3 {
+			margin-top: 20px;
+			font-size: 24px;
+			font-style: italic;
+		}
+		p {
+			line-height: 1.4;
+			font-weight: 400;
+		}
+		.content {
+			margin-top: -35px;
+			background-color: rgba(255, 255, 255, 0.4);
+			padding: 20px;
+		}
+	}
+
+	.icon-border {
+		background-color: rgba(255, 255, 255, 0.4);
+		display: inline-block;
+		border-radius: 50%;
+		padding: 15px;
+	}
+
+	.our-approach {
+		h3 {
+			font-size: 24px;
+			margin: 0 0 30px;
+		}
+		.our-approach-infographic {
+			background-image: url('/assets/Our-Approach_Our-Model-Infographic_600.png');
+			background-size: cover;
+			display: block;
+			height: 0;
+			padding-top: 100%;
+		}
+	}
+
+	.programs {
+		h2 {
+			margin-bottom: 20px;
+		}
+		.sec-wrap {
+			padding: 0 30px;
+		}
+	}
+
+	.panel {
+		margin-bottom: 70px;
+		header {
+			width:100%;
+			padding-bottom: 100%;
+			position: relative;
+			background-size: cover;
+
+			img {
+				width: 38%;
+			}
+
+			h3 {
+				margin-top: 20px;
+				font-size: 20px;
+				color: #fff;
+			}
+		}
+		.header-wrap {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			top: 50%;
+			.transform(translateY(-50%));
+			z-index: 1;
+		}
+		.content {
+			p {
+				font-size: 14px;
+			}
+			.btn-wrap {
+				text-align: center;
+			}
+			.btn {
+				min-width: 80%;
+			}
+		}
+	}
+	.get-involved {
+		margin-top: -10px;
+		height: 740px;
+
+		h2 {
+			color: @restore-red;
 		}
 	}
 }

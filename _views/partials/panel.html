@@ -1,0 +1,24 @@
+{% if subsection.meta.link %}
+	{% assign link = {{subsection.meta.link}} %}
+{% endif %}
+
+<article class="panel {{subsection.meta.sectionClass}} {% if gridSize %}col-{{subsection.meta.gridColSize | fallback:'1'}}-{{gridSize}}{% endif %}">
+	<header {% if subsection.meta.headerBackgroundImage %}style="background-image:url({{subsection.meta.headerBackgroundImage}})"{% endif %}>
+		<div class="header-wrap">
+			{% if link %}<a class="header-link" href="{{link}}"{% if subsection.meta.linkTarget %} target="{{subsection.meta.linkTarget}}"{% endif %}{% if subsection.meta.dataGa %} data-ga="{{subsection.meta.dataGa}}"{% endif %}>{% endif %}
+				{% if subsection.meta.headerIconClass %}
+					<div class="icon-wrapper">
+						<i class="{{subsection.meta.headerIconClass}} vertical-align"></i>
+					</div>
+				{% endif %}
+				{% if subsection.meta.headerImageUrl %}
+					<img src="{{subsection.meta.headerImageUrl}}" alt="{{subsection.title}}" />
+				{% endif %}
+				{% include 'views/utils/title-post' %}
+			{% if link %}</a>{% endif %}
+			</div>
+	</header>
+	<div class="content">
+		{{subsection.body}}
+	</div>
+</article>

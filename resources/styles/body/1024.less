@@ -1,5 +1,6 @@
 body {
 	//font-size:24px;
+	//background-color: #000;
 }
 h1 {
 	//font-size:4.2em;
@@ -67,6 +68,24 @@ blockquote {
 			z-index:1;
 		}
 	}
+	&.carrot {
+		.restore-icon {
+			margin-left: -2px;
+		}
+		&:before {
+			content:"";
+			position:absolute;
+			top:0px;
+			left:50%;
+			margin-left:-40px;
+			width:0;
+			height:0;
+			border-top:36px solid white;
+			border-left:40px solid transparent;
+			border-right:40px solid transparent;
+			z-index:-1;
+		}
+	}
 }
 .btn {
 	&:hover {
@@ -88,6 +107,14 @@ blockquote {
 	&.fill-white:hover {
 		background-color:@restore-dark-grey;
 		color:#fff;
+	}
+	&.hover-fill-red:hover {
+		background-color: @restore-red;
+		color:#fff;
+	}
+	&.hover-fill-white:hover {
+		background-color:#fff;
+		color:@restore-red;
 	}
 }
 //Columns

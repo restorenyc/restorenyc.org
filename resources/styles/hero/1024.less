@@ -1,0 +1,40 @@
+html {
+	overflow-y: scroll;
+}
+body {
+	overflow: visible;
+}
+
+#hero {
+	.vertical-align {
+		//transform: translateY(-70%);
+	}
+
+	header {
+		margin-top: 280px;
+	}
+
+	h2 {
+		font-size: 48px;
+		&.line {
+			padding-bottom: 45px;
+			margin-bottom: 13px;
+		}
+	}
+	h3 {
+		width: auto;
+		font-size: 24px;
+	}
+
+	video {
+		display: block;
+		position: relative;
+		min-width: 100%;
+		min-height: 100%;
+		top: 0;
+		left: 50%;
+		opacity: 0;
+		.transition(opacity, 1s, @ease-time);
+		.transform(translateX(-50%));
+	}
+}
