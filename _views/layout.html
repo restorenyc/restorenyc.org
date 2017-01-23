@@ -50,7 +50,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/{{site.meta.fontAwesomeVersion}}/css/font-awesome.min.css">
 		{% if flickity %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css">{% endif %}
 		{{ header_styles }}
-		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.min.css?ver=1483813356289">
+		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.min.css?ver=1485127066037">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.1/lity.min.css">
 		{{ header_scripts }}
 		<script src="//use.typekit.net/oln3ahs.js"></script>
@@ -66,6 +66,7 @@
 		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 		})(window,document,'script','dataLayer','{{site.meta.googleTagManager}}');</script>
 		<!-- End Google Tag Manager -->
+		{% include 'views/partials/svg' %}
 		<header class="mh">
 			<div class="site-logo">
 				<a href="/">
@@ -112,7 +113,8 @@
 					</div>
 					<div class="bottom clearfix">
 						<div class="logo-wrap">
-							<span class="r-icon restore-logo"></span>
+							<svg class="icon-restore-logo"><use xlink:href="#s-restore-logo" /></svg>
+							<!-- <span class="r-icon restore-logo"></span> -->
 							{% if home? %}
 								<h1>Rebuilding the Life Intended</h1>
 							{% else %}
