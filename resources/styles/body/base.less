@@ -17,7 +17,7 @@ body {
 	color:@text-color;
 	line-height:1.5;
 	font-size:20px;
-	text-align: center;
+	// text-align: center;
 
 	background-color: #fff;
 }
@@ -65,8 +65,10 @@ h1,h2,h3,h4,h5,h6 {
 		&:after {
 			content:"";
 			position:absolute;
-			margin-left:-22px;
-			left:50%;
+			// margin-left:-22px;
+			// left:50%;
+			margin-left:0;
+			left:0;
 			bottom:20px;
 			width:44px;
 			height:2px;
@@ -75,6 +77,12 @@ h1,h2,h3,h4,h5,h6 {
 			&:after {
 				margin-left:0;
 				left:0;
+			}
+		}
+		&.align-center {
+			&:after {
+				margin-left:-22px;
+				left:50%;
 			}
 		}
 	}
