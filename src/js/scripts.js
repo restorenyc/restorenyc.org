@@ -22,6 +22,7 @@ var Utils = (function() {
 			if(Utils.isLegacyIE()) {
 				$('input, textarea').placeholder();
 			}
+			Utils.mailchimp();
 		},
 		isLegacyIE: function() {
 			return Utils.$html.hasClass('ie8') || Utils.$html.hasClass('ie9');
@@ -56,6 +57,16 @@ var Utils = (function() {
 				container.empty();
 				Utils.$lb.removeClass('open');
 				wrap.off('click.lbOpen');
+			}
+		},
+		mailchimp: function(){
+			var btn = $('.signup-form');
+			var link = 'http://restorenyc.us13.list-manage.com/subscribe?u=3ab98ba41ef52e8a3ed2e0745&id=5360afa171&MERGE0=';
+			if(btn.length) {
+				btn.click(function(e){
+					var email = $('.signup-form-input').val();
+					window.location.href = link + email;
+				})
 			}
 		},
 		// gaInit: function() {
