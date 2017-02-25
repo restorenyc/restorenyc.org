@@ -526,7 +526,7 @@ section {
   background-color: #fff;
 }
 .sec-wrap {
-  padding: 0 20px;
+  padding: 0 15px;
 }
 .full-width .sec-wrap {
   padding: 0;
@@ -571,6 +571,9 @@ section {
 }
 .align-center {
   text-align: center;
+}
+.divider-wrap {
+  position: relative;
 }
 .divider {
   margin: 15px 0;
@@ -1889,6 +1892,85 @@ footer .copyright a:visited {
 }
 .banner-lead .bg-wrap .loaded {
   opacity: 1;
+}
+.blog article {
+  color: #EE3526;
+  position: relative;
+}
+.blog article figure {
+  margin: 0;
+}
+.blog article .meta {
+  font-size: 12px;
+  font-style: italic;
+}
+.blog article header {
+  position: relative;
+  bottom: 50px;
+  margin: 0 10px;
+  padding: 7px 10px;
+  background-color: #fff;
+}
+.blog article h1 {
+  font-size: 18px;
+}
+.blog article .tags.meta {
+  border-top: 1px solid #686F6E;
+  padding-top: 5px;
+}
+.blog article .tags.meta a,
+.blog article .tags.meta a:visited,
+.blog article .tags.meta a:hover {
+  display: inline-block;
+  color: #686F6E;
+}
+.blog article .icon-tag {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+}
+.blog article .icon-tag use {
+  fill: #686F6E;
+}
+.blog article.promo {
+  color: #fff;
+}
+.blog article.promo header {
+  background-color: #EE3526;
+}
+.blog article.promo .tags {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+.blog article.promo .tags a,
+.blog article.promo .tags a:visited,
+.blog article.promo .tags a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+.blog article.promo .icon-tag use {
+  fill: rgba(255, 255, 255, 0.5);
+}
+.blog.blogroll {
+  background-color: #F2F2F2;
+}
+.blog.blogroll aside {
+  text-align: center;
+}
+.blog.blogroll aside .btn {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.blog.tags .list a {
+  display: inline-block;
+  padding: 3px 15px;
+  font-size: 16px;
+  font-style: italic;
+  background-color: #F2F2F2;
+  border: 1px solid #E1DDDD;
+}
+.blog.archive ul {
+  padding: 0;
+  list-style: none;
 }
 .single-header {
   text-align: center;
