@@ -1960,7 +1960,10 @@ footer .copyright a:visited {
   padding-left: 40px;
   padding-right: 40px;
 }
-.blog.tags .list a {
+.blog.meta .meta-tags {
+  padding: 0;
+}
+.blog.meta .meta-tags .list a {
   display: inline-block;
   padding: 3px 15px;
   font-size: 16px;
@@ -1968,9 +1971,74 @@ footer .copyright a:visited {
   background-color: #F2F2F2;
   border: 1px solid #E1DDDD;
 }
-.blog.archive ul {
+.blog.meta .meta-archive {
+  padding: 0;
+}
+.blog.meta .meta-archive ul {
   padding: 0;
   list-style: none;
+}
+.blog.giving {
+  text-align: center;
+  font-size: 16px;
+}
+.blog.giving .sec-wrap {
+  padding: 0;
+}
+.blog.giving section {
+  padding: 40px 15px 20px 15px;
+}
+.blog.giving h1 {
+  font-size: 24px;
+  color: #fff;
+}
+.blog.giving p {
+  font-style: italic;
+  color: #fff;
+}
+.blog.giving input {
+  display: block;
+  width: 100%;
+  background-color: #CDD0DD;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  padding: .6em .85em;
+  border-radius: 7px;
+  font-size: .85em;
+  outline: 0;
+  border: 0;
+  margin: 15px 0;
+}
+.blog.giving input::-webkit-input-placeholder {
+  color: #fff;
+}
+.blog.giving input::-moz-placeholder {
+  color: #fff;
+}
+.blog.giving input::-ms-input-placeholder {
+  color: #fff;
+}
+.blog.giving input::-moz-placeholder {
+  color: #fff;
+}
+.blog.giving .email {
+  background-color: #A1A6BB;
+  padding-bottom: 10px;
+}
+.blog.giving .email p {
+  margin-bottom: 30px;
+}
+.blog.giving .donate {
+  background-color: #686F6E;
+}
+.blog.giving .donate aside p {
+  color: #B1B1B1;
+}
+.blog-header {
+  font-size: 16px;
+  font-style: italic;
+  color: #fff;
 }
 .single-header {
   text-align: center;
@@ -2897,6 +2965,31 @@ footer .copyright a:visited {
     padding-right: .5em;
     margin: 10px;
   }
+  .blog article .meta {
+    font-size: 16px;
+  }
+  .blog article header {
+    bottom: 70px;
+    margin: 0 20px;
+    padding: 14px 20px;
+  }
+  .blog article h1 {
+    font-size: 24px;
+  }
+  .blog article .icon-tag {
+    width: 19px;
+    height: 19px;
+  }
+  .blog.meta .meta-tags,
+  .blog.meta .meta-archive {
+    display: inline-block;
+    width: 49.5%;
+    vertical-align: top;
+    padding: 0;
+  }
+  .blog-header {
+    font-size: 24px;
+  }
   .single-header h1.small-font {
     font-size: 2.5em;
   }
@@ -3680,6 +3773,51 @@ footer .copyright a:visited {
   }
   .banner-lead.no-video .bg-wrap figure {
     opacity: 1;
+  }
+  .blog article.promo {
+    width: 49.5%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .blog article.promo:nth-of-type(odd) {
+    padding-right: 10px;
+  }
+  .blog article.promo:nth-of-type(even) {
+    padding-left: 10px;
+  }
+  .blog.blogroll article {
+    display: table;
+    margin-bottom: 50px;
+  }
+  .blog.blogroll article figure {
+    width: 35%;
+    display: table-cell;
+  }
+  .blog.blogroll article header {
+    width: 65%;
+    vertical-align: middle;
+    display: table-cell;
+    bottom: auto;
+    background: transparent;
+  }
+  .blog.blogroll article .tags.meta {
+    border-top: none;
+  }
+  .blog.giving .sec-wrap {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .blog.giving section {
+    float: left;
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    min-height: 365px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .blog-header {
+    font-size: 24px;
   }
   .subheader + section {
     padding-top: 110px;

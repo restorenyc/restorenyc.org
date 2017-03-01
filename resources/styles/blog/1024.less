@@ -1,0 +1,57 @@
+.blog {
+	article.promo {
+		width: 49.5%;
+		display: inline-block;
+		vertical-align: top;
+
+		&:nth-of-type(odd) {
+			padding-right: 10px;
+		}
+
+		&:nth-of-type(even) {
+			padding-left: 10px;
+		}
+	}
+
+	&.blogroll {
+		article {
+			display: table;
+			margin-bottom: 50px;
+
+			figure {
+				width: 35%;
+				display: table-cell;
+			}
+			header {
+				width: 65%;
+				vertical-align: middle;
+				display: table-cell;
+				bottom: auto;
+				background: transparent;
+			}
+			.tags.meta {
+				border-top: none;
+			}
+		}
+	}
+
+	&.giving {
+		.sec-wrap {
+			padding-left: 100px;
+			padding-right: 100px;
+		}
+		section {
+			float:left;
+			width: 50%;
+			display: inline-block;
+			vertical-align: top;
+			min-height: 365px;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+	}
+}
+
+.blog-header {
+	font-size: 24px;
+}
