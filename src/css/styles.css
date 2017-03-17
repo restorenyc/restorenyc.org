@@ -1917,6 +1917,7 @@ footer .copyright a:visited {
 .blog article .tags.meta {
   border-top: 1px solid #686F6E;
   padding-top: 5px;
+  color: #686F6E;
 }
 .blog article .tags.meta a,
 .blog article .tags.meta a:visited,
@@ -1934,6 +1935,9 @@ footer .copyright a:visited {
   fill: #686F6E;
 }
 .blog article.promo {
+  color: #fff;
+}
+.blog article.promo a {
   color: #fff;
 }
 .blog article.promo header {
@@ -1966,6 +1970,7 @@ footer .copyright a:visited {
 .blog.meta .meta-tags .list a {
   display: inline-block;
   padding: 3px 15px;
+  margin-bottom: 6px;
   font-size: 16px;
   font-style: italic;
   background-color: #F2F2F2;
@@ -2039,6 +2044,142 @@ footer .copyright a:visited {
   font-size: 16px;
   font-style: italic;
   color: #fff;
+}
+.article-page #main {
+  background-color: #F2F2F2;
+}
+.article {
+  background-color: #F2F2F2;
+}
+.article-header {
+  margin-top: -24px;
+  padding: 0;
+  background-color: transparent;
+}
+.article-header header {
+  background-color: #fff;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.article-header h1 {
+  font-size: 28px;
+  border-bottom: 2px solid #EE3526;
+  padding-bottom: 6px;
+}
+.article-header .meta {
+  font-size: 12px;
+  font-style: italic;
+}
+.article-header .date {
+  margin-top: 8px;
+  margin-bottom: 2px;
+}
+.article-header .icon-tag {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+}
+.article-header .icon-tag use {
+  fill: #686F6E;
+}
+.article-header .tags {
+  color: #686F6E;
+}
+.article-header .tags a,
+.article-header .tags a:visited,
+.article-header .tags a:hover {
+  display: inline-block;
+  color: #686F6E;
+}
+.article-header + section {
+  padding-top: 30px;
+}
+.article-footer {
+  margin-top: 80px;
+  text-align: center;
+}
+.article-footer .next {
+  margin-top: 25px;
+  padding: 15px 10px 0;
+  border-top: 1px solid #EE3526;
+}
+.article-footer .next a {
+  display: block;
+  text-align: right;
+  color: #374146;
+}
+.article-footer .next span {
+  font-size: 14px;
+  font-weight: 600;
+}
+.article-footer .next span i {
+  color: #EE3526;
+}
+.article-footer .next h2 {
+  margin-top: 0;
+  font-size: 22px;
+}
+.article-social {
+  margin: 10px 0 5px;
+}
+.article-social a {
+  width: 30px;
+  height: 30px;
+  margin-right: 7px;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #EE3526;
+  text-align: center;
+  font-size: 18px;
+}
+.article-social a i {
+  vertical-align: middle;
+}
+.donate-module {
+  display: none;
+  max-width: 360px;
+  text-align: center;
+  background-color: #374146;
+  padding: 40px 15px 20px 15px;
+}
+.donate-module h2 {
+  font-size: 24px;
+  color: #fff;
+}
+.donate-module p {
+  font-style: italic;
+  color: #fff;
+}
+.donate-module input {
+  display: block;
+  width: 100%;
+  background-color: #CDD0DD;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  padding: .6em .85em;
+  border-radius: 7px;
+  font-size: .85em;
+  outline: 0;
+  border: 0;
+  margin: 15px 0;
+}
+.donate-module input::-webkit-input-placeholder {
+  color: #fff;
+}
+.donate-module input::-moz-placeholder {
+  color: #fff;
+}
+.donate-module input::-ms-input-placeholder {
+  color: #fff;
+}
+.donate-module input::-moz-placeholder {
+  color: #fff;
+}
+.donate-module .footnote p {
+  color: #B1B1B1;
 }
 .single-header {
   text-align: center;
@@ -2990,6 +3131,43 @@ footer .copyright a:visited {
   .blog-header {
     font-size: 24px;
   }
+  .article-header {
+    margin-top: -56px;
+  }
+  .article-header header {
+    background-color: #fff;
+    margin: 10px 20px;
+    padding: 15px 20px;
+  }
+  .article-header h1 {
+    padding-bottom: 8px;
+  }
+  .article-header .meta {
+    font-size: 16px;
+  }
+  .article-header .date {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  .article-header .icon-tag {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  .article-header .article-social {
+    margin: 17px 0 0;
+  }
+  .article-footer .next {
+    margin-top: 30px;
+    padding: 20px 40px 0;
+  }
+  .article-footer .next span {
+    font-size: 16px;
+  }
+  .article-footer .next h2 {
+    margin-top: 7px;
+    font-size: 28px;
+  }
   .single-header h1.small-font {
     font-size: 2.5em;
   }
@@ -3818,6 +3996,37 @@ footer .copyright a:visited {
   }
   .blog-header {
     font-size: 24px;
+  }
+  .donate-module {
+    float: right;
+    display: block;
+  }
+  .article-header {
+    max-width: 1024px;
+    margin: -106px auto 0;
+  }
+  .article-header header {
+    background-color: #fff;
+    margin: 10px 20px;
+    padding: 15px 20px;
+  }
+  .article-header h1 {
+    padding-bottom: 8px;
+  }
+  .article-header .meta {
+    font-size: 16px;
+  }
+  .article-header .date {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+  .article-header .icon-tag {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  .article-header .article-social {
+    margin: 17px 0 0;
   }
   .subheader + section {
     padding-top: 110px;

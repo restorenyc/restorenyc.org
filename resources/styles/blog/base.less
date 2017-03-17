@@ -23,6 +23,7 @@
 		.tags.meta {
 			border-top: 1px solid #686F6E;
 			padding-top: 5px;
+			color: #686F6E;
 
 			& a, a:visited, a:hover {
 				display: inline-block;
@@ -43,6 +44,10 @@
 
 	article.promo {
 		color: #fff;
+
+		a {
+			color: #fff;
+		}
 
 		header {
 			background-color: @restore-red;
@@ -80,6 +85,7 @@
 				a {
 					display: inline-block;
 					padding: 3px 15px;
+					margin-bottom: 6px;
 					font-size: 16px;
 					font-style: italic;
 					background-color: #F2F2F2;
@@ -165,4 +171,160 @@
 	color: #fff;
 }
 
+.article-page {
+	#main {
+		background-color: #F2F2F2
+	}
+}
+.article {
+	background-color: #F2F2F2;
+}
+.article-header {
+	margin-top: -24px;
+	padding: 0;
+	background-color: transparent;
 
+	header {
+		background-color: #fff;
+		margin: 10px;
+		padding: 10px;
+		box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+	}
+
+	h1 {
+		font-size: 28px;
+		border-bottom: 2px solid @restore-red;
+		padding-bottom: 6px;
+	}
+
+	.meta {
+		font-size: 12px;
+		font-style: italic;
+	}
+
+	.date {
+		margin-top: 8px;
+		margin-bottom: 2px;
+	}
+
+	.icon-tag {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		vertical-align: middle;
+
+		use {
+			fill: #686F6E;
+		}
+	}
+
+	.tags {
+		color: #686F6E;
+
+		& a, a:visited, a:hover {
+			display: inline-block;
+			color: #686F6E;
+		}
+	}
+
+	+ section {
+		padding-top: 30px;
+	}
+}
+
+
+.article-footer {
+	margin-top: 80px;
+	text-align: center;
+
+	.next {
+		margin-top: 25px;
+		padding: 15px 10px 0;
+		border-top: 1px solid @restore-red;
+
+		a {
+			display: block;
+			text-align: right;
+			color: #374146;
+		}
+		span {
+			font-size: 14px;
+			font-weight: 600;
+
+			i {
+				color: @restore-red
+			}
+		}
+		h2 {
+			margin-top: 0;
+			font-size: 22px;
+		}
+	}
+}
+
+.article-social {
+	margin: 10px 0 5px;
+
+	a {
+		width: 30px;
+		height: 30px;
+		margin-right: 7px;
+		display: inline-block;
+		border-radius: 50%;
+		border: 1px solid @restore-red;
+		text-align: center;
+		font-size: 18px;
+
+		i {
+			vertical-align: middle;
+		}
+	}
+}
+
+.donate-module {
+	display: none;
+	max-width: 360px;
+	text-align: center;
+	background-color: #374146;
+	padding: 40px 15px 20px 15px;
+	h2 {
+		font-size: 24px;
+		color: #fff;
+	}
+	p {
+		font-style: italic;
+		color: #fff;
+	}
+	input {
+		display: block;
+		width: 100%;
+		background-color: #CDD0DD;
+		color: #fff;
+		font-weight: 400;
+		text-align: center;
+		padding: .6em .85em;
+		border-radius: 7px;
+		font-size: .85em;
+		outline: 0;
+		border: 0;
+		margin: 15px 0;
+
+		&::-webkit-input-placeholder {
+			color: #fff;
+		}
+		&::-moz-placeholder {
+			color: #fff;
+		}
+		&::-ms-input-placeholder {
+			color: #fff;
+		}
+		&::-moz-placeholder {
+			color: #fff;
+		}
+	}
+	.footnote {
+		p {
+			color: #B1B1B1;
+		}
+	}
+}

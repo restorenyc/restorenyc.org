@@ -17,6 +17,12 @@
 				{% include 'views/main' %}
 			{% endif %}
 		{% endfor %}
+	{% elsif url == '/blog/a/2017' %}
+		{% include 'views/singles/archive2017' %}
+	{% elsif type == 'post' %}
+		{% include 'views/singles/article' %}
+	{% elsif type == 'tag' %}
+		{% include 'views/singles/tags' %}
 	{% else %}
 		{% include 'views/main' %}
 	{% endif %}

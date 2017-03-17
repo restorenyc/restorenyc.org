@@ -1,0 +1,59 @@
+{% if current.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+
+<section class="single-header {{current.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" >
+	<div class="sec-wrap vertical-align" style="{{current.meta.sectionWrapStyles}}">
+	</div>
+	{% if bgImage %}
+		<div class="frame">
+			<div class="portrait" data-img-url="{{current.meta.backgroundImage}}" data-img-pos="{{current.meta.backgroundPosition}}"></div>
+		</div>
+	{% endif %}
+</section>
+<section class="article-header">
+	<header>
+		{% include 'views/utils/title-header' %}
+		<div class="date meta">{{current.date | date: "%B %-d, %Y"}}</div>
+		{% if current.taxonomy['tags'] | size != "0" %}
+		<div class="tags meta">
+			<svg class="icon-tag">
+				<use xlink:href="#svg-tag"></use>
+			</svg>
+			{% for tag in current.taxonomy['tags'] %}
+				<a href="{{tag.url}}">{{tag.value}}</a>{% if forloop.last %}{% else %}<span>,&nbsp;</span>{% endif %}
+			{% endfor %}
+		</div>
+		{% endif %}
+		<div class="article-social">
+			<a href="https://www.facebook.com/sharer/sharer.php?u={{current.permalink}}" data-ga="article--click--facebook:{{current.title}}" target="_blank"><i class="fa fa-facebook"></i></a>
+			<a href="https://twitter.com/home?status={{current.meta.twitterShare}}" data-ga="article--click--twitter:{{current.title}}" target="_blank"><i class="fa fa-twitter"></i></a>
+		</div>
+	</header>
+</section>
+<section class="article">
+	<div class="sec-wrap">
+		{% include 'views/partials/donate' %}
+		{{body}}
+		<div class="article-footer">
+			<div class="article-social">
+				<a href="https://www.facebook.com/sharer/sharer.php?u={{current.permalink}}" data-ga="article--click--facebook:{{current.title}}" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="https://twitter.com/home?status={{current.meta.twitterShare}}" data-ga="article--click--twitter:{{current.title}}" target="_blank"><i class="fa fa-twitter"></i></a>
+			</div>
+			<div class="next">
+				{% if next %}
+					<a href="{{next.url}}">
+						<span>NEXT <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+						<h2>{{next.title}}</h2>
+					</a>
+				{% else %}
+					<a href="{{parent.url}}"><span>READ MORE <i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+						<h2>BACK TO UPDATES...</h2>
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,23 @@
+<article>
+	<figure>
+		<a href="{{article.url}}">
+			<img src="{{article.meta.metaImage | fallback:'/assets/temp-NewsBox1.png'}}"/>
+		</a>
+	</figure>
+	<header>
+		<a href="{{article.url}}">
+		<div class="meta">{{article.date | date: "%B %-d, %Y"}}</div>
+		<h1>{{article.title}}</h1>
+		</a>
+		{% if article.taxonomy['tags'] | size != "0" %}
+			<div class="tags meta">
+				<svg class="icon-tag">
+					<use xlink:href="#svg-tag"></use>
+				</svg>
+				{% for tag in article.taxonomy['tags'] %}
+					<a href="{{tag.url}}">{{tag.value}}</a>{% if forloop.last %}{% else %}<span>,&nbsp;</span>{% endif %}
+				{% endfor %}
+			</div>
+		{% endif %}
+	</header>
+</article>

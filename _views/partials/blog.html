@@ -1,46 +1,9 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" display="none">
-	<symbol id="svg-tag" viewBox="0 0 30 28">
-		<path d="M7 7c0-1.109-0.891-2-2-2s-2 0.891-2 2 0.891 2 2 2 2-0.891 2-2zM23.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578s-1.047-0.219-1.406-0.578l-11.172-11.188c-0.797-0.781-1.422-2.297-1.422-3.406v-6.5c0-1.094 0.906-2 2-2h6.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422zM29.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578-0.812 0-1.219-0.375-1.75-0.922l7.344-7.344c0.359-0.359 0.578-0.875 0.578-1.406s-0.219-1.047-0.578-1.422l-11.172-11.156c-0.797-0.797-2.312-1.422-3.422-1.422h3.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422z"></path>
-	</symbol>
-</svg>
-
 <section class="blog latest">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
 		<h2 class="line red">LATEST</h2>
-		<article class="promo">
-			<figure>
-				<img src="/assets/temp-NewsBox1.png"/>
-			</figure>
-			<header>
-				<div class="meta">January 24, 2017</div>
-				<h1>IDENTIFICATION SERIES Pt. 1: WHAT IS IDENTIFICATION?</h1>
-				<div class="tags meta">
-					<svg class="icon-tag">
-						<use xlink:href="#svg-tag"></use>
-					</svg>
-					<a href="">tag1</a>
-					<a href="">tag2</a>
-					<a href="">tag3</a>
-				</div>
-			</header>
-		</article>
-		<article class="promo">
-			<figure>
-				<img src="/assets/temp-NewsBox1.png"/>
-			</figure>
-			<header>
-				<div class="meta">January 24, 2017</div>
-				<h1>IDENTIFICATION SERIES Pt. 1: WHAT IS IDENTIFICATION?</h1>
-				<div class="tags meta">
-					<svg class="icon-tag">
-						<use xlink:href="#svg-tag"></use>
-					</svg>
-					<a href="">tag1</a>
-					<a href="">tag2</a>
-					<a href="">tag3</a>
-				</div>
-			</header>
-		</article>
+		{% for article in posts limit:2 %}
+			{% include 'views/partials/blogroll-article-promo' %}
+		{% endfor %}
 	</div>
 </section>
 
@@ -50,62 +13,37 @@
 
 <section class="blog blogroll">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
-		<article>
-			<figure>
-				<img src="/assets/temp-NewsBox1.png"/>
-			</figure>
-			<header>
-				<div class="meta">January 24, 2017</div>
-				<h1>IDENTIFICATION SERIES Pt. 1: WHAT IS IDENTIFICATION?</h1>
-				<div class="tags meta">
-					<svg class="icon-tag">
-						<use xlink:href="#svg-tag"></use>
-					</svg>
-					<a href="">tag1</a>
-					<a href="">tag2</a>
-					<a href="">tag3</a>
-				</div>
-			</header>
-		</article>
-		<article>
-			<figure>
-				<img src="/assets/temp-NewsBox1.png"/>
-			</figure>
-			<header>
-				<div class="meta">January 24, 2017</div>
-				<h1>IDENTIFICATION SERIES Pt. 1: WHAT IS IDENTIFICATION?</h1>
-				<div class="tags meta">
-					<svg class="icon-tag">
-						<use xlink:href="#svg-tag"></use>
-					</svg>
-					<a href="">tag1</a>
-					<a href="">tag2</a>
-					<a href="">tag3</a>
-				</div>
-			</header>
-		</article>
-		<aside>
+		{% for article in posts offset:2 %}
+			{% include 'views/partials/blogroll-article' %}
+		{% endfor %}
+
+
+		<!--aside>
 			<div class="btn-wrap">
 				<a class="btn text-red" href="">LOAD MORE UPDATES</a>
 			</div>
-		</aside>
+		</aside-->
 	</div>
 </section>
+
+{% assign posts_by_year = posts | group_by: "year" %}
 <section class="blog meta">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
 		<section class="meta-tags">
 			<h2 class="line red">TAGS</h2>
 			<div class="list">
-				<a href="">#tag1</a>
-				<a href="">#tag2</a>
-				<a href="">#tag3</a>
+				{% for tag in taxonomy['tags'] %}
+					<a href="{{tag.url}}">{{tag.value}}</a>
+				{% endfor %}
 			</div>
 		</section>
 		<section class="meta-archive">
 			<h2 class="line red">ARCHIVE</h2>
 			<ul>
-				<li><a href=""><strong>2017</strong> (7)</a></li>
-				<li><a href=""><strong>2016</strong> (2)</a></li>
+			{% for year in posts_by_year %}
+				{% assign posts_within_year = year.items %}
+				<li><a href="/blog/a/{{year.name}}"><strong>{{year.name}}</strong> ({{posts_within_year.size}})</a></li>
+			{% endfor %}
 			</ul>
 		</section>
 	</div>
@@ -134,24 +72,5 @@
 			</aside>
 
 		</section>
-	</div>
-</section>
-
-
-
-<section class="blog {{section.meta.sectionClass}}">
-	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
-
-		{% for subsection in section.pages %}
-			{% if subsection.title contains '__'%}
-
-				{% if subsection.title contains '__?' %}
-					{% assign title = '' %}
-				{% else %}
-					{% assign title = subsection.title | remove_first:'__' %}
-				{% endif %}
-				{% include 'views/secondary' %}
-			{% endif %}
-		{% endfor %}
 	</div>
 </section>

@@ -1,0 +1,19 @@
+{% if section.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+
+<section class="single-header {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" >
+	<div class="sec-wrap vertical-align" style="{{section.meta.sectionWrapStyles}}">
+		{% include 'views/utils/title-header' %}
+
+		{{section.body}}
+	</div>
+	{% if bgImage %}
+		<div class="frame">
+			<div class="portrait" data-img-url="{{section.meta.backgroundImage}}" data-img-pos="{{section.meta.backgroundPosition}}"></div>
+		</div>
+	{% endif %}
+</section>
+{% include 'views/partials/blogroll' %}
