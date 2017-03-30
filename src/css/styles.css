@@ -699,6 +699,7 @@ section {
   color: #EE3526 !important;
 }
 input[type=text],
+input[type=number],
 textarea {
   display: block;
   width: 100%;
@@ -713,18 +714,21 @@ textarea {
   -webkit-appearance: none;
 }
 input[type=text]::-webkit-input-placeholder,
+input[type=number]::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #fff;
   letter-spacing: 1px;
   font-weight: 200;
 }
 input[type=text]::-moz-placeholder,
+input[type=number]::-moz-placeholder,
 textarea::-moz-placeholder {
   color: #fff;
   font-weight: 200;
   letter-spacing: 1px;
 }
 input[type=text]:-ms-input-placeholder,
+input[type=number]:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   color: #fff;
   font-weight: 200;
@@ -1654,6 +1658,9 @@ footer .copyright a:visited {
   text-align: left;
   position: relative;
   z-index: 2;
+}
+#hero.has-campaign {
+  min-height: 915px;
 }
 #hero .sec-wrap {
   position: relative;
@@ -2600,6 +2607,91 @@ footer .copyright a:visited {
 .panel .content .btn {
   min-width: 80%;
 }
+.campaign-support {
+  background-color: rgba(55, 65, 70, 0.4);
+  border-radius: 4px;
+  padding: 10px 0 30px;
+}
+.campaign-support .ribbon {
+  display: inline-block;
+  position: relative;
+  background-color: #EE3526;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 8px 20px 5px 24px;
+}
+.campaign-support .ribbon:after {
+  content: '';
+  position: absolute;
+  display: block;
+  top: 0;
+  right: -20px;
+  border: 20px solid #EE3526;
+  border-right-color: transparent;
+}
+.campaign-support .inner {
+  padding: 0 15px;
+}
+.campaign-support .content {
+  padding: 10px 0;
+}
+.campaign-support .content p {
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.campaign-support .content .headline {
+  font-weight: 600;
+  text-align: center;
+}
+.support-module {
+  padding: 15px 15px;
+  background-color: #A1A6BB;
+  border-radius: 4px;
+}
+.support-module .headline {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.support-module .form-input {
+  position: relative;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 8px 35px 9px;
+  margin: 14px 0;
+}
+.support-module .form-input span {
+  position: absolute;
+  font-size: 26px;
+  font-weight: 700;
+  color: #374146;
+}
+.support-module .form-input .prefix {
+  left: 11px;
+  top: 7px;
+}
+.support-module .form-input .suffix {
+  display: none;
+}
+.support-module .form-input input {
+  background: #fff;
+  font-size: 30px;
+  color: #EE3526;
+  margin: 0;
+  padding: 0;
+  -moz-appearance: textfield;
+}
+.support-module .form-input input::-webkit-inner-spin-button,
+.support-module .form-input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.support-module .controls .btn {
+  font-size: 18px;
+  border-radius: 4px;
+}
 @media screen and (min-width: 600px) {
   .home .get-involved {
     height: 600px;
@@ -2781,6 +2873,9 @@ footer .copyright a:visited {
   .home .get-involved h2 {
     text-align: center;
   }
+  #hero.has-campaign {
+    min-height: 960px;
+  }
   #hero header {
     margin-top: 150px;
   }
@@ -2927,6 +3022,49 @@ footer .copyright a:visited {
     -ms-transform: translateY(0);
     transform: translateY(0);
     text-align: left;
+  }
+  .campaign-support {
+    padding: 20px 0 30px;
+  }
+  .campaign-support .inner {
+    padding: 0 20px;
+  }
+  .campaign-support .content {
+    padding: 10px 0 0;
+  }
+  .campaign-support .content p {
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 0px;
+  }
+  .campaign-support .content .headline {
+    text-align: left;
+    font-size: 32px;
+  }
+  .support-module {
+    padding: 15px 20px;
+  }
+  .support-module .headline {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .support-module .form-input {
+    padding: 8px 85px 9px 35px;
+    margin: 14px 0 21px;
+  }
+  .support-module .form-input .suffix {
+    display: block;
+    right: 15px;
+    top: 7px;
+  }
+  .support-module .controls .btn {
+    padding-left: 0;
+    padding-right: 0;
+    width: 47%;
+    float: left;
+  }
+  .support-module .controls .last {
+    float: right;
   }
 }
 @media screen and (min-width: 768px) {
@@ -3539,6 +3677,12 @@ footer .copyright a:visited {
   body {
     overflow: visible;
   }
+  #hero.has-campaign {
+    min-height: 800px;
+  }
+  #hero.has-campaign header {
+    margin-top: 140px;
+  }
   #hero header {
     margin-top: 280px;
   }
@@ -3931,6 +4075,15 @@ footer .copyright a:visited {
   }
   .panel:nth-of-type(2n+2) {
     margin: 0 42px;
+  }
+  .campaign-support .content {
+    width: 500px;
+    float: left;
+  }
+  .support-module {
+    width: 360px;
+    float: right;
+    margin-top: -30px;
   }
 }
 @media screen and (min-width: 1280px) {

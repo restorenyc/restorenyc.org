@@ -5,11 +5,38 @@
 	{% assign bgImage = false %}
 {% endif %}
 
-<div id="hero" class="{{hero.meta.sectionClass}}{% if bgImage %} hero-bg-image{% endif %}" style="{{hero.meta.sectionStyles}}">
+{% assign heroCampaign = hero.meta.campaign %}
+
+<div id="hero" class="{{hero.meta.sectionClass}}{% if bgImage %} hero-bg-image{% endif %}{% if heroCampaign == 'true' %} has-campaign{% endif %}" style="{{hero.meta.sectionStyles}}">
 	<div class="sec-wrap {{hero.meta.sectionWrapClass}}" style="{{hero.meta.sectionWrapStyles}}">
 		<header>
 			{{hero.body}}
 		</header>
+		{% if heroCampaign == 'true' %}
+		<div class="campaign-support">
+			<div class="ribbon">
+				<span>SUPPORT</span>
+			</div>
+			<div class="inner clearfix">
+				<div class="content">
+					<div class="headline">{{hero.meta.campaignTitle}}</div>
+					<p>{{hero.meta.campaignDescription}}</p>
+				</div>
+				<div class="support-module">
+					<div class="headline">{{hero.meta.campaignDonateDescription}}</div>
+					<div class="form-input">
+						<span class="prefix">$</span>
+						<input class="donate-amount" type="number" />
+						<span class="suffix">USD</span>
+					</div>
+					<div class="controls clearfix">
+						<a class="btn fill-red block donate-action" href="{{hero.meta.campaignClassyLink}}" target="_blank">{{hero.meta.campaignClassyLinkText}}</a>
+						<a class="btn outline-white hover-fill-white block last" href="{{hero.meta.campaignSecondBtnLink}}">{{hero.meta.campaignSecondBtnText}}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endif %}
 	</div>
 	<div class="bg-wrap">
 		{% if hero.meta.backgroundVideo %}
