@@ -23,6 +23,7 @@ var Utils = (function() {
 				$('input, textarea').placeholder();
 			}
 			Utils.mailchimp();
+			Utils.campaign();
 		},
 		isLegacyIE: function() {
 			return Utils.$html.hasClass('ie8') || Utils.$html.hasClass('ie9');
@@ -69,6 +70,29 @@ var Utils = (function() {
 				})
 			}
 		},
+		campaign: function(){
+			var campaigns = $('.campaign-support');
+
+			if(campaigns.length){
+				campaigns.each(function(){
+					var action = $(this).find('.donate-action'),
+						href = action.attr('href'),
+						input = $(this).find('.donate-amount'),
+						prefix = null,
+						newHref = null;
+
+					input.on('keyup', function(e){
+						e.preventDefault();
+						prefix = (href.indexOf('?') > -1) ? '&' : '?';
+
+						newHref = href + prefix + 'amount=' + input.val();
+						action.attr('href', newHref);
+					});
+
+					input.trigger('keyup');
+				});
+			}
+		}
 		// gaInit: function() {
 		// 	if(typeof window.ga !== 'undefined'){
 		// 		Utils.gaLoaded = true;

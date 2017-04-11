@@ -25,7 +25,7 @@ gulp.task('styles', function() {
 		.pipe(cleanCSS())
 		.pipe(gulp.dest('src/css'));
 	return gulp.src('_views/layout.html', { base: './' })
-		.pipe(replace(/(\/src\/css\/styles.css)(.*)"/, '$1?ver=' + getDate() + '"'))
+		.pipe(replace(/(\/src\/css\/styles.min.css)(.*)"/, '$1?ver=' + getDate() + '"'))
 		.pipe(gulp.dest('./'));
 });
 
@@ -38,7 +38,7 @@ gulp.task('scripts', function() {
 		.pipe(uglify())
 		.pipe(gulp.dest('src/js'));
 	return gulp.src('_views/layout.html', { base: './' })
-		.pipe(replace(/(\/src\/js\/scripts.js)(.*)"/, '$1?ver=' + getDate() + '"'))
+		.pipe(replace(/(\/src\/js\/scripts.min.js)(.*)"/, '$1?ver=' + getDate() + '"'))
 		.pipe(gulp.dest('./'));
 });
 
