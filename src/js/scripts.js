@@ -61,32 +61,71 @@ var Utils = (function() {
 			}
 		},
 		mailchimp: function(){
-			var btn = $('.signup-form');
-			var link = 'http://restorenyc.us13.list-manage.com/subscribe?u=3ab98ba41ef52e8a3ed2e0745&id=5360afa171&MERGE0=';
-			if(btn.length) {
-				btn.click(function(e){
-					var email = $('.signup-form-input').val();
-					window.location.href = link + email;
-				})
+			var forms = $('.signup-form, .subscribe-module'),
+				link = 'http://restorenyc.us13.list-manage.com/subscribe?u=3ab98ba41ef52e8a3ed2e0745&id=5360afa171&MERGE0=';
+
+			if(forms.length) {
+				forms.each(function(){
+					var form = $(this),
+						btn = form.find('.email-submit');
+
+					btn.click(function(e){
+						e.preventDefault();
+						window.location.href = link + form.find('.email').val();
+					})
+				});
 			}
 		},
 		campaign: function(){
-			var campaigns = $('.campaign-support');
+			var campaigns = $('.campaign-support, .donate-module');
+
+			function getPrefix(str) {
+				return (str.indexOf('?') > -1) ? '&' : '?';
+			}
 
 			if(campaigns.length){
 				campaigns.each(function(){
 					var action = $(this).find('.donate-action'),
 						href = action.attr('href'),
 						input = $(this).find('.donate-amount'),
+						monthly = $(this).find('.monthly'),
+						monthlyInput = monthly.find('input'),
+						giveByCheck = $(this).find('.check strong'),
+						checkAddress = $(this).find('.check-address'),
 						prefix = null,
 						newHref = null;
 
+					monthly.on('click', function(e){
+						console.log('c')
+						if(monthlyInput.val() === '0') {
+							monthlyInput.val('1');
+							monthly.find('.checkbox-off').removeClass('show');
+							monthly.find('.checkbox-on').addClass('show');
+						}
+						else {
+							monthlyInput.val('0');
+							monthly.find('.checkbox-off').addClass('show');
+							monthly.find('.checkbox-on').removeClass('show');
+						}
+
+						input.trigger('keyup');
+					});
+
+
 					input.on('keyup', function(e){
 						e.preventDefault();
-						prefix = (href.indexOf('?') > -1) ? '&' : '?';
 
-						newHref = href + prefix + 'amount=' + input.val();
+						newHref = href + getPrefix(href) + 'amount=' + input.val();
+
+						if(monthly.length) {
+							newHref = newHref + getPrefix(newHref) + 'recurring=' + monthlyInput.val();
+						}
+
 						action.attr('href', newHref);
+					});
+
+					giveByCheck.on('click', function(){
+						checkAddress.toggleClass('show');
 					});
 
 					input.trigger('keyup');

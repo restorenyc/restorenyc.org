@@ -26,6 +26,20 @@
 	</div>
 </section>
 
+<section class="blog giving">
+	<div class="sec-wrap clearfix {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		<aside class="subscribe-module">
+			<header>
+				<h2>INBOX ME.</h2>
+				<p>Receive updates straight to your inbox. </p>
+			</header>
+			<input class="email" type="email" placeholder="Enter email address" />
+			<a class="btn fill-red block email-submit" href="#">SUBMIT</a>
+		</aside>
+		{% include 'views/partials/donate' %}
+	</div>
+</section>
+
 {% assign posts_by_year = posts | group_by: "year" %}
 <section class="blog meta">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
@@ -45,32 +59,6 @@
 				<li><a href="/blog/a/{{year.name}}"><strong>{{year.name}}</strong> ({{posts_within_year.size}})</a></li>
 			{% endfor %}
 			</ul>
-		</section>
-	</div>
-</section>
-<section class="blog giving">
-	<div class="sec-wrap clearfix {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
-		<section class="email">
-			<h1>INBOX ME.</h1>
-			<p>Receive updates first thing. And don’t worry, we dislike spam.</p>
-			<input type="email" placeholder="EMAIL" />
-			<a class="btn fill-red block" href="">SUBMIT</a>
-
-		</section>
-		<section class="donate">
-			<h1>GIVE</h1>
-			<p>Donate to help end sex trafficking.</p>
-			<div class="btn-wrap">
-				<a class="btn fill-red block" href="">DONATE</a>
-			</div>
-			<aside>
-				<p><strong>Give by check</strong></p>
-				<p>Simply send your check to P.O. Box 1003<br/>
-					Bowling Green Station<br/>
-					New York, NY 10274
-				</p>
-			</aside>
-
 		</section>
 	</div>
 </section>

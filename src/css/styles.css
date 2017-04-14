@@ -552,7 +552,7 @@ section {
   padding-bottom: 25px;
 }
 .vertical-align,
-.banner-lead .article-content,
+.banner-lead .content,
 .infobox .icon-wrapper .fa,
 .infobox .icon-wrapper .r-icon {
   position: relative;
@@ -1907,6 +1907,9 @@ footer .copyright a:visited {
 .blog article figure {
   margin: 0;
 }
+.blog article figure a {
+  display: block;
+}
 .blog article .meta {
   font-size: 12px;
   font-style: italic;
@@ -1991,61 +1994,10 @@ footer .copyright a:visited {
   list-style: none;
 }
 .blog.giving {
-  text-align: center;
-  font-size: 16px;
+  padding: 0;
 }
 .blog.giving .sec-wrap {
   padding: 0;
-}
-.blog.giving section {
-  padding: 40px 15px 20px 15px;
-}
-.blog.giving h1 {
-  font-size: 24px;
-  color: #fff;
-}
-.blog.giving p {
-  font-style: italic;
-  color: #fff;
-}
-.blog.giving input {
-  display: block;
-  width: 100%;
-  background-color: #CDD0DD;
-  color: #fff;
-  font-weight: 400;
-  text-align: center;
-  padding: .6em .85em;
-  border-radius: 7px;
-  font-size: .85em;
-  outline: 0;
-  border: 0;
-  margin: 15px 0;
-}
-.blog.giving input::-webkit-input-placeholder {
-  color: #fff;
-}
-.blog.giving input::-moz-placeholder {
-  color: #fff;
-}
-.blog.giving input::-ms-input-placeholder {
-  color: #fff;
-}
-.blog.giving input::-moz-placeholder {
-  color: #fff;
-}
-.blog.giving .email {
-  background-color: #A1A6BB;
-  padding-bottom: 10px;
-}
-.blog.giving .email p {
-  margin-bottom: 30px;
-}
-.blog.giving .donate {
-  background-color: #686F6E;
-}
-.blog.giving .donate aside p {
-  color: #B1B1B1;
 }
 .blog-header {
   font-size: 16px;
@@ -2055,8 +2007,16 @@ footer .copyright a:visited {
 .article-page #main {
   background-color: #F2F2F2;
 }
+.article-page .donate-module {
+  display: none;
+}
 .article {
   background-color: #F2F2F2;
+  padding-top: 0;
+}
+.article > article {
+  position: relative;
+  z-index: 1;
 }
 .article-header {
   margin-top: -24px;
@@ -2103,6 +2063,19 @@ footer .copyright a:visited {
 .article-header + section {
   padding-top: 30px;
 }
+.article-wrap section {
+  padding: 0 !important;
+  background-color: transparent;
+}
+.article-wrap .sec-wrap {
+  padding: 0 !important;
+}
+.article-wrap .infobox {
+  background-color: #fff;
+}
+.article-wrap img {
+  max-width: 100%;
+}
 .article-footer {
   margin-top: 80px;
   text-align: center;
@@ -2143,50 +2116,6 @@ footer .copyright a:visited {
 }
 .article-social a i {
   vertical-align: middle;
-}
-.donate-module {
-  display: none;
-  max-width: 360px;
-  text-align: center;
-  background-color: #374146;
-  padding: 40px 15px 20px 15px;
-}
-.donate-module h2 {
-  font-size: 24px;
-  color: #fff;
-}
-.donate-module p {
-  font-style: italic;
-  color: #fff;
-}
-.donate-module input {
-  display: block;
-  width: 100%;
-  background-color: #CDD0DD;
-  color: #fff;
-  font-weight: 400;
-  text-align: center;
-  padding: .6em .85em;
-  border-radius: 7px;
-  font-size: .85em;
-  outline: 0;
-  border: 0;
-  margin: 15px 0;
-}
-.donate-module input::-webkit-input-placeholder {
-  color: #fff;
-}
-.donate-module input::-moz-placeholder {
-  color: #fff;
-}
-.donate-module input::-ms-input-placeholder {
-  color: #fff;
-}
-.donate-module input::-moz-placeholder {
-  color: #fff;
-}
-.donate-module .footnote p {
-  color: #B1B1B1;
 }
 .single-header {
   text-align: center;
@@ -2983,6 +2912,167 @@ footer .copyright a:visited {
   font-size: 18px;
   border-radius: 4px;
 }
+.subscribe-module {
+  text-align: center;
+  font-size: 16px;
+  background-color: #A1A6BB;
+  padding: 40px 15px 15px 15px;
+}
+.subscribe-module h2 {
+  font-size: 24px;
+  margin: 0;
+  color: #fff;
+}
+.subscribe-module header p {
+  color: #fff;
+  margin: 12px 0 20px;
+  padding: 0 15%;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.subscribe-module .email {
+  display: block;
+  width: 100%;
+  background-color: #CDD0DD;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  padding: 8px 15px;
+  border-radius: 7px;
+  font-size: 18px;
+  outline: 0;
+  border: 0;
+  margin: 0 0 15px 0;
+}
+.subscribe-module .email::-webkit-input-placeholder {
+  color: #fff;
+  font-style: italic;
+}
+.subscribe-module .email::-moz-placeholder {
+  color: #fff;
+  font-style: italic;
+}
+.subscribe-module .email::-ms-input-placeholder {
+  color: #fff;
+  font-style: italic;
+}
+.subscribe-module .email::-moz-placeholder {
+  color: #fff;
+  font-style: italic;
+}
+.subscribe-module .email-submit {
+  font-size: 16px;
+  padding: 6px 15px;
+}
+.donate-module {
+  text-align: center;
+  background-color: #374146;
+  padding: 40px 15px 35px;
+}
+.donate-module h2 {
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
+}
+.donate-module header p {
+  color: #fff;
+  margin: 12px 0 20px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.donate-module .form-input {
+  position: relative;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 7px 35px;
+  margin: 0 10px 15px 10px;
+}
+.donate-module .form-input span {
+  position: absolute;
+  font-weight: 700;
+  font-size: 20px;
+  color: #374146;
+}
+.donate-module .form-input .prefix {
+  left: 11px;
+  top: 5px;
+}
+.donate-module .form-input .suffix {
+  display: none;
+}
+.donate-module .form-input input {
+  background: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  color: #EE3526;
+  margin: 0;
+  padding: 0;
+  -moz-appearance: textfield;
+}
+.donate-module .form-input input::-webkit-inner-spin-button,
+.donate-module .form-input input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.donate-module .btn-wrap {
+  margin: 12px 10px;
+}
+.donate-module .donate-action {
+  font-size: 20px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-weight: 500;
+}
+.donate-module .monthly {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 24px 0 0 7px;
+  text-align: left;
+  cursor: pointer;
+}
+.donate-module .monthly i {
+  font-size: 20px;
+  vertical-align: middle;
+}
+.donate-module .monthly span {
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.donate-module .monthly .checkbox-on,
+.donate-module .monthly .checkbox-off {
+  line-height: 1;
+  display: none;
+}
+.donate-module .monthly .checkbox-on.show,
+.donate-module .monthly .checkbox-off.show {
+  display: inline-block;
+}
+.donate-module .footnote {
+  font-size: 16px;
+  font-weight: 600;
+}
+.donate-module .footnote p {
+  color: #B1B1B1;
+  margin: 12px 0;
+  line-height: 1.4;
+}
+.donate-module .check-address {
+  font-style: italic;
+  display: none;
+}
+.donate-module .check-address.show {
+  display: block;
+}
+.donate-module p.check {
+  display: inline-block;
+  border-bottom: 1px solid #B1B1B1;
+  margin: 22px 0 0;
+  cursor: pointer;
+}
 @media screen and (min-width: 600px) {
   .home .get-involved {
     height: 600px;
@@ -3230,8 +3320,7 @@ footer .copyright a:visited {
     margin-top: -56px;
   }
   .article-header header {
-    background-color: #fff;
-    margin: 10px 20px;
+    margin: 10px 15px;
     padding: 15px 20px;
   }
   .article-header h1 {
@@ -3418,6 +3507,46 @@ footer .copyright a:visited {
   }
   .support-module .controls .last {
     float: right;
+  }
+  .subscribe-module {
+    padding: 40px 30px 30px;
+  }
+  .subscribe-module header p {
+    margin: 15px 0 25px;
+  }
+  .subscribe-module .email {
+    padding: 10px 15px;
+  }
+  .subscribe-module .email-submit {
+    padding: 7px 15px;
+  }
+  .donate-module {
+    padding: 40px 50px 40px;
+  }
+  .donate-module header p {
+    margin: 15px 0 25px;
+  }
+  .donate-module .form-input {
+    padding: 9px 35px;
+  }
+  .donate-module .form-input .prefix {
+    top: 7px;
+  }
+  .donate-module .donate-action {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .donate-module .monthly {
+    font-size: 20px;
+  }
+  .donate-module .monthly i {
+    font-size: 22px;
+  }
+  .donate-module .check-address {
+    padding-top: 30px;
+  }
+  .donate-module p.check {
+    padding-bottom: 2px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -4096,6 +4225,10 @@ footer .copyright a:visited {
   .banner-lead.no-video .bg-wrap figure {
     opacity: 1;
   }
+  .blog .sec-wrap {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
   .blog article.promo {
     width: 49.5%;
     display: inline-block;
@@ -4125,52 +4258,71 @@ footer .copyright a:visited {
   .blog.blogroll article .tags.meta {
     border-top: none;
   }
-  .blog.giving .sec-wrap {
-    padding-left: 100px;
-    padding-right: 100px;
+  .blog.giving {
+    padding-top: 60px;
   }
-  .blog.giving section {
-    float: left;
-    width: 50%;
+  .blog.giving .sec-wrap {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .blog.giving aside {
+    width: 420px;
+    min-height: 375px;
     display: inline-block;
     vertical-align: top;
-    min-height: 365px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 5px;
+  }
+  .blog.giving .subscribe-module {
+    float: left;
+  }
+  .blog.giving .subscribe-module header p {
+    padding: 0;
+  }
+  .blog.giving .donate-module {
+    float: right;
   }
   .blog-header {
     font-size: 24px;
   }
-  .donate-module {
-    float: right;
+  .article-page .donate-module {
     display: block;
+    border-radius: 4px;
+    float: right;
+    width: 360px;
+    padding: 30px 32px;
+    margin: 120px 0 20px 15px;
   }
-  .article-header {
-    max-width: 1024px;
-    margin: -106px auto 0;
-  }
-  .article-header header {
-    background-color: #fff;
-    margin: 10px 20px;
-    padding: 15px 20px;
-  }
-  .article-header h1 {
-    padding-bottom: 8px;
-  }
-  .article-header .meta {
+  .article-page .donate-module .monthly {
     font-size: 16px;
   }
-  .article-header .date {
-    margin-top: 6px;
-    margin-bottom: 6px;
+  .article-page .donate-module .checkbox-on,
+  .article-page .donate-module .checkbox-off {
+    font-size: 20px;
   }
-  .article-header .icon-tag {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
+  .article-page .donate-module .check-address {
+    padding-top: 10px;
   }
-  .article-header .article-social {
-    margin: 17px 0 0;
+  .article > article {
+    width: 1024px;
+    margin: 0 auto;
+  }
+  .article-header {
+    max-width: 662px;
+    margin: -106px 0 0;
+  }
+  .article-header header {
+    margin-left: 0;
+    margin-right: 20px;
+    padding: 15px 20px;
+  }
+  .article-wrap {
+    padding: 0;
+  }
+  .article-wrap .sec-wrap {
+    width: auto;
+    margin: 0;
   }
   .subheader + section {
     padding-top: 110px;

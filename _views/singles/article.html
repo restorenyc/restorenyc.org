@@ -4,39 +4,39 @@
 	{% assign bgImage = false %}
 {% endif %}
 
-<section class="single-header {{current.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" >
-	<div class="sec-wrap vertical-align" style="{{current.meta.sectionWrapStyles}}">
-	</div>
+<section class="article {{current.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" >
+	<div class="single-header ">
 	{% if bgImage %}
 		<div class="frame">
-			<div class="portrait" data-img-url="{{current.meta.backgroundImage}}" data-img-pos="{{current.meta.backgroundPosition}}"></div>
+			<div class="portrait" data-img-url="{{section.meta.backgroundImage}}" data-img-pos="{{section.meta.backgroundPosition}}"></div>
 		</div>
 	{% endif %}
-</section>
-<section class="article-header">
-	<header>
-		{% include 'views/utils/title-header' %}
-		<div class="date meta">{{current.date | date: "%B %-d, %Y"}}</div>
-		{% if current.taxonomy['tags'] | size != "0" %}
-		<div class="tags meta">
-			<svg class="icon-tag">
-				<use xlink:href="#svg-tag"></use>
-			</svg>
-			{% for tag in current.taxonomy['tags'] %}
-				<a href="{{tag.url}}">{{tag.value}}</a>{% if forloop.last %}{% else %}<span>,&nbsp;</span>{% endif %}
-			{% endfor %}
-		</div>
-		{% endif %}
-		<div class="article-social">
-			<a href="https://www.facebook.com/sharer/sharer.php?u={{current.permalink}}" data-ga="article--click--facebook:{{current.title}}" target="_blank"><i class="fa fa-facebook"></i></a>
-			<a href="https://twitter.com/home?status={{current.meta.twitterShare}}" data-ga="article--click--twitter:{{current.title}}" target="_blank"><i class="fa fa-twitter"></i></a>
-		</div>
-	</header>
-</section>
-<section class="article">
-	<div class="sec-wrap">
+	</div>
+	<article>
 		{% include 'views/partials/donate' %}
-		{{body}}
+		<div class="article-header"">
+			<header>
+				{% include 'views/utils/title-header' %}
+				<div class="date meta">{{current.date | date: "%B %-d, %Y"}}</div>
+				{% if current.taxonomy['tags'] | size != "0" %}
+				<div class="tags meta">
+					<svg class="icon-tag">
+						<use xlink:href="#svg-tag"></use>
+					</svg>
+					{% for tag in current.taxonomy['tags'] %}
+						<a href="{{tag.url}}">{{tag.value}}</a>{% if forloop.last %}{% else %}<span>,&nbsp;</span>{% endif %}
+					{% endfor %}
+				</div>
+				{% endif %}
+				<div class="article-social">
+					<a href="https://www.facebook.com/sharer/sharer.php?u={{current.permalink}}" data-ga="article--click--facebook:{{current.title}}" target="_blank"><i class="fa fa-facebook"></i></a>
+					<a href="https://twitter.com/home?status={{current.meta.twitterShare}}" data-ga="article--click--twitter:{{current.title}}" target="_blank"><i class="fa fa-twitter"></i></a>
+				</div>
+			</header>
+		</div>
+		<div class="article-wrap sec-wrap">
+			{{body}}
+		</div>
 		<div class="article-footer">
 			<div class="article-social">
 				<a href="https://www.facebook.com/sharer/sharer.php?u={{current.permalink}}" data-ga="article--click--facebook:{{current.title}}" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -55,5 +55,5 @@
 				{% endif %}
 			</div>
 		</div>
-	</div>
+	</article>
 </section>

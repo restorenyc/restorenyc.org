@@ -1,4 +1,8 @@
 .blog {
+	.sec-wrap {
+		padding-left: 80px;
+		padding-right: 80px;
+	}
 	article.promo {
 		width: 49.5%;
 		display: inline-block;
@@ -36,18 +40,31 @@
 	}
 
 	&.giving {
+		padding-top: 60px;
+
 		.sec-wrap {
-			padding-left: 100px;
-			padding-right: 100px;
+			padding-left: 80px;
+			padding-right: 80px;
 		}
-		section {
-			float:left;
-			width: 50%;
+		aside {
+			width: 420px;
+			min-height: 375px;
 			display: inline-block;
 			vertical-align: top;
-			min-height: 365px;
-			padding-left: 40px;
-			padding-right: 40px;
+			padding-left: 30px;
+			padding-right: 30px;
+			border-radius: 5px;
+		}
+		.subscribe-module {
+			float: left;
+
+			header p {
+				padding: 0;
+			}
+		}
+
+		.donate-module {
+			float: right;
 		}
 	}
 }
@@ -55,41 +72,53 @@
 .blog-header {
 	font-size: 24px;
 }
-.donate-module {
-	float: right;
-	display: block;
-}
-.article-header {
-	max-width: 1024px;
-	margin: -106px auto 0;
 
+.article-page {
+	.donate-module {
+		display: block;
+		border-radius: 4px;
+		float: right;
+		width: 360px;
+		padding: 30px 32px;
+		margin: 120px 0 20px 15px;
+
+		.monthly {
+			font-size: 16px;
+		}
+
+		.checkbox-on,
+		.checkbox-off {
+			font-size: 20px;
+		}
+
+		.check-address {
+			padding-top: 10px;
+		}
+	}
+}
+
+.article > article {
+	width: 1024px;
+	margin: 0 auto;
+}
+
+.article-header {
+	max-width: 662px;
+	margin: -106px 0 0;
 
 	header {
-		background-color: #fff;
-		margin: 10px 20px;
+		margin-left: 0;
+		margin-right: 20px;
 		padding: 15px 20px;
 	}
 
-	h1 {
-		padding-bottom: 8px;
-	}
+}
 
-	.meta {
-		font-size: 16px;
-	}
+.article-wrap {
+	padding: 0;
 
-	.date {
-		margin-top: 6px;
-		margin-bottom: 6px;
-	}
-
-	.icon-tag {
-		width: 20px;
-		height: 20px;
-		margin-right: 5px;
-	}
-
-	.article-social {
-		margin: 17px 0 0;
+	.sec-wrap {
+		width: auto;
+		margin: 0;
 	}
 }

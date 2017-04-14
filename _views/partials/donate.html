@@ -1,14 +1,33 @@
 <aside class="donate-module">
-	<h2>GIVE</h2>
-	<p>Donate to help end sex trafficking.</p>
+	<header>
+		<h2>GIVE</h2>
+		<p>You can help bring an end to sex trafficking.</p>
+	</header>
+	<div class="form-input">
+		<span class="prefix">$</span>
+		<input class="donate-amount" type="number" value="75"/>
+		<span class="suffix">USD</span>
+	</div>
 	<div class="btn-wrap">
-		<a class="btn fill-red block" href="">DONATE</a>
+		<a class="btn fill-red block donate-action" href="{{site.meta.donateModuleClassyLink}}" data-ga="donateModule--click--{{site.meta.donateModuleClassyLinkTracking}}" target="_blank">DONATE</a>
+	</div>
+	<div class="monthly">
+		<div>
+			<span class="checkbox-off show"><i class="fa fa-square"></i></span>
+			<span class="checkbox-on"><i class="fa fa-check-square"></i></span>
+			<span>Make this a recurring monthly gift</span>
+		</div>
+		<input type="hidden" name="monthly" value="0"/>
 	</div>
 	<div class="footnote">
-		<p><strong>Give by check</strong></p>
-		<p>Simply send your check to P.O. Box 1003<br/>
-			Bowling Green Station<br/>
-			New York, NY 10274
-		</p>
+		<p class="check"><strong>Want to give by check?</strong></p>
+		<div class="check-address">
+			<p>Simply send to:</p>
+			<p>Restore NYC<br/>
+				P.O. Box 1003<br/>
+				Bowling Green Station<br/>
+				New York, NY 10274
+			</p>
+		</div>
 	</div>
 </aside>
