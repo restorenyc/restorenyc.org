@@ -1182,6 +1182,7 @@ footer .logo-wrap {
   color: #fff;
 }
 footer .icon-restore-logo {
+  width: 194px;
   height: 64px;
 }
 footer .copyright {
@@ -3603,7 +3604,7 @@ footer .copyright a:visited {
   }
   footer .logo-wrap {
     margin-top: 0;
-    text-align: right;
+    padding-left: 50px;
   }
   .home .sec-wrap {
     padding-left: 125px;
@@ -4059,7 +4060,7 @@ footer .copyright a:visited {
     font-size: 1.125em;
   }
   footer .logo-wrap {
-    padding-right: 164px;
+    padding-left: 110px;
   }
   .sm-tweet {
     height: 640px;
