@@ -1,8 +1,10 @@
 <section class="blog latest">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
 		<h2 class="line red">LATEST</h2>
-		{% for article in posts limit:2 %}
-			{% include 'views/partials/blogroll-article-promo' %}
+
+		{% assign sticky_posts = posts | where:"meta.pin","true" %}
+		{% for article in sticky_posts %}
+				{% include 'views/partials/blogroll-article-promo' %}
 		{% endfor %}
 	</div>
 </section>
@@ -13,7 +15,8 @@
 
 <section class="blog blogroll">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
-		{% for article in posts offset:2 %}
+		{% assign blog_posts = posts | where:"meta.pin","" %}
+		{% for article in blog_posts %}
 			{% include 'views/partials/blogroll-article' %}
 		{% endfor %}
 
