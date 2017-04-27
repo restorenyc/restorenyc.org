@@ -12,6 +12,7 @@ RedirectMatch 301 /get-involved/$ /get-involved/volunteer
 # CUSTOM REDIRECTS (ADD HERE)
 Redirect 301 /give https://donate.restorenyc.org/checkout/donation?eid=51308
 Redirect 301 /get-involved/join-our-team /join-our-team
+Redirect 301 /esther https://donate.restorenyc.org/give/120413/#!/donation/checkout
 
 # MIGRATION: REDIRECT OLD LINKS TO NEW SITE
 Redirect 301 /the-issue /our-work/approach/
