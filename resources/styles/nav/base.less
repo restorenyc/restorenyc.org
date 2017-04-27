@@ -13,13 +13,15 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-	//position: relative;
 	padding:10px 0 8px;
 	height:@mh-height;
 	z-index:10;
 	box-shadow:0 1px 5px rgba(0,0,0,0.3);
 	background-color:#fff;
 	.transition(all, 0.3s, @ease-time);
+	&.relative {
+		position: relative;
+	}
 	.site-logo {
 		line-height:1;
 		//margin:24px 0 0 24px;
@@ -29,7 +31,7 @@
 		color:@restore-red;
 	}
 	.menu-close {
-		position: fixed;
+		position: absolute; //fixed;
 		padding: 10px;
 		//top: 35px;
 		top: 15px;
@@ -286,4 +288,17 @@
 	#lightbox {
 		z-index:2;
 	}
+}
+
+
+.announcement-bar {
+	position: fixed;
+	width: 100%;
+	z-index: 11;
+}
+
+.page-wrap {
+	position: relative;
+	height: 100%;
+	padding-top: 100px;
 }

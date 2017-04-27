@@ -50,7 +50,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/{{site.meta.fontAwesomeVersion}}/css/font-awesome.min.css">
 		{% if flickity %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css">{% endif %}
 		{{ header_styles }}
-		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.min.css?ver=1492432245290">
+		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.min.css?ver=1493299607924">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.1/lity.min.css">
 		{{ header_scripts }}
 		<script src="//use.typekit.net/oln3ahs.js"></script>
@@ -67,7 +67,13 @@
 		})(window,document,'script','dataLayer','{{site.meta.googleTagManager}}');</script>
 		<!-- End Google Tag Manager -->
 		{% include 'views/partials/svg' %}
-		<header class="mh">
+
+		{% assign show_announcement_bar = site.pages['announcement-bar'].meta['show'] %}
+		{% if show_announcement_bar == 'true!' %}
+			{% include 'views/partials/announcement-bar' %}
+			<div class="page-wrap">
+		{% endif %}
+		<header class="mh {% if show_announcement_bar == 'true' %}relative{% endif %}">
 			<div class="site-logo">
 				<a href="/">
 					<span class="r-icon restore-logo"></span>
@@ -120,6 +126,9 @@
 				</div>
 			</footer>
 		</div>
+		{% if show_announcement_bar == 'true' %}
+			</div>
+		{% endif %}
 		<div id="lightbox">
 			<div class="wrap"></div>
 			<div class="content"></div>
@@ -127,7 +136,7 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		{% if flickity %}<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script>{% endif%}
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.1/lity.min.js"></script>
-		<script type="text/javascript" src="/src/js/scripts.min.js?ver=1492144313138"></script>
+		<script type="text/javascript" src="/src/js/scripts.min.js?ver=1493296420206"></script>
 		{{ footer_scripts }}
 		{% if footer_scripts_jquery %}
 			<script type="text/javascript">
@@ -138,8 +147,8 @@
 				})(jQuery);
 			</script>
 		{% endif %}
-		{% if meta.metaScripts %}
-			{{meta.metaScripts}}
+		{% if site.meta.metaScripts %}
+			{{site.meta.metaScripts}}
 		{% endif %}
 	</body>
 </html>
