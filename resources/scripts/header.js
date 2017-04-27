@@ -8,11 +8,13 @@
 		},
 		loadHeaderImage: function() {
 			var self = this;
-			if(this.el.length > 0 && (Utils.isHome() || this.el.hasClass('bg-image'))) {
+			if(this.el.length > 0 && (Utils.isHome() || this.el.hasClass('bg-image') || this.el.hasClass('bg-image-blog'))) {
 				var portrait = this.el.find('.portrait')
 					url = portrait.attr('data-img-url'),
 					position = $.trim(portrait.attr('data-img-pos')) === "" ? "50% 50%" : portrait.attr('data-img-pos'),
 					img = new Image();
+
+					console.log(url)
 				img.addEventListener('load', function() {
 					portrait
 						.css({

@@ -1,11 +1,17 @@
+{% assign sticky_posts = posts | where:"meta.pin","true" %}
+{% assign blog_posts = posts | where:"meta.pin","" %}
 <section class="blog latest">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
 		<h2 class="line red">LATEST</h2>
-
-		{% assign sticky_posts = posts | where:"meta.pin","true" %}
-		{% for article in sticky_posts %}
-				{% include 'views/partials/blogroll-article-promo' %}
-		{% endfor %}
+		{% if sticky_posts.size > 0 %}
+			{% for article in sticky_posts %}
+					{% include 'views/partials/blogroll-article-promo' %}
+			{% endfor %}
+		{% else %}
+			{% for article in posts | limit: 2 %}
+					{% include 'views/partials/blogroll-article-promo' %}
+			{% endfor %}
+		{% endif %}
 	</div>
 </section>
 
@@ -15,10 +21,15 @@
 
 <section class="blog blogroll">
 	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
-		{% assign blog_posts = posts | where:"meta.pin","" %}
-		{% for article in blog_posts %}
-			{% include 'views/partials/blogroll-article' %}
-		{% endfor %}
+		{% if sticky_posts.size > 0 %}
+			{% for article in blog_posts %}
+				{% include 'views/partials/blogroll-article' %}
+			{% endfor %}
+		{% else %}
+			{% for article in posts | offset: 2 %}
+					{% include 'views/partials/blogroll-article' %}
+			{% endfor %}
+		{% endif %}
 
 
 		<!--aside>

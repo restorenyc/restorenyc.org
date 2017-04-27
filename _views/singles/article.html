@@ -4,11 +4,11 @@
 	{% assign bgImage = false %}
 {% endif %}
 
-<section class="article {{current.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" >
-	<div class="single-header ">
+<section class="article {{current.meta.sectionClass}}" >
+	<div class="single-header {% if bgImage %}bg-image-blog{% endif %}">
 	{% if bgImage %}
 		<div class="frame">
-			<div class="portrait" data-img-url="{{section.meta.backgroundImage}}" data-img-pos="{{section.meta.backgroundPosition}}"></div>
+			<div class="portrait" data-img-url="{{current.meta.backgroundImage}}" data-img-pos="{{current.meta.backgroundPosition}}"></div>
 		</div>
 	{% endif %}
 	</div>
