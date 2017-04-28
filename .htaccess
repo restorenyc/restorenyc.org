@@ -15,6 +15,18 @@ Redirect 301 /get-involved/join-our-team /join-our-team
 Redirect 301 /esther https://donate.restorenyc.org/give/120413/#!/donation/checkout
 
 # MIGRATION: REDIRECT OLD LINKS TO NEW SITE
+Redirect 301 /news1 /updates/news1
+Redirect 301 /news2 /updates/news2
+Redirect 301 /news3 /updates/news3
+Redirect 301 /news5 /updates/news5
+Redirect 301 /news6 /updates/news6
+Redirect 301 /news7 /updates/news7
+Redirect 301 /news8 /updates/news8
+Redirect 301 /news9 /updates/news9
+Redirect 301 /news10 /updates/news10
+Redirect 301 /news11 /updates/news11
+Redirect 301 /news12 /updates/news12
+
 Redirect 301 /the-issue /our-work/approach/
 Redirect 301 /causes /our-work/approach/
 Redirect 301 /the-numbers /our-work/approach/
