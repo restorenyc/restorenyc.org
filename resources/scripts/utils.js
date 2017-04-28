@@ -126,6 +126,27 @@ var Utils = (function() {
 					input.trigger('keyup');
 				});
 			}
+		},
+		cookie: function(name, value, ms) {
+			// cookie('mine', 'data', 5*60*1000) -- write data to cookie named mine that lasts for five minutes
+			// cookie('mine') -- read the cookie that was just set, function result will be 'data'
+			// cookie('mine', '', -1) -- delete the cookie
+			if(arguments.length < 2) {
+				// read cookie
+				var cookies = document.cookie.split(';')
+				for(var i=0; i < cookies.length; i++) {
+					var c = cookies[i].replace(/^\s+/, '')
+					if(c.indexOf(name+'=') == 0) {
+						return decodeURIComponent(c.substring(name.length+1).split('+').join(' '))
+					}
+				}
+				return null
+			}
+
+			// write cookie
+			var date = new Date()
+			date.setTime(date.getTime()+ms)
+			document.cookie = name+"=" + encodeURIComponent(value) + (ms ? ";expires="+date.toGMTString() : '') + ";path=/"
 		}
 		// gaInit: function() {
 		// 	if(typeof window.ga !== 'undefined'){

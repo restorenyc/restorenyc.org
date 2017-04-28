@@ -13,14 +13,15 @@
 	position: fixed;
 	top: 0;
 	width: 100%;
-	padding:10px 0 8px;
-	height:@mh-height;
+	//padding:10px 0 8px;
 	z-index:10;
 	box-shadow:0 1px 5px rgba(0,0,0,0.3);
 	background-color:#fff;
 	.transition(all, 0.3s, @ease-time);
-	&.relative {
+	.wrap {
+		min-height:@mh-height;
 		position: relative;
+		padding:10px 0 8px;
 	}
 	.site-logo {
 		line-height:1;
@@ -292,13 +293,45 @@
 
 
 .announcement-bar {
-	position: fixed;
+	position: relative;
 	width: 100%;
-	z-index: 11;
+	display: none;
+	background-color: @restore-red;
+	color: #fff;
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.2;
+	.transition(all, 0.3s);
+
+	&.show {
+		display: block;
+	}
+
+	.inner {
+		padding: 7px 50px;
+	}
+
+	.content {
+		p {
+			margin: 0;
+		}
+
+		a, a:hover, a:visited {
+			text-decoration: underline;
+			color: #fff;
+			cursor: pointer;
+		}
+	}
+
+	.close {
+		position: absolute;
+		top: 6px;
+		right: 10px;
+		font-size: 18px;
+		cursor: pointer;
+	}
 }
 
-.page-wrap {
-	position: relative;
-	height: 100%;
-	padding-top: 100px;
+.nav-open .announcement-bar {
+	opacity: 0;
 }

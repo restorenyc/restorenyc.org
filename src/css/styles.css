@@ -819,8 +819,6 @@ textarea:-ms-input-placeholder {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 10px 0 8px;
-  height: 60px;
   z-index: 10;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
   background-color: #fff;
@@ -830,8 +828,10 @@ textarea:-ms-input-placeholder {
   -ms-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
   transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
 }
-.mh.relative {
+.mh .wrap {
+  min-height: 60px;
   position: relative;
+  padding: 10px 0 8px;
 }
 .mh .site-logo {
   line-height: 1;
@@ -1129,14 +1129,45 @@ textarea:-ms-input-placeholder {
   z-index: 2;
 }
 .announcement-bar {
-  position: fixed;
-  width: 100%;
-  z-index: 11;
-}
-.page-wrap {
   position: relative;
-  height: 100%;
-  padding-top: 100px;
+  width: 100%;
+  display: none;
+  background-color: #EE3526;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -moz-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -o-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  -ms-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+  transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) 0s;
+}
+.announcement-bar.show {
+  display: block;
+}
+.announcement-bar .inner {
+  padding: 7px 50px;
+}
+.announcement-bar .content p {
+  margin: 0;
+}
+.announcement-bar .content a,
+.announcement-bar .content a:hover,
+.announcement-bar .content a:visited {
+  text-decoration: underline;
+  color: #fff;
+  cursor: pointer;
+}
+.announcement-bar .close {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.nav-open .announcement-bar {
+  opacity: 0;
 }
 footer {
   text-align: center;
@@ -2982,8 +3013,8 @@ footer .copyright a:visited {
   font-style: italic;
 }
 .subscribe-module .email-submit {
-  font-size: 16px;
-  padding: 6px 15px;
+  font-size: 20px;
+  padding: 5px 15px;
 }
 .donate-module {
   text-align: center;
@@ -3167,8 +3198,8 @@ footer .copyright a:visited {
   .home #main {
     padding-top: 0;
   }
-  .mh {
-    height: 90px;
+  .mh .wrap {
+    min-height: 90px;
   }
   .mh .site-logo {
     margin: 24px 0 0 24px;
@@ -3921,9 +3952,9 @@ footer .copyright a:visited {
   #hero .bg-wrap {
     padding-top: 100px;
   }
-  .mh {
-    height: 100px;
+  .mh .wrap {
     padding: 0;
+    min-height: 100px;
   }
   .mh .site-logo {
     margin: 29px 0 0 49px;

@@ -14,7 +14,6 @@
 					position = $.trim(portrait.attr('data-img-pos')) === "" ? "50% 50%" : portrait.attr('data-img-pos'),
 					img = new Image();
 
-					console.log(url)
 				img.addEventListener('load', function() {
 					portrait
 						.css({

@@ -131,6 +131,27 @@ var Utils = (function() {
 					input.trigger('keyup');
 				});
 			}
+		},
+		cookie: function(name, value, ms) {
+			// cookie('mine', 'data', 5*60*1000) -- write data to cookie named mine that lasts for five minutes
+			// cookie('mine') -- read the cookie that was just set, function result will be 'data'
+			// cookie('mine', '', -1) -- delete the cookie
+			if(arguments.length < 2) {
+				// read cookie
+				var cookies = document.cookie.split(';')
+				for(var i=0; i < cookies.length; i++) {
+					var c = cookies[i].replace(/^\s+/, '')
+					if(c.indexOf(name+'=') == 0) {
+						return decodeURIComponent(c.substring(name.length+1).split('+').join(' '))
+					}
+				}
+				return null
+			}
+
+			// write cookie
+			var date = new Date()
+			date.setTime(date.getTime()+ms)
+			document.cookie = name+"=" + encodeURIComponent(value) + (ms ? ";expires="+date.toGMTString() : '') + ";path=/"
 		}
 		// gaInit: function() {
 		// 	if(typeof window.ga !== 'undefined'){
@@ -161,6 +182,7 @@ var Utils = (function() {
 	var nav = {
 		trackOpen: true,
 		init: function() {
+			this.loadAnnouncement();
 			this.bindEvents();
 		},
 		closeNav: function() {
@@ -172,6 +194,26 @@ var Utils = (function() {
 			Utils.$nav.find('.item.open')
 				.removeClass('open')
 				//.find('.submenu').slideUp();
+		},
+		loadAnnouncement: function(){
+			var cookie = 'showAnnouncement',
+				announcement = $('.announcement-bar');
+
+			if(announcement.length > 0 ) {
+				Utils.$body.on('click', '.announcement-bar .close', function(e){
+					e.stopPropagation();
+
+					announcement.removeClass('show');
+					Utils.cookie(cookie, 'false', 3600 * 24 * 1000);
+				});
+
+				if(Utils.cookie(cookie) === 'false') {
+					announcement.removeClass('show');
+				}
+				else {
+					announcement.addClass('show');
+				}
+			}
 		},
 		bindEvents: function() {
 			var self = this;
@@ -240,7 +282,6 @@ var Utils = (function() {
 					position = $.trim(portrait.attr('data-img-pos')) === "" ? "50% 50%" : portrait.attr('data-img-pos'),
 					img = new Image();
 
-					console.log(url)
 				img.addEventListener('load', function() {
 					portrait
 						.css({
