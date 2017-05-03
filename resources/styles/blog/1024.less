@@ -74,13 +74,25 @@
 }
 
 .article-page {
-	.donate-module {
+	.donate-module.article-top {
 		display: block;
-		border-radius: 4px;
 		float: right;
+		margin: 120px 0 20px 15px;
+	}
+	.donate-module {
+		border-radius: 4px;
 		width: 360px;
 		padding: 30px 32px;
-		margin: 120px 0 20px 15px;
+
+		&.left {
+			float: left;
+			margin: 20px 20px 20px 0;
+		}
+
+		&.right {
+			float: right;
+			margin: 20px 0 20px 20px;
+		}
 
 		.monthly {
 			font-size: 16px;

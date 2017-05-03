@@ -96,7 +96,6 @@ var Utils = (function() {
 						newHref = null;
 
 					monthly.on('click', function(e){
-						console.log('c')
 						if(monthlyInput.val() === '0') {
 							monthlyInput.val('1');
 							monthly.find('.checkbox-off').removeClass('show');

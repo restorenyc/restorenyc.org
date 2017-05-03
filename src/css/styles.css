@@ -2052,7 +2052,7 @@ footer .copyright a:visited {
 .article-page #main {
   background-color: #F2F2F2;
 }
-.article-page .donate-module {
+.article-page .donate-module.article-top {
   display: none;
 }
 .article {
@@ -3078,14 +3078,14 @@ footer .copyright a:visited {
 }
 .donate-module .monthly {
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   margin: 24px 0 0 7px;
   text-align: left;
   cursor: pointer;
 }
 .donate-module .monthly i {
-  font-size: 20px;
+  font-size: 18px;
   vertical-align: middle;
 }
 .donate-module .monthly span {
@@ -4340,13 +4340,23 @@ footer .copyright a:visited {
   .blog-header {
     font-size: 24px;
   }
-  .article-page .donate-module {
+  .article-page .donate-module.article-top {
     display: block;
-    border-radius: 4px;
     float: right;
+    margin: 120px 0 20px 15px;
+  }
+  .article-page .donate-module {
+    border-radius: 4px;
     width: 360px;
     padding: 30px 32px;
-    margin: 120px 0 20px 15px;
+  }
+  .article-page .donate-module.left {
+    float: left;
+    margin: 20px 20px 20px 0;
+  }
+  .article-page .donate-module.right {
+    float: right;
+    margin: 20px 0 20px 20px;
   }
   .article-page .donate-module .monthly {
     font-size: 16px;
