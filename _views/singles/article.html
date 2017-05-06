@@ -13,8 +13,8 @@
 	{% endif %}
 	</div>
 	<article>
-		<div class="article-donate-top">
-			{% include 'views/partials/donate-article-top' %}
+		<div class="article-top">
+			{% include 'views/partials/donate-article' %}
 		</div>
 		<div class="article-header"">
 			<header>
@@ -38,6 +38,9 @@
 		</div>
 		<div class="article-wrap sec-wrap">
 			{{body}}
+		</div>
+		<div class="article-bottom">
+			{% include 'views/partials/donate-article' %}
 		</div>
 		<div class="article-footer">
 			<div class="article-social">

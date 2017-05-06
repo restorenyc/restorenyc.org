@@ -812,6 +812,10 @@ textarea:-ms-input-placeholder {
 #hero {
   padding-top: 60px;
 }
+.has-announcement #main,
+.has-announcement #hero {
+  padding-top: 100px;
+}
 .home #main {
   padding-top: 0;
 }
@@ -2052,7 +2056,7 @@ footer .copyright a:visited {
 .article-page #main {
   background-color: #F2F2F2;
 }
-.article-page .donate-module.article-top {
+.article-page .article-top .donate-module {
   display: none;
 }
 .article {
@@ -2175,9 +2179,11 @@ footer .copyright a:visited {
 .single-header h1.small-font {
   font-size: 1.90em;
 }
+.single-header.tag h1 {
+  text-transform: uppercase;
+}
 .single-header.bg-image,
 .single-header.bg-image-blog {
-  height: 360px;
   position: relative;
 }
 .single-header.bg-image .sec-wrap,
@@ -2208,6 +2214,9 @@ footer .copyright a:visited {
 .single-header.bg-image .loaded,
 .single-header.bg-image-blog .loaded {
   opacity: 1;
+}
+.single-header.bg-image-blog {
+  height: 360px;
 }
 .subheader {
   padding-top: 35px;
@@ -4340,10 +4349,13 @@ footer .copyright a:visited {
   .blog-header {
     font-size: 24px;
   }
-  .article-page .donate-module.article-top {
+  .article-page .article-top .donate-module {
     display: block;
     float: right;
     margin: 120px 0 20px 15px;
+  }
+  .article-page .article-bottom .donate-module {
+    display: none;
   }
   .article-page .donate-module {
     border-radius: 4px;

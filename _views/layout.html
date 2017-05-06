@@ -2,6 +2,7 @@
 <!--[if lte IE 8]>   <html class="ie8 no-js">           <![endif]-->
 <!--[if IE 9]>       <html class="ie9 no-js">           <![endif]-->
 <!--[if !IE]><!-->   <html lang="en-US" class="no-js">  <!--<![endif]-->
+{% assign announcement = site.pages['announcement-bar'].meta['show'] %}
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,13 +51,13 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/{{site.meta.fontAwesomeVersion}}/css/font-awesome.min.css">
 		{% if flickity %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css">{% endif %}
 		{{ header_styles }}
-		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.min.css?ver=1493815848792">
+		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.min.css?ver=1494089439638">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.1/lity.min.css">
 		{{ header_scripts }}
 		<script src="//use.typekit.net/oln3ahs.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
-	<body class="{% if home? %}{{'home'}}{% endif %}{% if type == 'post' %}{{'article-page'}}{% endif %}">
+	<body class="{% if home? %}{{'home'}}{% endif %}{% if type == 'post' %}{{'article-page'}}{% endif %}{% if announcement == 'true' %} has-announcement{% endif %}">
 		<!-- Google Tag Manager -->
 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5WXNZJ"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -67,9 +68,10 @@
 		})(window,document,'script','dataLayer','{{site.meta.googleTagManager}}');</script>
 		<!-- End Google Tag Manager -->
 		{% include 'views/partials/svg' %}
-
 		<header class="mh">
-			{% include 'views/partials/announcement-bar' %}
+			{% if announcement == 'true' %}
+				{% include 'views/partials/announcement-bar' %}
+			{% endif %}
 			<div class="wrap">
 				<div class="site-logo">
 					<a href="/">
