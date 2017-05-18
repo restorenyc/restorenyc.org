@@ -1,8 +1,6 @@
-{% if section.meta.backgroundImage %}
-	{% assign bgImage = true %}
-{% else %}
-	{% assign bgImage = false %}
-{% endif %}
+{% assign bgImage = site.meta.tagsPageBackgroundImage %}
+{% assign bgImagePosition = ''%}
+
 
 <section class="single-header tag {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" >
 	<div class="sec-wrap vertical-align" style="{{section.meta.sectionWrapStyles}}">
@@ -12,7 +10,7 @@
 	</div>
 	{% if bgImage %}
 		<div class="frame">
-			<div class="portrait" data-img-url="{{section.meta.backgroundImage}}" data-img-pos="{{section.meta.backgroundPosition}}"></div>
+			<div class="portrait" data-img-url="{{bgImage}}" data-img-pos="{{section.meta.backgroundPosition}}"></div>
 		</div>
 	{% endif %}
 </section>
