@@ -13,6 +13,7 @@ RedirectMatch 301 /get-involved/$ /get-involved/volunteer
 Redirect 301 /give https://donate.restorenyc.org/checkout/donation?eid=51308
 Redirect 301 /get-involved/join-our-team /join-our-team
 Redirect 301 /esther https://donate.restorenyc.org/give/120413/#!/donation/checkout
+Redirect 301 /fallbenefit2017 https://www.501auctions.com/restorenyc
 
 # MIGRATION: REDIRECT OLD LINKS TO NEW SITE
 Redirect 301 /news1 /updates/news1
