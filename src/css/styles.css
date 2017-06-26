@@ -4063,7 +4063,7 @@ img.article-image-right {
     position: absolute;
     top: 0;
     left: 220px;
-    text-align: center;
+    text-align: left;
   }
   #top-menu .item {
     display: inline-block;
@@ -4075,7 +4075,7 @@ img.article-image-right {
   #top-menu .item > a:hover,
   #top-menu .item > a:visited,
   #top-menu .item > span {
-    padding: 0 30px;
+    padding: 0 40px 0 20px;
     color: inherit;
     font-weight: 600;
     height: 100px;
@@ -4092,8 +4092,8 @@ img.article-image-right {
   #top-menu .item > span {
     cursor: default;
   }
-  #top-menu .item:hover > a,
-  #top-menu .item:hover > span {
+  #top-menu .item.has-sub:hover > a,
+  #top-menu .item.has-sub:hover > span {
     -webkit-transform: translateY(-20px);
     -moz-transform: translateY(-20px);
     -o-transform: translateY(-20px);
@@ -4101,8 +4101,8 @@ img.article-image-right {
     transform: translateY(-20px);
     font-weight: 400;
   }
-  #top-menu .item:hover > a:hover,
-  #top-menu .item:hover > span:hover {
+  #top-menu .item.has-sub:hover > a:hover,
+  #top-menu .item.has-sub:hover > span:hover {
     font-weight: 600;
   }
   #top-menu .item:hover .submenu {
@@ -4134,6 +4134,7 @@ img.article-image-right {
     top: 55%;
     background-color: inherit;
     color: inherit;
+    text-align: left;
   }
   #top-menu .subitem {
     font-weight: 400;
@@ -4146,7 +4147,7 @@ img.article-image-right {
   #top-menu .subitem > a:visited {
     color: inherit;
     display: block;
-    padding: 10px;
+    padding: 10px 20px;
     cursor: pointer;
   }
   footer .footer-wrap {
