@@ -1,0 +1,14 @@
+<section class="blog blogroll">
+	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		{% for article in posts %}
+			{% include 'views/partials/blogroll-article' %}
+		{% endfor %}
+
+
+		<!--aside>
+			<div class="btn-wrap">
+				<a class="btn text-red" href="">LOAD MORE UPDATES</a>
+			</div>
+		</aside-->
+	</div>
+</section>

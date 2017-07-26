@@ -1,0 +1,315 @@
+.blog {
+	article {
+		color: @restore-red;
+		position: relative;
+
+		figure {
+			margin: 0;
+
+			a {
+				display: block;
+			}
+		}
+		.meta {
+			font-size: 12px;
+			font-style: italic;
+		}
+		header {
+			position: relative;
+			bottom: 50px;
+			margin: 0 10px;
+			padding: 7px 10px;
+			background-color: #fff;
+		}
+		h1 {
+			font-size: 18px;
+		}
+		.tags.meta {
+			border-top: 1px solid #686F6E;
+			padding-top: 5px;
+			color: #686F6E;
+
+			& a, a:visited, a:hover {
+				display: inline-block;
+				color: #686F6E;
+			}
+		}
+		.icon-tag {
+			display: inline-block;
+			width: 12px;
+			height: 12px;
+			vertical-align: middle;
+
+			use {
+				fill: #686F6E;
+			}
+		}
+	}
+
+	article.promo {
+		color: #fff;
+
+		a {
+			color: #fff;
+		}
+
+		header {
+			background-color: @restore-red;
+		}
+		.tags {
+			border-top: 1px solid rgba(255, 255, 255, 0.5);
+
+			& a, a:visited, a:hover {
+				color: rgba(255, 255, 255, 0.5);
+			}
+		}
+		.icon-tag {
+			use {
+				fill: rgba(255, 255, 255, 0.5);
+			}
+		}
+	}
+
+	&.blogroll {
+		background-color: #F2F2F2;
+
+		aside {
+			text-align: center;
+			.btn {
+				padding-left: 40px;
+				padding-right: 40px;
+			}
+		}
+	}
+
+	&.meta {
+		.meta-tags {
+			padding: 0;
+			.list {
+				a {
+					display: inline-block;
+					padding: 3px 15px;
+					margin-bottom: 6px;
+					font-size: 16px;
+					font-style: italic;
+					background-color: #F2F2F2;
+					border: 1px solid #E1DDDD;
+				}
+			}
+		}
+		.meta-archive {
+			padding: 0;
+			ul {
+				padding: 0;
+				list-style: none;
+			}
+		}
+	}
+}
+
+.blog.giving {
+	padding:0;
+
+	.sec-wrap {
+		padding: 0;
+	}
+}
+
+.blog-header {
+	font-size: 16px;
+	font-style: italic;
+	color: #fff;
+}
+
+.article-page {
+	#main {
+		background-color: #F2F2F2
+	}
+
+	.article-top .donate-module {
+		display: none;
+	}
+}
+.article {
+	background-color: #F2F2F2;
+	padding-top: 0;
+
+	& > article {
+		position: relative;
+		z-index: 1;
+	}
+
+}
+.article-header {
+	margin-top: -24px;
+	padding: 0;
+	background-color: transparent;
+
+	header {
+		background-color: #fff;
+		margin: 10px;
+		padding: 10px;
+		box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+	}
+
+	h1 {
+		font-size: 28px;
+		border-bottom: 2px solid @restore-red;
+		padding-bottom: 6px;
+	}
+
+	.meta {
+		font-size: 12px;
+		font-style: italic;
+	}
+
+	.date {
+		margin-top: 8px;
+		margin-bottom: 2px;
+	}
+
+	.icon-tag {
+		display: inline-block;
+		width: 12px;
+		height: 12px;
+		vertical-align: middle;
+
+		use {
+			fill: #686F6E;
+		}
+	}
+
+	.tags {
+		color: #686F6E;
+
+		& a, a:visited, a:hover {
+			display: inline-block;
+			color: #686F6E;
+		}
+	}
+
+	+ section {
+		padding-top: 30px;
+	}
+}
+
+.article-wrap {
+	section {
+		padding: 0 !important;
+		background-color: transparent;
+	}
+
+	.sec-wrap {
+		padding: 0 !important;
+	}
+
+	.infobox {
+		background-color: #fff;
+	}
+
+	img {
+		max-width: 100%;
+	}
+}
+
+.article-footer {
+	margin-top: 80px;
+	text-align: center;
+
+	.next {
+		margin-top: 25px;
+		padding: 15px 10px 0;
+		border-top: 1px solid @restore-red;
+
+		a {
+			display: block;
+			text-align: right;
+			color: #374146;
+		}
+		span {
+			font-size: 14px;
+			font-weight: 600;
+
+			i {
+				color: @restore-red
+			}
+		}
+		h2 {
+			margin-top: 0;
+			font-size: 22px;
+		}
+	}
+}
+
+.article-social {
+	margin: 10px 0 5px;
+
+	a {
+		width: 30px;
+		height: 30px;
+		margin-right: 7px;
+		display: inline-block;
+		border-radius: 50%;
+		border: 1px solid @restore-red;
+		text-align: center;
+		font-size: 18px;
+
+		i {
+			vertical-align: middle;
+		}
+	}
+}
+
+img.icon-left {
+	float: left;
+	margin: 5px 20px 5px 0;
+	width: auto;
+}
+
+img.icon-right {
+	width: auto;
+	float: right;
+	margin: 5px 0 5px 20px;
+}
+
+img.article-image-left,
+img.article-image-right {
+	max-width: 800px;
+	margin: 20px auto;
+	display: block;
+}
+
+.icon-text-list {
+	list-style: none;
+	margin: 30px 0;
+	padding: 0;
+
+	li {
+		display: table;
+
+		> img {
+			display: table-cell;
+			max-width: none;
+			vertical-align: middle;
+		}
+
+		> p {
+			padding-left: 20px;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+}
+
+.article-infobox {
+	.item {
+		max-width: 400px;
+		margin: 20px auto;
+		padding: 20px;
+		text-align: center;
+
+		img {
+			margin: 0 auto;
+		}
+	}
+}

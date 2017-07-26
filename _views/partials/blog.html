@@ -1,0 +1,78 @@
+{% assign sticky_posts = posts | where:"meta.pin","true" %}
+{% assign blog_posts = posts | where:"meta.pin","" %}
+<section class="blog latest">
+	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		<h2 class="line red">LATEST</h2>
+		{% if sticky_posts.size > 0 %}
+			{% for article in sticky_posts %}
+					{% include 'views/partials/blogroll-article-promo' %}
+			{% endfor %}
+		{% else %}
+			{% for article in posts | limit: 2 %}
+					{% include 'views/partials/blogroll-article-promo' %}
+			{% endfor %}
+		{% endif %}
+	</div>
+</section>
+
+<div class="divider-wrap">
+	<div class="divider carrot"></div>
+</div>
+
+<section class="blog blogroll">
+	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		{% if sticky_posts.size > 0 %}
+			{% for article in blog_posts %}
+				{% include 'views/partials/blogroll-article' %}
+			{% endfor %}
+		{% else %}
+			{% for article in posts | offset: 2 %}
+					{% include 'views/partials/blogroll-article' %}
+			{% endfor %}
+		{% endif %}
+
+
+		<!--aside>
+			<div class="btn-wrap">
+				<a class="btn text-red" href="">LOAD MORE UPDATES</a>
+			</div>
+		</aside-->
+	</div>
+</section>
+
+<section class="blog giving">
+	<div class="sec-wrap clearfix {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		<aside class="subscribe-module">
+			<header>
+				<h2>STAY INFORMED</h2>
+				<p>Receive updates straight to your inbox. </p>
+			</header>
+			<input class="email" type="email" placeholder="Enter email address" />
+			<a class="btn fill-red block email-submit" href="#">SUBMIT</a>
+		</aside>
+		{% include 'views/partials/donate' %}
+	</div>
+</section>
+
+{% assign posts_by_year = posts | group_by: "year" %}
+<section class="blog meta">
+	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		<section class="meta-tags">
+			<h2 class="line red">TAGS</h2>
+			<div class="list">
+				{% for tag in taxonomy['tags'] %}
+					<a href="{{tag.url}}">{{tag.value}}</a>
+				{% endfor %}
+			</div>
+		</section>
+		<section class="meta-archive">
+			<h2 class="line red">ARCHIVE</h2>
+			<ul>
+			{% for year in posts_by_year %}
+				{% assign posts_within_year = year.items %}
+				<li><a href="/updates/a/{{year.name}}"><strong>{{year.name}}</strong> ({{posts_within_year.size}})</a></li>
+			{% endfor %}
+			</ul>
+		</section>
+	</div>
+</section>

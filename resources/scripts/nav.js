@@ -2,6 +2,7 @@
 	var nav = {
 		trackOpen: true,
 		init: function() {
+			this.loadAnnouncement();
 			this.bindEvents();
 		},
 		closeNav: function() {
@@ -13,6 +14,26 @@
 			Utils.$nav.find('.item.open')
 				.removeClass('open')
 				//.find('.submenu').slideUp();
+		},
+		loadAnnouncement: function(){
+			var cookie = 'showAnnouncement',
+				announcement = $('.announcement-bar');
+
+			if(announcement.length > 0 ) {
+				Utils.$body.on('click', '.announcement-bar .close', function(e){
+					e.stopPropagation();
+
+					announcement.removeClass('show');
+					Utils.cookie(cookie, 'false', 3600 * 24 * 1000);
+				});
+
+				if(Utils.cookie(cookie) === 'false') {
+					announcement.removeClass('show');
+				}
+				else {
+					announcement.addClass('show');
+				}
+			}
 		},
 		bindEvents: function() {
 			var self = this;

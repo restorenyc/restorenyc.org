@@ -1,0 +1,34 @@
+{% if section.meta.backgroundImage %}
+	{% assign bgImage = true %}
+{% else %}
+	{% assign bgImage = false %}
+{% endif %}
+
+{% assign posts_by_year = site.posts | where:"year", "2017" %}
+
+<section class="single-header {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" >
+	<div class="sec-wrap vertical-align" style="{{section.meta.sectionWrapStyles}}">
+		{% include 'views/utils/title-header' %}
+
+		{{section.body}}
+	</div>
+	{% if bgImage %}
+		<div class="frame">
+			<div class="portrait" data-img-url="{{section.meta.backgroundImage}}" data-img-pos="{{section.meta.backgroundPosition}}"></div>
+		</div>
+	{% endif %}
+</section>
+<section class="blog blogroll">
+	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		{% for article in posts_by_year %}
+			{% include 'views/partials/blogroll-article' %}
+		{% endfor %}
+
+
+		<!--aside>
+			<div class="btn-wrap">
+				<a class="btn text-red" href="">LOAD MORE UPDATES</a>
+			</div>
+		</aside-->
+	</div>
+</section>

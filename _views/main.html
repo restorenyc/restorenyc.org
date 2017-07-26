@@ -45,6 +45,10 @@
 		{% include 'views/partials/video' %}
 	{% elsif template == 'svg' %}
 		{% include 'views/partials/svg' %}
+	{% elsif template == 'blog' %}
+		{% include 'views/partials/blog' %}
+	{% elsif template == 'blogroll' %}
+		{% include 'views/partials/blogroll' %}
 
 	{% else %}
 		{% include 'views/partials/section' %}
@@ -61,6 +65,9 @@
 	{% else %}
 		{% include 'views/partials/section' %}
 	{% endif %}
+
+{% elsif taxonomy['tags'] %}
+	{% include 'views/partials/blogroll' %}
 
 {% else %}
 	{% comment %}

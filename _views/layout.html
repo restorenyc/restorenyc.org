@@ -2,6 +2,7 @@
 <!--[if lte IE 8]>   <html class="ie8 no-js">           <![endif]-->
 <!--[if IE 9]>       <html class="ie9 no-js">           <![endif]-->
 <!--[if !IE]><!-->   <html lang="en-US" class="no-js">  <!--<![endif]-->
+{% assign announcement = site.pages['announcement-bar'].meta['show'] %}
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,13 +51,13 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/{{site.meta.fontAwesomeVersion}}/css/font-awesome.min.css">
 		{% if flickity %}<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.min.css">{% endif %}
 		{{ header_styles }}
-		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.min.css?ver=1490897309818">
+		<link id="main-styles" rel="stylesheet" type="text/css" href="/src/css/styles.min.css?ver=1498496635235">
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.1/lity.min.css">
 		{{ header_scripts }}
 		<script src="//use.typekit.net/oln3ahs.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 	</head>
-	<body class="{% if home? %}{{'home'}}{% endif %}">
+	<body class="{% if home? %}{{'home'}}{% endif %}{% if type == 'post' %}{{'article-page'}}{% endif %}{% if announcement == 'true' %} has-announcement{% endif %}">
 		<!-- Google Tag Manager -->
 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5WXNZJ"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -68,16 +69,21 @@
 		<!-- End Google Tag Manager -->
 		{% include 'views/partials/svg' %}
 		<header class="mh">
-			<div class="site-logo">
-				<a href="/">
-					<span class="r-icon restore-logo"></span>
-				</a>
+			{% if announcement == 'true' %}
+				{% include 'views/partials/announcement-bar' %}
+			{% endif %}
+			<div class="wrap">
+				<div class="site-logo">
+					<a href="/">
+						<span class="r-icon restore-logo"></span>
+					</a>
+				</div>
+				<span class="menu-close r-icon restore-close"></span>
+				<span class="menu-btn r-icon restore-menu-btn" data-ga="nav--click--open">
+					<span>Menu</span>
+				</span>
+				{% include 'views/partials/top-nav' %}
 			</div>
-			<span class="menu-close r-icon restore-close"></span>
-			<span class="menu-btn r-icon restore-menu-btn" data-ga="nav--click--open">
-				<span>Menu</span>
-			</span>
-			{% include 'views/partials/top-nav' %}
 		</header>
 
 		{% include 'views/partials/site-nav' %}
@@ -93,9 +99,9 @@
 					<div class="top clearfix">
 						<div class="header">
 							<h2>Stay Informed</h2>
-							<div class="input-wrap" />
-								<input class="signup-form-input" type="text" name="ea" placeholder="Email" maxlength="50" />
-								<button type="submit" class="btn large fill-dark-grey signup-form" name="go">Submit</button>
+							<div class="input-wrap signup-form" />
+								<input class="email" type="text" name="ea" placeholder="Email" maxlength="50" />
+								<button type="submit" class="btn large fill-dark-grey email-submit" name="go">Submit</button>
 							</div>
 						</div>
 						<div class="links clearfix">
@@ -127,7 +133,7 @@
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		{% if flickity %}<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.1/flickity.pkgd.min.js"></script>{% endif%}
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.2.1/lity.min.js"></script>
-		<script type="text/javascript" src="/src/js/scripts.min.js?ver=1490899204032"></script>
+		<script type="text/javascript" src="/src/js/scripts.min.js?ver=1498496655620"></script>
 		{{ footer_scripts }}
 		{% if footer_scripts_jquery %}
 			<script type="text/javascript">
@@ -138,8 +144,8 @@
 				})(jQuery);
 			</script>
 		{% endif %}
-		{% if meta.metaScripts %}
-			{{meta.metaScripts}}
+		{% if site.meta.metaScripts %}
+			{{site.meta.metaScripts}}
 		{% endif %}
 	</body>
 </html>
