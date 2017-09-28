@@ -1,0 +1,32 @@
+<section class="collapsed {{section.meta.sectionClass}}" style="{{section.meta.sectionStyles}}">
+	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		{% if section.meta.image %}
+			<div class="image">
+				<img src="{{section.meta.image}}" />
+				{% if section.meta.imageCaption%}
+					<div class="caption">
+						<h3 class="line red">{{section.meta.imageCaption}}</h3>
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
+		{% if section.meta.video %}
+			<div class="sec-video">
+				{% include 'views/partials/video-container' %}
+			</div>
+		{% endif %}
+		<div class="content">
+			<div class="preview">
+				<p>{{section.meta.previewText}}</p>
+			</div>
+			<div class="mask">
+				<div class="btn-wrap">
+					<span class="btn text-red" >{{section.meta.buttonText}}</span>
+				</div>
+			</div>
+			<div class="body">
+				{{section.body}}
+			</div>
+		</div>
+	</div>
+</section>

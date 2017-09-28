@@ -1,0 +1,14 @@
+<section class="image-block {{section.meta.sectionClass}}" style="{{section.meta.sectionStyles}}">
+	<div class="sec-wrap {{section.meta.sectionWrapClass}}" style="{{section.meta.sectionWrapStyles}}">
+		{% if section.meta.image %}
+			<div class="image">
+				<img src="{{section.meta.image}}" />
+			</div>
+		{% endif %}
+		<div class="content">
+			<div class="body">
+				{{section.body}}
+			</div>
+		</div>
+	</div>
+</section>

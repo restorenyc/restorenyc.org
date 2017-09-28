@@ -269,7 +269,8 @@ var Utils = (function() {
 	var header = {
 		el: null,
 		init: function() {
-			this.el = Utils.isHome() ? $('.banner-lead'): $('.single-header');
+			//this.el = Utils.isHome() ? $('.banner-lead'): $('.single-header');
+			this.el = $('.single-header');
 			this.loadHeaderImage();
 			this.loadVideo();
 		},
@@ -294,7 +295,7 @@ var Utils = (function() {
 			}
 		},
 		loadVideo: function() {
-			var el = $('.banner-lead'),
+			var el = $('.single-header'),
 				video = el.find('video'),
 				filetype,
 				src;
@@ -409,13 +410,11 @@ var Utils = (function() {
 				if(this.isMobileVP()) return;
 
 				if(top > (vpH - 5)) {
-					console.log('if')
 					Utils.$main.css('opacity', 1);
 					$('#hero').css('margin-bottom', 0);
 					Utils.$main.removeClass('locked');
 				}
 				else {
-					console.log('else')
 					Utils.$main.css('opacity', opacity)
 					$('#hero').css('margin-bottom', vpH + mainH)
 					Utils.$main.addClass('locked');
@@ -592,6 +591,26 @@ var Billboard = (function($){
 			});
 		}
 	};
+
+})(jQuery);
+(function($) {
+	var modules = {
+		init: function() {
+			this.collapsed();
+		},
+		collapsed: function() {
+			var sections = Utils.$body.find('.collapsed');
+			if(sections.length > 0) {
+				sections.find('.mask .btn').click(function(e){
+					$(e.target).closest('.collapsed').addClass('show');
+				});
+			}
+		}
+	};
+
+	$(document).ready(function() {
+		modules.init();
+	});
 
 })(jQuery);
 var Video = (function($){

@@ -11,6 +11,8 @@
 		{% include 'views/partials/header' %}
 	{% elsif template == 'subheader' %}
 		{% include 'views/partials/subheader' %}
+	{% elsif template == 'subheader2' %}
+		{% include 'views/partials/subheader2' %}
 	{% elsif template == 'section' %}
 		{% include 'views/partials/section' %}
 	{% elsif template == 'single' %}
@@ -49,6 +51,12 @@
 		{% include 'views/partials/blog' %}
 	{% elsif template == 'blogroll' %}
 		{% include 'views/partials/blogroll' %}
+	{% elsif template == 'collapsed' %}
+		{% include 'views/partials/collapsed' %}
+	{% elsif template == 'next' %}
+		{% include 'views/partials/next' %}
+	{% elsif template == 'image-block' %}
+		{% include 'views/partials/image-block' %}
 
 	{% else %}
 		{% include 'views/partials/section' %}

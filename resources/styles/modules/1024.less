@@ -1,3 +1,23 @@
+.single-header {
+	&.bg-video {
+		overflow: hidden;
+	}
+
+	video {
+		display: block;
+		position: relative;
+		min-width: 100%;
+		min-height: 100%;
+		top: 0;
+		left: 50%;
+		opacity: 0;
+		z-index: 2;
+		.transition(opacity, 1s, @ease-time);
+		.transform(translateX(-50%));
+	}
+
+}
+
 .subheader {
 	& + section {
 		padding-top:110px;
@@ -286,4 +306,65 @@
 	width: 360px;
 	float: right;
 	margin-top: -30px;
+}
+.image-block {
+	width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+
+	.sec-wrap {
+		width: auto;
+	}
+
+}
+.collapsed {
+	width: 1024px;
+	margin-left: auto;
+	margin-right: auto;
+
+	.sec-wrap {
+		width: auto;
+	}
+
+	.caption {
+		bottom: 60px;
+		left: 100px;
+
+		h3 {
+			font-size: 48px;
+		}
+	}
+	.content {
+		padding: 40px 100px;
+	}
+}
+.sec-next {
+	padding: 30px 0;
+}
+.sex-trafficking {
+	.widget-57k {
+		background-image: url('/assets/Desktop_57K.png');
+		width: 422px;
+		height: 356px;
+		margin-top: -36px;
+		margin-left: 0;
+	}
+	.widget-4x {
+		background-image: url('/assets/Desktop_4x.png');
+		width: 564px;
+		height: 357px;
+		margin: -10px -15px 10px 20px;
+	}
+}
+.icons-text {
+	figure {
+		width: 140px;
+		img {
+			width: 100px;
+		}
+		margin: 20px;
+	}
+	figcaption {
+		font-size: 24px;
+	}
 }

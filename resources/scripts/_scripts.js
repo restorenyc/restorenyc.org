@@ -9,6 +9,7 @@ module.exports = function() {
 		path + 'header.js',
 		path + 'hero.js',
 		path + 'billboard.js',
+		path + 'modules.js',
 		path + 'video.js'
 	];
 };

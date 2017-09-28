@@ -2,7 +2,8 @@
 	var header = {
 		el: null,
 		init: function() {
-			this.el = Utils.isHome() ? $('.banner-lead'): $('.single-header');
+			//this.el = Utils.isHome() ? $('.banner-lead'): $('.single-header');
+			this.el = $('.single-header');
 			this.loadHeaderImage();
 			this.loadVideo();
 		},
@@ -27,7 +28,7 @@
 			}
 		},
 		loadVideo: function() {
-			var el = $('.banner-lead'),
+			var el = $('.single-header'),
 				video = el.find('video'),
 				filetype,
 				src;

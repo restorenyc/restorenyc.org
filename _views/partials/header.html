@@ -4,12 +4,22 @@
 	{% assign bgImage = false %}
 {% endif %}
 
-<section class="single-header {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}" >
+{% if section.meta.backgroundVideo %}
+	{% assign bgVideo = true %}
+{% else %}
+	{% assign bgVideo = false %}
+{% endif %}
+
+<section class="single-header {{section.meta.sectionClass}} {% if bgImage %}bg-image{% endif %}{% if bgVideo %} bg-video{% endif %}" >
 	<div class="sec-wrap vertical-align" style="{{section.meta.sectionWrapStyles}}">
 		{% include 'views/utils/title-header' %}
 
 		{{section.body}}
 	</div>
+	{% if bgVideo %}
+		<video autoplay="true" loop="true" class="bg-video" preload="none" data-src="{{section.meta.backgroundVideo}}">
+		</video>
+	{% endif %}
 	{% if bgImage %}
 		<div class="frame">
 			<div class="portrait" data-img-url="{{section.meta.backgroundImage}}" data-img-pos="{{section.meta.backgroundPosition}}"></div>

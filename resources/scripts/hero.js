@@ -88,13 +88,11 @@
 				if(this.isMobileVP()) return;
 
 				if(top > (vpH - 5)) {
-					console.log('if')
 					Utils.$main.css('opacity', 1);
 					$('#hero').css('margin-bottom', 0);
 					Utils.$main.removeClass('locked');
 				}
 				else {
-					console.log('else')
 					Utils.$main.css('opacity', opacity)
 					$('#hero').css('margin-bottom', vpH + mainH)
 					Utils.$main.addClass('locked');
